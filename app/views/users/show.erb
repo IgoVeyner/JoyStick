@@ -1,6 +1,30 @@
-<% if current_user == @user %>
-  Hello <%= @user.username %>
-<% else %>
-  <%= @user.username %>'s Collections!
+<h1><%= @user.username %></h1>
+<p>Member Since: </p>
+<p><%= @user.created_at.month %> / <%= @user.created_at.day %> / <%= @user.created_at.year %></p>
+<br>
+
+<section>
+  <h2>Stats</h2>
+  <h3>Collections: <%= @user.collections.size %></h3>
+  <h3>Consoles: <%= @user.consoles.size %></h3>
+  <h3>Games: <%= @user.games.size %></h3>
+  <h3>Favorite Console: STUB<%=  %></h3>
+  <p>*by number of games</p>
+</section>
+
+<br>
+<h2>All Collections: </h2>
+<% @user.collections.each do |col| %>
+  <section>
+    <h2>Name: <%= col.name %></h2>
+    <h3>Console: <%= col.console.name %> </h3>
+    <h3>Games:</h3>
+    <ol>
+      <% col.games.each do |game| %>
+        <li><%= game.name %></li>
+      <% end %>
+    </ol>
+  </section>
 <% end %>
+
  
