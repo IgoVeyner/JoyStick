@@ -29,7 +29,8 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect "/users/#{user.slug}"
     else 
-      redirect '/login'
+      @errors = user.errors
+      erb :'users/login'
     end
   end
 
