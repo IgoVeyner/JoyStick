@@ -2,11 +2,13 @@ class CollectionsController < ApplicationController
 
   # GET: /collections
   get "/collections" do
+    redirect_if_not_logged_in
     erb :"/collections/index.html"
   end
 
   # GET: /collections/new
   get "/collections/new" do
+    redirect_if_not_logged_in
     erb :"/collections/new.html"
   end
 
@@ -17,11 +19,13 @@ class CollectionsController < ApplicationController
 
   # GET: /collections/5
   get "/collections/:id" do
+    redirect_if_not_logged_in
     erb :"/collections/show.html"
   end
 
   # GET: /collections/5/edit
   get "/collections/:id/edit" do
+    redirect_if_not_logged_in
     erb :"/collections/edit.html"
   end
 
