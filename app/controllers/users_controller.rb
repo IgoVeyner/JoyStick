@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 
   get '/signup' do
+    redirect_if_logged_in
+    erb :'users/signup'
   end
   
   post '/signup' do
