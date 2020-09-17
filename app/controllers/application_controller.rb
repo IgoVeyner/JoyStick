@@ -27,7 +27,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def redirect_if_logged_in
-      redirect '/login' if logged_in?
+      redirect "/users/#{current_user.slug}" if logged_in?
     end
   end
 
