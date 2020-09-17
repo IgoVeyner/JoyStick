@@ -3,9 +3,11 @@
 <% if @errors %>
   <br>
   <p>Error: </p>
-  <% @errors.messages.each do |key, value|%>
+
+  <% @errors.each do |key, value|%>
     <p><%= key %>: <%= value.to_s.gsub(/[\[\]\"]/, "") %></p>
   <% end %>
+  
   <br>
 <% end %>
 
