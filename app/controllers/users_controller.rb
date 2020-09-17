@@ -32,6 +32,12 @@ class UsersController < ApplicationController
     end
   end
 
+  delete '/logout' do
+    # remember to add a form on the nav bar to log the current user out
+    session[user_id] = nil
+    redirect '/login'
+  end
+
   get '/users/:slug' do
   end
 end
