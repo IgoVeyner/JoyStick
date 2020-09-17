@@ -1,6 +1,15 @@
 <h1>Create a New Account</h1>
 <h3>It's quick and easy!</h3>
 
+<% if @errors %>
+  <br>
+  <p>Error: </p>
+  <% @errors.messages.each do |key, value|%>
+    <p><%= key %>: <%= value.to_s.gsub(/[\[\]\"]/, "") %></p>
+  <% end %>
+  <br>
+<% end %>
+
 <form action="/signup" method="post">
   <label>Username: </label>
   <br>
