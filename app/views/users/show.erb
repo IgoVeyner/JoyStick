@@ -1,0 +1,6 @@
+<% if current_user == @user %>
+  Hello <%= @user.username %>
+<% else %>
+  <%= @user.username %>'s Collections!
+<% end %>
+ 
