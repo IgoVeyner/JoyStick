@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     
     if user.save 
       session[:user_id] = user.id
-      redirect "/user/#{user.slug}"
+      redirect "/users/#{user.slug}"
     else
       redirect '/signup'
     end
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     
     if user && user.authenticate(params[:user][:password])
       session[:user_id] = user.id
-      redirect "/user/#{user.slug}"
+      redirect "/users/#{user.slug}"
     else 
       redirect '/login'
     end
