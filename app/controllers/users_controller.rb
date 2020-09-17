@@ -22,6 +22,7 @@ class UsersController < ApplicationController
   end
 
   post '/login' do
+    
   end
 
   get '/users/:slug' do

@@ -1,1 +1,22 @@
-stub
+<h3>Log Into JoyStick</h3>
+
+<form action="/login" method="post">
+  <label>Username: </label>
+  <br>
+  <input type="text" name="user[username]">
+  <br><br>
+
+  <label>Password: </label>
+  <br>
+  <input type="password" name="user[password]">
+  <br><br>
+
+  <input type="submit" value="Log In">
+</form>
+
+<br>
+<p>or</p>
+
+<form action="/signup" method="get">
+  <input type="submit" value="Create A New Account">
+</form>
