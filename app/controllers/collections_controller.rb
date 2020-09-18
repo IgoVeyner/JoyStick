@@ -121,8 +121,31 @@ class CollectionsController < ApplicationController
   end
 
   # PATCH: /collections/5
-  patch "/collections/:slug" do
-    redirect "/collections/:id"
+  patch "/collections/:id" do
+    @collection = Collection.find_by(params[:id])
+
+    if !params[:collection].keys.include?(:game_ids)
+      params[:collection][:game_ids] = []
+    end
+
+    @collection.update(params[:collection])
+    
+    if !params[:game][:name].empty?     # If making a new game
+      
+      game = Game.new(params[:game])
+      if game.save                      # Does the game save? (Unique Name)
+        @collection.games << game
+        redirect "/collections/#{@collection.id}"
+      else                              # Did not save (Name already taken)
+        @consoles = Console.all
+        @games = Game.all
+        @errors = ["Game "]
+        @errors[0] += game.errors.full_messages[0]
+        erb :'collections/edit'
+      end
+    else                                # Not making a new game
+      redirect "/collections/#{@collection.id}"
+    end
   end
 
   # DELETE: /collections/5/delete
