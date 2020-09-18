@@ -1,13 +1,11 @@
 class CollectionsController < ApplicationController
 
-  # GET: /collections
   get "/collections" do
     redirect_if_not_logged_in
     @collections = Collection.all
     erb :"/collections/index"
   end
 
-  # GET: /collections/new
   get "/collections/new" do
     @consoles = Console.all
     @games = Game.all
@@ -15,7 +13,6 @@ class CollectionsController < ApplicationController
     erb :"/collections/new"
   end
 
-  # POST: /collections
   post "/collections" do
 
     @games = Game.all
@@ -94,7 +91,6 @@ class CollectionsController < ApplicationController
     end
   end
 
-  # GET: /collections/5
   get "/collections/:id" do
     redirect_if_not_logged_in
     @collection = Collection.find_by(id: params[:id])
@@ -106,7 +102,6 @@ class CollectionsController < ApplicationController
     end
   end
 
-  # GET: /collections/5/edit
   get "/collections/:id/edit" do
     redirect_if_not_logged_in
     @collection = Collection.find_by(id: params[:id])
@@ -120,7 +115,6 @@ class CollectionsController < ApplicationController
     end
   end
 
-  # PATCH: /collections/5
   patch "/collections/:id" do
     @collection = Collection.find_by(params[:id])
 
@@ -148,7 +142,6 @@ class CollectionsController < ApplicationController
     end
   end
 
-  # DELETE: /collections/5/delete
   delete "/collections/:id" do
     collection = Collection.find_by(params[:id])
     collection.destroy
