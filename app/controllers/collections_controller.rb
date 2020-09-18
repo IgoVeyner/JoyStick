@@ -88,14 +88,12 @@ class CollectionsController < ApplicationController
         erb :'collections/new'
       end
     
-    else
-      if params[:collection][:game_ids]
-        binding.pry
-        params[:collection][:game_ids].each do |game_id|
-          collection.games << Game.find_by(id: game_id.to_i)
-          redirect "/collections"
-        end
+    elsif params[:collection][:game_ids]
+        # binding.pry
+      params[:collection][:game_ids].each do |game_id|
+        collection.games << Game.find_by(id: game_id.to_i)
       end
+      redirect "/collections"
     end
   end
 end
