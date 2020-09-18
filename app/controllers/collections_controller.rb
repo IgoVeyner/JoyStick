@@ -110,7 +110,14 @@ class CollectionsController < ApplicationController
   get "/collections/:id/edit" do
     redirect_if_not_logged_in
     @collection = Collection.find_by(id: params[:id])
-    erb :"/collections/edit"
+
+    if current_user == @collection.user
+      @consoles = Console.all
+      @games = Game.all
+      erb :"/collections/edit"
+    else
+      redirect "/collections/#{@collection.id}"
+    end
   end
 
   # PATCH: /collections/5
