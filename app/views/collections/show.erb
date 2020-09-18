@@ -8,3 +8,9 @@
 
 <h2>User: <a href="/users/<%= @collection.user.slug %>"><%= @collection.user.username %> </h2></a>
 <h2>Console: <a href="/consoles/<%= @collection.console.slug %>"><%= @collection.console.name %> </h2></a>
+<h2>Games: <%= @collection.games.size %></h2>
+<ol>
+  <% @collection.games.each do |game| %>
+    <li><a href="/games/<%= game.slug %>"><%= game.name %></a></li>
+  <% end %>
+</ol>
