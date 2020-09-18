@@ -26,21 +26,15 @@ class CollectionsController < ApplicationController
       if collection.save
         
         game = add_games_to_collection(collection, params)
-        
-        if game == nil
-          redirect '/collections'
-        end
+
+        redirect '/collections' if game == nil
 
         @games = Game.all
         @consoles = Console.all
         @errors = ["Game "]
         @errors[0] += game.errors.full_messages[0]
         erb :'collections/new'
-        # if !@errors
-        #   redirect "/collections"
-        # else 
-        #   erb :'collections/new'
-        # end
+    
       else
         @consoles = Console.all
         @errors = collection.errors.full_messages
@@ -51,6 +45,7 @@ class CollectionsController < ApplicationController
       console = Console.new(name: params[:console][:name])
       if console.save
         collection = Collection.create(name: name, console_id: console.id, user_id: current_user.id)
+        
         redirect "/collections"
       else 
         @games = Game.all
