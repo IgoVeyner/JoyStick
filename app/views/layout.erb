@@ -12,10 +12,11 @@
   <body>
 
     <nav>
-      <form action="/logout" method="post">
-        <input type="hidden" name="_method" id="delete">
-        <input type="submit" value="Logout">
-      </form>
+      <% if current_user %>  
+        <form action="/logout" method="post">
+          <input type="submit" value="Logout">
+        </form>
+      <% end %>
     </nav>
 
     <div class="wrapper">
