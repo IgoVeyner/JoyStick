@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     end
   end
 
-  post '/logout' do
+  delete '/logout' do
     session[:user_id] = nil
     redirect '/login'
   end
