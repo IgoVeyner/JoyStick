@@ -3,4 +3,12 @@ class Game < ActiveRecord::Base
   has_many :collections, through: :games_collections
   has_many :consoles, through: :collections
   has_many :users, through: :collections
+  
+  def slug 
+    self.username.gsub(" ", "-")
+  end
+
+  def self.find_by_slug(slug)
+    self.all.find {|u| u.slug == slug}
+  end
 end
