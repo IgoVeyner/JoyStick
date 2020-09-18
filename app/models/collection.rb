@@ -4,5 +4,7 @@ class Collection < ActiveRecord::Base
   has_many :games_collections
   has_many :games, through: :games_collections
 
-  validates :name, :console_id, :user_id, presence: true
+  validates :name, :user_id, presence: true
+  validates :console_id, presence: {scope: :true, 
+    message: "needs to be selected or create a new Console"}
 end
