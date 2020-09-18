@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   validates :username, :password, presence: true
   validates :username, uniqueness: true
   
-  has_many :collections
+  has_many :collections, dependent: :destroy
   has_many :consoles, through: :collections
   has_many :games, through: :collections
 
