@@ -1,1 +1,7 @@
-<%= @collection.name %>
+<h2>Name: <%= @collection.name %></h2>
+
+ <% if current_user == @collection.user %>
+  <form action="/collections/<%= @collection.id %>/edit" method="get">
+    <input type="submit" value="Edit Collection">
+  </form>
+<% end %>
