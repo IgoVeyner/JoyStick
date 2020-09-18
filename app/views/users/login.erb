@@ -1,14 +1,9 @@
 <h3>Log Into JoyStick</h3>
 
 <% if @errors %>
-  <br>
-  <p>Error: </p>
-
-  <% @errors.each do |key, value|%>
-    <p><%= key %>: <%= value.to_s.gsub(/[\[\]\"]/, "") %></p>
+  <% @errors.each do |error| %>
+    <p style="color: red;"><%= error %></p>
   <% end %>
-  
-  <br>
 <% end %>
 
 <form action="/login" method="post">

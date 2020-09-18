@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect "/users/#{user.slug}"
     else
-      @errors = user.errors
+      @errors = user.errors.full_messages
       erb :'users/signup'
     end
   end
@@ -29,12 +29,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect "/users/#{user.slug}"
     else 
-      if user == nil
-        @errors = {username: "Not a valid Username"}
-      elsif user && !user.authenticate(params[:user][:password])
-        @errors = {password: "invalid password, please try again"}
-      end
-      
+      @errors = ["Invalid Username or Password"] 
       erb :'users/login'
     end
   end
