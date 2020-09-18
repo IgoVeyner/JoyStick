@@ -23,12 +23,12 @@
       </form>
     <% end %>
     
-    <h2>Name: <%= col.name %></h2>
-    <h3>Console: <%= col.console.name %> </h3>
+    <h2>Name: <a href="/collections/<%= col.id %>"><%= col.name %></h2></a>
+    <h3>Console: <a href="/consoles/<%= col.console.slug %>"><%= col.console.name %> </h3></a>
     <h3>Games:</h3>
     <ol>
       <% col.games.each do |game| %>
-        <li><%= game.name %></li>
+        <li><a href="/games/<%= game.slug %>"><%= game.name %></a></li>
       <% end %>
     </ol>
   </section>
