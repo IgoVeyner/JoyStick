@@ -25,12 +25,22 @@ class CollectionsController < ApplicationController
       collection = Collection.new(name: name, console_id: console_id, user_id: current_user.id)
       if collection.save
         
-        @errors = add_games_to_collection(collection, params)
-        if !@errors
-          redirect "/collections"
-        else 
-          erb :'collections/new'
+        game = add_games_to_collection(collection, params)
+        
+        if game == nil
+          redirect '/collections'
         end
+
+        @games = Game.all
+        @consoles = Console.all
+        @errors = ["Game "]
+        @errors[0] += game.errors.full_messages[0]
+        erb :'collections/new'
+        # if !@errors
+        #   redirect "/collections"
+        # else 
+        #   erb :'collections/new'
+        # end
       else
         @consoles = Console.all
         @errors = collection.errors.full_messages
@@ -81,15 +91,15 @@ class CollectionsController < ApplicationController
         collection.games << game
         redirect "/collections"
       else
-        @games = Game.all
-        @consoles = Console.all
-        @errors = ["Game "]
-        @errors[0] += game.errors.full_messages[0]
-        erb :'collections/new'
+        game
+        # @games = Game.all
+        # @consoles = Console.all
+        # @errors = ["Game "]
+        # @errors[0] += game.errors.full_messages[0]
+        # erb :'collections/new'
       end
     
     elsif params[:collection][:game_ids]
-        # binding.pry
       params[:collection][:game_ids].each do |game_id|
         collection.games << Game.find_by(id: game_id.to_i)
       end
