@@ -97,7 +97,8 @@ class CollectionsController < ApplicationController
   # GET: /collections/5
   get "/collections/:id" do
     redirect_if_not_logged_in
-    erb :"/collections/show.html"
+    @collection = Collection.find_by(params[:id])
+    erb :"/collections/show"
   end
 
   # GET: /collections/5/edit
