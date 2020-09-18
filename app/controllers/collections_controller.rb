@@ -149,7 +149,7 @@ class CollectionsController < ApplicationController
   end
 
   # DELETE: /collections/5/delete
-  delete "/collections/:id/delete" do
+  delete "/collections/:id" do
     redirect "/collections"
   end
 
