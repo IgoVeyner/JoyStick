@@ -9,8 +9,9 @@ class CollectionsController < ApplicationController
 
   # GET: /collections/new
   get "/collections/new" do
+    @consoles = Console.all
     redirect_if_not_logged_in
-    erb :"/collections/new.html"
+    erb :"/collections/new"
   end
 
   # POST: /collections
