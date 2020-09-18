@@ -21,6 +21,8 @@ class CollectionsController < ApplicationController
     name = params[:collection][:name]
     if params[:console][:name].empty?
       
+      @games = Game.all
+      @consoles = Console.all
       console_id = params[:collection][:console_id][0].to_i if params[:collection][:console_id]
       collection = Collection.new(name: name, console_id: console_id, user_id: current_user.id)
       if collection.save
@@ -29,14 +31,11 @@ class CollectionsController < ApplicationController
 
         redirect '/collections' if game == nil
 
-        @games = Game.all
-        @consoles = Console.all
         @errors = ["Game "]
         @errors[0] += game.errors.full_messages[0]
         erb :'collections/new'
     
       else
-        @consoles = Console.all
         @errors = collection.errors.full_messages
         erb :'collections/new'
       end
@@ -93,11 +92,6 @@ class CollectionsController < ApplicationController
         redirect "/collections"
       else
         game
-        # @games = Game.all
-        # @consoles = Console.all
-        # @errors = ["Game "]
-        # @errors[0] += game.errors.full_messages[0]
-        # erb :'collections/new'
       end
     
     elsif params[:collection][:game_ids]
