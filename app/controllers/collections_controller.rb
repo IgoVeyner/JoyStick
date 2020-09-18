@@ -73,8 +73,10 @@ class CollectionsController < ApplicationController
   def add_games_to_collection(collection, params)
     if !params[:game][:name].empty?
     else
-      params[:collection][:game_ids].each do |game_id|
-        collection.games << Game.find_by(id: game_id.to_i)
+      if params[:collection][:game_ids]
+        params[:collection][:game_ids].each do |game_id|
+          collection.games << Game.find_by(id: game_id.to_i)
+        end
       end
     end
   end
