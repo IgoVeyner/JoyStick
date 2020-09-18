@@ -3,6 +3,9 @@ class Console < ActiveRecord::Base
   has_many :games, through: :collections
   has_many :users, through: :collections
 
+  validates :name, presence: true
+  validates :name, uniqueness: true
+
   def slug 
     self.name.gsub(" ", "-")
   end
