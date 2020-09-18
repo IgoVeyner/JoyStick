@@ -16,7 +16,23 @@ class CollectionsController < ApplicationController
 
   # POST: /collections
   post "/collections" do
-    redirect "/collections"
+    
+    name = params[:collection][:name]
+    console_id = params[:collection][:console_id][0].to_i if params[:collection][:console_id]
+    if params[:console][:name].empty?
+
+      collection = Collection.new(name: name, console_id: console_id, user_id: current_user.id)
+      if collection.save
+        redirect "/collections"
+      else
+        @consoles = Console.all
+        @errors = collection.errors.full_messages
+        erb :'collections/new'
+      end
+
+    else
+
+    end
   end
 
   # GET: /collections/5
