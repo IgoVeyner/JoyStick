@@ -150,6 +150,8 @@ class CollectionsController < ApplicationController
 
   # DELETE: /collections/5/delete
   delete "/collections/:id" do
+    collection = Collection.find_by(params[:id])
+    collection.destroy
     redirect "/collections"
   end
 

@@ -48,7 +48,7 @@
 
 <br><br>
 
-<form action="/collections/<%= @collection.id %>">
+<form action="/collections/<%= @collection.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <input type="submit"  value="Delete Collection">
 </form>
