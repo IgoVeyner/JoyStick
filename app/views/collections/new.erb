@@ -1,5 +1,11 @@
 <form action="/collections" method="post">
   <h1>Create a Collection</h1>
+
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <p style="color: red;"><%= error %></p>
+    <% end %>
+  <% end %>
   
   <label for="">Collection Name: </label>
   <br>
