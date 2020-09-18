@@ -18,7 +18,7 @@
 
       <h3>User: <a href="/users/<%= col.user.slug %>"><%= col.user.username %> </h3></a></h3>
       <h3>Console: <a href="/consoles/<%= col.console.slug %>"><%= col.console.name %> </h3></a>
-      <h3>Games:</h3>
+      <h3>Games: <%= col.games.size %></h3>
       <ol>
         <% col.games.each do |game| %>
           <li><a href="/games/<%= game.slug %>"><%= game.name %></a></li>
