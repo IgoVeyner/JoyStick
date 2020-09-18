@@ -18,9 +18,9 @@ class CollectionsController < ApplicationController
   post "/collections" do
     
     name = params[:collection][:name]
-    console_id = params[:collection][:console_id][0].to_i if params[:collection][:console_id]
     if params[:console][:name].empty?
-
+      
+      console_id = params[:collection][:console_id][0].to_i if params[:collection][:console_id]
       collection = Collection.new(name: name, console_id: console_id, user_id: current_user.id)
       if collection.save
         redirect "/collections"
@@ -29,9 +29,15 @@ class CollectionsController < ApplicationController
         @errors = collection.errors.full_messages
         erb :'collections/new'
       end
-
+      
     else
-
+      console = Console.new(name: params[:console][:name])
+      if console.save
+        collection = Collection.create(name: name, console_id: console.id, user_id: current_user.id)
+        redirect "/collections"
+      else 
+        binding.pry
+      end
     end
   end
 
