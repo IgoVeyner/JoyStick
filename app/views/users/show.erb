@@ -13,13 +13,18 @@
 </section>
 
 <br>
+<% if @user == current_user %>
+  <form action="/collections/new" method="get">
+    <input type="submit" value="New Collection">
+  </form>
+<% end %>
 <h2>All Collections: </h2>
 <% @user.collections.each do |col| %>
   <section>
 
     <% if @user == current_user %>
       <form action="/collections/<%= col.id %>/edit" method="get">
-        <input type="submit" value="Edit">
+        <input type="submit" value="Edit Collection">
       </form>
     <% end %>
     
