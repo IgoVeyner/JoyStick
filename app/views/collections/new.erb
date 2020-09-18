@@ -13,7 +13,7 @@
   <br><br>
 
   <h3>Select an existing Console or create a new one:</h3>
-  <br>
+  <p>* Required</p>
   <% @consoles.each do |console| %>
     <input type="radio" name="collection[console_id]" id="<%= console.id %>" value="<%= console.id %>"><span><%= console.name %></span>
     <br>
@@ -27,7 +27,7 @@
   <br><br>
 
   <h3>Select existing Games or create a new one:</h3>
-  <br>
+  <p>* Optional</p>
   <% @games.each do |game| %>
     <input type="checkbox" name="collection[game_ids][]" id="<%= game.id %>" value="<%= game.id %>"><span><%= game.name %></span>
     <br>
