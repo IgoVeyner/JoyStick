@@ -47,7 +47,8 @@ class UsersController < ApplicationController
       erb :'users/show'
     else 
       # gotta figure out how to display an error here
-      redirect '/'
+      @errors = ["#{params[:slug]} is not a valid User"]
+      erb :'failure'
     end
   end
 end
