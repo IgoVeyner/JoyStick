@@ -24,6 +24,9 @@ class CollectionsController < ApplicationController
       console_id = params[:collection][:console_id][0].to_i if params[:collection][:console_id]
       collection = Collection.new(name: name, console_id: console_id, user_id: current_user.id)
       if collection.save
+        
+        add_games_to_collection(collection, params)
+
         redirect "/collections"
       else
         @consoles = Console.all
@@ -65,5 +68,14 @@ class CollectionsController < ApplicationController
   # DELETE: /collections/5/delete
   delete "/collections/:id/delete" do
     redirect "/collections"
+  end
+
+  def add_games_to_collection(collection, params)
+    if !params[:game][:name].empty?
+    else
+      params[:collection][:game_ids].each do |game_id|
+        collection.games << Game.find_by(id: game_id.to_i)
+      end
+    end
   end
 end
