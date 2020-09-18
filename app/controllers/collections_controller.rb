@@ -36,7 +36,10 @@ class CollectionsController < ApplicationController
         collection = Collection.create(name: name, console_id: console.id, user_id: current_user.id)
         redirect "/collections"
       else 
-        binding.pry
+        @consoles = Console.all
+        @errors = ["Console "]
+        @errors[0] += console.errors.full_messages[0]
+        erb :'collections/new'
       end
     end
   end
