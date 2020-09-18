@@ -29,6 +29,25 @@ class ApplicationController < Sinatra::Base
     def redirect_if_logged_in
       redirect "/users/#{current_user.slug}" if logged_in?
     end
+      
+    def add_games_to_collection(collection, params)
+      if !params[:game][:name].empty?
+        game = Game.new(name: params[:game][:name])
+        if game.save
+          collection.games << game
+          redirect "/collections"
+        else
+          game
+        end
+      
+      elsif params[:collection][:game_ids]
+        params[:collection][:game_ids].each do |game_id|
+          collection.games << Game.find_by(id: game_id.to_i)
+        end
+        redirect "/collections"
+      end
+    end
+
   end
 
 end
