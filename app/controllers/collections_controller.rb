@@ -3,7 +3,8 @@ class CollectionsController < ApplicationController
   # GET: /collections
   get "/collections" do
     redirect_if_not_logged_in
-    erb :"/collections/index.html"
+    @collections = Collection.all
+    erb :"/collections/index"
   end
 
   # GET: /collections/new
