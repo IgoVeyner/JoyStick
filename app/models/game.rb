@@ -5,7 +5,7 @@ class Game < ActiveRecord::Base
   has_many :users, through: :collections
   
   def slug 
-    self.username.gsub(" ", "-")
+    self.name.gsub(" ", "-")
   end
 
   def self.find_by_slug(slug)
