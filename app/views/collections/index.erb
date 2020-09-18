@@ -1,1 +1,29 @@
-<h1>This is the Model's index page.</h1>
+
+
+<form action="/collections/new" method="get">
+  <input type="submit" value="New Collection">
+</form>
+
+<h2>All Collections: </h2>
+<section>
+  <% @collections.each do |col| %>
+
+    <h2>Name: <a href="/collections/<%= col.id %>"><%= col.name %></h2></a>
+    
+    <% if current_user == col.user %>
+      <form action="/collections/<%= col.id %>/edit" method="get">
+        <input type="submit" value="Edit Collection">
+      </form>
+    <% end %>
+
+      <h3>User: <a href="/users/<%= col.user.slug %>"><%= col.user.username %> </h3></a></h3>
+      <h3>Console: <a href="/consoles/<%= col.console.slug %>"><%= col.console.name %> </h3></a>
+      <h3>Games:</h3>
+      <ol>
+        <% col.games.each do |game| %>
+          <li><a href="/games/<%= game.slug %>"><%= game.name %></a></li>
+        <% end %>
+      </ol>
+      <br><br>
+  <% end %>
+</section>
