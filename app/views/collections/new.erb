@@ -1,1 +1,25 @@
-<h1>Insert the form to create a new instance of your model.</h1>
+<form action="/collections" method="post">
+  <h1>Create a Collection</h1>
+  
+  <label for="">Collection Name: </label>
+  <br>
+  <input type="text" name="collection[name]" required>
+  <br><br>
+
+  <h3>Select an existing Console or create a new one:</h3>
+  <label for="">Select a Console: </label>
+  <br>
+  <% @consoles.each do |console| %>
+    <input type="radio" name="collection[console_id][]" id="<%= console.id %>" value="<%= console.id %>"><span><%= console.name %></span>
+    <br>
+  <% end %>
+
+  <h3>New Console</h3>
+  <label for="">Console Name:</label>
+  <br>
+  <input type="text" name="console[name]">
+  <br><br>
+
+  <br>
+  <input type="submit" value="Create Collection">
+</form>
