@@ -10,7 +10,14 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-    
+
+    <nav>
+      <form action="/logout" method="post">
+        <input type="hidden" name="_method" id="delete">
+        <input type="submit" value="Logout">
+      </form>
+    </nav>
+
     <div class="wrapper">
 
         <%= yield %>
