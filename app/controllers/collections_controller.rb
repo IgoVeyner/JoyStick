@@ -27,14 +27,16 @@ class CollectionsController < ApplicationController
       collection = Collection.new(name: name, console_id: console_id, user_id: current_user.id)
       if collection.save
         
-        game = add_games_to_collection(collection, params)
+        # binding.pry
+        if !params[:game][:name].empty? || params[:collection][:game_ids]
+          game = add_games_to_collection(collection, params)
+          @errors = ["Game "]
+          @errors[0] += game.errors.full_messages[0]
+          erb :'collections/new'
+        else 
+          redirect '/collections'
+        end
 
-        redirect '/collections' if game == nil
-
-        @errors = ["Game "]
-        @errors[0] += game.errors.full_messages[0]
-        erb :'collections/new'
-    
       else
         @errors = collection.errors.full_messages
         erb :'collections/new'
@@ -47,13 +49,15 @@ class CollectionsController < ApplicationController
       if console.save
         collection = Collection.create(name: name, console_id: console.id, user_id: current_user.id)
         
-        game = add_games_to_collection(collection, params)
-
-        redirect '/collections' if game == nil
-
-        @errors = ["Game "]
-        @errors[0] += game.errors.full_messages[0]
-        erb :'collections/new'
+        if !params[:game][:name].empty? || params[:collection][:game_ids]
+          game = add_games_to_collection(collection, params)
+          @errors = ["Game "]
+          @errors[0] += game.errors.full_messages[0]
+          erb :'collections/new'
+        else 
+          redirect '/collections'
+        end
+        
       else 
         @errors = ["Console "]
         @errors[0] += console.errors.full_messages[0]
