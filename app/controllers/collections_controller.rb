@@ -17,46 +17,76 @@ class CollectionsController < ApplicationController
 
   # POST: /collections
   post "/collections" do
-    if params[:console][:name].empty?
-      
-      @games = Game.all
-      @consoles = Console.all
 
-      collection = Collection.new(params[:collection])
-      if collection.save
-        
-        if !params[:game][:name].empty? 
-          # game = add_games_to_collection(collection, params)
-          # @errors = ["Game "]
-          # @errors[0] += game.errors.full_messages[0]
-          # binding.pry
-          erb :'collections/new'
-        else 
-          redirect '/collections'
-        end
+    @games = Game.all
+    @consoles = Console.all
 
-      else
-        @errors = collection.errors.full_messages
-        erb :'collections/new'
-      end
-      
-    else
-      console = Console.new(name: params[:console][:name])
-      @games = Game.all
-      @consoles = Console.all
-      if console.save
-        collection = Collection.create(name: name, console_id: console.id, user_id: current_user.id)
-        
-        if !params[:game][:name].empty? || params[:collection][:game_ids]
-          game = add_games_to_collection(collection, params)
+    if params[:console][:name].empty? # Was the create a new console field left blank? (not creating a new console)
+      if !params[:game][:name].empty? # Are you creating a new game?
+        game = Game.new(params[:game]) 
+
+        if game.save               # Does the game save? (Unique Name?) 
+          collection = Collection.new(params[:collection])
+
+          if collection.save          # Does the collection save?
+            collection.games << game
+            redirect '/collections'
+
+          else                        # Collection did not save (No console selected)
+            @errors = collection.errors.full_messages
+            erb :'collections/new'
+          end
+        else                          # Game did not save (Name was already taken) 
           @errors = ["Game "]
           @errors[0] += game.errors.full_messages[0]
           erb :'collections/new'
-        else 
-          redirect '/collections'
         end
-        
-      else 
+
+      else                          # Not creating a new game (using radio buttons or not adding games yet)
+        collection = Collection.new(params[:collection])
+
+        if collection.save          # Does the collection save?
+          redirect '/collections'
+
+        else                        # collection did not save, there was no console selected
+          @errors = collection.errors.full_messages
+          erb :'collections/new'
+        end
+      end
+      
+    else                            # Creating a new console
+      console = Console.new(name: params[:console][:name])
+
+      if console.save               # Does the console save? (Unique Name?) 
+        params[:collection][:console_id] = console.id
+
+        if !params[:game][:name].empty?   # Are you creating a new game?
+          game = Game.new(params[:game])
+
+          if game.save                    # Does the game save? (Unique Name?)
+            collection = Collection.create(params[:collection])
+            collection.games << game
+            redirect '/collections'
+
+          else                            # Game did not save (Name was already taken)
+            @errors = ["Game "]
+            @errors[0] += game.errors.full_messages[0]
+            erb :'collections/new'
+          end
+
+        else                              # Not creating a new game
+          collection = Collection.new(params[:collection])
+
+          if collection.save              # Does the collection save?
+            redirect '/collections'
+
+          else                            # Collection did not save
+            @errors = collection.errors.full_messages
+            erb :'collections/new'
+          end
+        end
+
+      else                          # Console did not save (Name already taken)
         @errors = ["Console "]
         @errors[0] += console.errors.full_messages[0]
         erb :'collections/new'
