@@ -15,7 +15,7 @@
   <h3>Select an existing Console or create a new one:</h3>
   <br>
   <% @consoles.each do |console| %>
-    <input type="radio" name="collection[console_id][]" id="<%= console.id %>" value="<%= console.id %>"><span><%= console.name %></span>
+    <input type="radio" name="collection[console_id]" id="<%= console.id %>" value="<%= console.id %>"><span><%= console.name %></span>
     <br>
   <% end %>
 
@@ -41,5 +41,7 @@
   <br><br>
 
   <br>
+
+  <input type="hidden" name="collection[user_id]" value="<%= current_user.id %>">
   <input type="submit" value="Create Collection">
 </form>

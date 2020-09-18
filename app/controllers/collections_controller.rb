@@ -17,21 +17,19 @@ class CollectionsController < ApplicationController
 
   # POST: /collections
   post "/collections" do
-    
-    name = params[:collection][:name]
     if params[:console][:name].empty?
       
       @games = Game.all
       @consoles = Console.all
-      console_id = params[:collection][:console_id][0].to_i if params[:collection][:console_id]
-      collection = Collection.new(name: name, console_id: console_id, user_id: current_user.id)
+
+      collection = Collection.new(params[:collection])
       if collection.save
         
-        # binding.pry
-        if !params[:game][:name].empty? || params[:collection][:game_ids]
-          game = add_games_to_collection(collection, params)
-          @errors = ["Game "]
-          @errors[0] += game.errors.full_messages[0]
+        if !params[:game][:name].empty? 
+          # game = add_games_to_collection(collection, params)
+          # @errors = ["Game "]
+          # @errors[0] += game.errors.full_messages[0]
+          # binding.pry
           erb :'collections/new'
         else 
           redirect '/collections'
@@ -87,5 +85,5 @@ class CollectionsController < ApplicationController
   delete "/collections/:id/delete" do
     redirect "/collections"
   end
-  
+
 end
