@@ -98,7 +98,12 @@ class CollectionsController < ApplicationController
   get "/collections/:id" do
     redirect_if_not_logged_in
     @collection = Collection.find_by(id: params[:id])
-    erb :"/collections/show"
+    if @collection 
+      erb :"/collections/show"
+    else
+      @errors = ["#{params[:id]} is not a valid Collection"]
+      erb :'failure'
+    end
   end
 
   # GET: /collections/5/edit
