@@ -106,13 +106,19 @@ class CollectionsController < ApplicationController
     redirect_if_not_logged_in
     @collection = Collection.find_by(id: params[:id])
 
-    if current_user == @collection.user
-      @consoles = Console.all
-      @games = Game.all
-      erb :"/collections/edit"
+    if @collection
+      if current_user == @collection.user
+        @consoles = Console.all
+        @games = Game.all
+        erb :"/collections/edit"
+      else
+        redirect "/collections/#{@collection.id}"
+      end
     else
-      redirect "/collections/#{@collection.id}"
+      @errors = ["#{params[:id]} is not a valid Collection"]
+      erb :'failure'
     end
+    
   end
 
   patch "/collections/:id" do
