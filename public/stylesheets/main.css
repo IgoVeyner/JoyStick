@@ -59,10 +59,6 @@
     width: 60%; /* 480px / 800px */
   }
 
-  .sidebar ul {
-    font-size: 14px;
-  }
-
   .branding {
     clear: both;
   }
@@ -77,7 +73,6 @@
     max-width: 20%;
     margin: auto;
     margin-bottom: 30px;
-    
   }
 
   #welcome-img{
@@ -126,6 +121,13 @@
     100% {opacity: 1;}
   }
 
+  /* --- Login Page Styles --- */
+  section#login-page { text-align: center;}
+
+  #login-header { 
+    margin: 15px 0;
+  }
+  /* --- Button Styles --- */
   .button {
     cursor: pointer;
     width: 150px;

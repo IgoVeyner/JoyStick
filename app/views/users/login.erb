@@ -1,28 +1,30 @@
-<h3>Log Into JoyStick</h3>
+<section id="login-page">
+  <h2 id="login-header">Log Into JoyStick</h2>
 
-<% if @errors %>
-  <% @errors.each do |error| %>
-    <p style="color: red;"><%= error %></p>
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <p style="color: red;"><%= error %></p>
+    <% end %>
   <% end %>
-<% end %>
 
-<form action="/login" method="post">
-  <label>Username: </label>
+  <form action="/login" method="post">
+    <label>Username: </label>
+    <br>
+    <input type="text" name="user[username]" required>
+    <br><br>
+
+    <label>Password: </label>
+    <br>
+    <input type="password" name="user[password]" required>
+    <br><br>
+
+    <input class="button button-login" type="submit" value="Log In">
+  </form>
+
   <br>
-  <input type="text" name="user[username]" required>
-  <br><br>
+  <p>or</p>
 
-  <label>Password: </label>
-  <br>
-  <input type="password" name="user[password]" required>
-  <br><br>
-
-  <input type="submit" value="Log In">
-</form>
-
-<br>
-<p>or</p>
-
-<form action="/signup" method="get">
-  <input type="submit" value="Create A New Account">
-</form>
+  <form action="/signup" method="get">
+    <input class="button button-signup" type="submit" value="Create New Account">
+  </form>
+</section>
