@@ -13,6 +13,8 @@
 
     <nav>
       <% if current_user %>  
+        <a href="/users/<%= current_user.slug %>">My Collections</a>
+
         <form action="/logout" method="post">
           <input type="hidden" name="_method" value="delete">
           <input type="submit" value="Logout">
