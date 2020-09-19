@@ -30,7 +30,7 @@
 
 <br>
 
-<form action="/console/<%= @console.slug %>">
+<form action="/consoles/<%= @console.slug %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete Console">
 </form>

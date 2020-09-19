@@ -50,7 +50,9 @@ class ConsolesController < ApplicationController
     redirect "/consoles/#{console.slug}"
   end
 
-  delete "/consoles/:id" do
+  delete "/consoles/:slug" do
+    console = Console.find_by_slug(params[:slug])
+    console.destroy
     redirect "/consoles"
   end
 end
