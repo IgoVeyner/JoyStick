@@ -6,15 +6,15 @@
     padding: 0;
   }
 
-  html, body {
+  html {
     height: 100%;
     width: 100%;
   }
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
-    color: #333;
+    background-color: lightsalmon;
+    color: black;
     font-family: Sans-Serif;
     line-height: 18px;
   }
@@ -80,6 +80,20 @@
     border-top: 2px solid #ccc;
     margin-top: 20px;
     padding-top: 20px;
+  }
+
+  #welcome-img-container{
+    max-width: 30%;
+    margin: auto;
+  }
+
+  #welcome-img{
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #welcome-message {
+    text-align: center;
   }
 }
 
