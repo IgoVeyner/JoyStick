@@ -138,7 +138,7 @@
     color: red;
     margin: 0px;
   }
-  
+
   /* --- Button Styles --- */
   .button {
     cursor: pointer;
@@ -153,7 +153,8 @@
   
   .button-login {background-color: #1877f2;}
   .button-login:hover {background-color: #166fe5;}
-  
+  .button-login-large {width: 280px}
+
   .forget-password{ 
     font-size: 12px;
     color: #1877f2;
