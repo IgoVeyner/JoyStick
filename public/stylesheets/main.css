@@ -126,12 +126,12 @@
   section#login-page { text-align: center;}
 
   #login-header { 
-    margin: 10px 0;
+    margin-top: 10px;
     font-size: 16px;
   }
 
   .login-input{
-    margin: 12px 0px;
+    margin: 15px 0px;
   }
 
   
