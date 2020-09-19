@@ -1,1 +1,35 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+<h1>Edit a Game</h1>
+
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <p style="color: red;"><%= error %></p>
+  <% end %>
+<% end %>
+
+<form action="/games/<%= @game.slug %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+
+  <label for="">Name:</label>
+  <p>* Required</p>
+  <input type="text" name="game[name]" value="<%= @game.name %>" required>
+  <br><br>
+
+  <label for="">Publisher:</label>
+  <br>
+  <input type="text" name="game[publisher]" value="<%= @game.publisher %>">
+  <br><br>
+  
+  <label for="">Developer:</label>
+  <br>
+  <input type="text" name="game[developer]" value="<%= @game.developer %>">
+  <br><br>
+
+  <label for="">Release Date:</label>
+  <br>
+  <input type="text" name="game[release_date]" value="<%= @game.release_date %>">
+  <br><br>
+
+  <input type="submit" value="Edit Game">
+</form>
+
+<%# todo: add delete button and warning label %>
