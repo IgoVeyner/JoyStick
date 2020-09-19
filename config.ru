@@ -6,5 +6,6 @@ end
 
 use Rack::MethodOverride
 run ApplicationController
+use ConsolesController
 use CollectionsController
 use UsersController
