@@ -86,12 +86,13 @@
     margin: auto;
   }
 
-  #welcome-name {
+  .name{
     font-family: 'Press Start 2P', cursive;
     font-size: 2rem;
     color: red;
-    animation: fade-in 9s;
   }
+
+  #welcome-name { animation: fade-in 9s;}
   
   .welcome-info{
     font-family: 'Ubuntu', sans-serif;
@@ -150,7 +151,7 @@
 
   /* --- Input Styles --- */
   .input{
-    width: 200px;
+    width: 250px;
     padding: 15px 15px;
     font-size: 18px;
     border: 1px solid #dddfe2;
