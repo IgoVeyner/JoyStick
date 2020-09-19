@@ -1,1 +1,11 @@
-<h1>This is the Model's index page.</h1>
+<!-- todo: add link to create a new console, create links to edit each console -->
+<h2>All Consoles:</h2>
+
+<section>
+  <% @consoles.each do |console| %>
+    <h3>Name: <%= console.name %></h3>
+    <h3>Manufacturer: <%= console.manufacturer ||= 'Unknown' %></h3>
+    <h3>Release Date: <%= console.release_date ||= 'Unknown' %></h3>
+    <br><br>
+  <% end %>
+</section>

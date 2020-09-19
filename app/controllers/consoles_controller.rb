@@ -1,6 +1,8 @@
 class ConsolesController < ApplicationController
 
   get "/consoles" do
+    redirect_if_not_logged_in
+    @consoles = Console.all
     erb :"/consoles/index"
   end
 
