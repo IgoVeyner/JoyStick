@@ -45,7 +45,9 @@ class GamesController < ApplicationController
   end
 
   patch "/games/:slug" do
-    redirect "/games/:slug"
+    game = Game.find_by_slug(params[:slug])
+    game.update(params[:game])
+    redirect "/games/#{game.slug}"
   end
 
   delete "/games/:slug" do
