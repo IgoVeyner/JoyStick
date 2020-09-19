@@ -1,6 +1,12 @@
 <%# todo: display errors %>
 <h1>Create a Console</h1>
 
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <p style="color: red;"><%= error %></p>
+  <% end %>
+<% end %>
+
 <form action="/consoles" method="post">
   <label for="">Console Name:</label>
   <p>* Required</p>
