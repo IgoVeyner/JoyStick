@@ -34,7 +34,14 @@ class GamesController < ApplicationController
 
   get "/games/:slug/edit" do
     redirect_if_not_logged_in
-    erb :"/games/edit"
+    @game = Game.find_by_slug(params[:slug])
+
+    if @game
+      erb :"/games/edit"
+    else
+      @errors = ["#{params[:slug]} is not a valid game"]
+      erb :'failure'
+    end
   end
 
   patch "/games/:slug" do
