@@ -14,6 +14,11 @@
     <h3>Total Owners: <%= game.users.uniq.length %></h3>
     <h3>Total Collections: <%= game.collections.length %></h3>
     <h3>Available for # of Consoles: <%= game.consoles.uniq.length %></h3>
-  <br>
+    <p>Missing or incorrect information? </p>
+
+    <form action="/games/<%= game.slug %>/edit" method="get">
+      <input type="submit" value="Edit Console">
+    </form>
+    <br><br>
   <% end %>
 </section>
