@@ -16,10 +16,12 @@ class ConsolesController < ApplicationController
   end
 
   get "/consoles/:id" do
+    redirect_if_not_logged_in
     erb :"/consoles/show"
   end
 
   get "/consoles/:id/edit" do
+    redirect_if_not_logged_in
     erb :"/consoles/edit"
   end
 
