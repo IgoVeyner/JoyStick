@@ -7,9 +7,9 @@ class CollectionsController < ApplicationController
   end
 
   get "/collections/new" do
+    redirect_if_not_logged_in
     @consoles = Console.all
     @games = Game.all
-    redirect_if_not_logged_in
     erb :"/collections/new"
   end
 

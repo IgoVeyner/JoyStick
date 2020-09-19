@@ -5,8 +5,9 @@ class ConsolesController < ApplicationController
     @consoles = Console.all
     erb :"/consoles/index"
   end
-
+  
   get "/consoles/new" do
+    redirect_if_not_logged_in
     erb :"/consoles/new"
   end
 
