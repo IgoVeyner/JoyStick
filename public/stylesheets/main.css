@@ -149,6 +149,7 @@
     font-weight: bolder;
     border: none;
     border-radius: 7px;
+    outline: none;
   }
   
   .button-login {background-color: #1877f2;}
