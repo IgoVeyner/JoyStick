@@ -12,7 +12,13 @@ class GamesController < ApplicationController
   end
 
   post "/games" do
-    redirect "/games"
+    game = Game.new(params[:game])
+    if game.save
+      redirect "/games"
+    else
+      @errors = game.errors.full_messages
+      erb :'games/new'
+    end
   end
 
   get "/games/:slug" do
