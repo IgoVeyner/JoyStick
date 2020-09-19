@@ -138,7 +138,6 @@
     color: red;
     margin: 0px;
   }
-
   
   /* --- Button Styles --- */
   .button {
@@ -168,6 +167,19 @@
   .button-signup:hover{ background-color: #36a420;}
 
   .button-or{ font-size: small;}
+
+  #name-container{
+    border: none;
+    background: transparent;
+    padding: 20px 20px;
+    margin: auto;
+    outline: none;
+    cursor: pointer;
+  }
+
+  #name-container:hover{
+   
+  }
 
   /* --- Input Styles --- */
   .input{
