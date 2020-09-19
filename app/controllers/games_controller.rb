@@ -1,10 +1,12 @@
 class GamesController < ApplicationController
 
   get "/games" do
+    redirect_if_not_logged_in
     erb :"/games/index"
   end
 
   get "/games/new" do
+    redirect_if_not_logged_in
     erb :"/games/new"
   end
 
@@ -13,10 +15,12 @@ class GamesController < ApplicationController
   end
 
   get "/games/:slug" do
+    redirect_if_not_logged_in
     erb :"/games/show"
   end
 
   get "/games/:slug/edit" do
+    redirect_if_not_logged_in
     erb :"/games/edit"
   end
 
