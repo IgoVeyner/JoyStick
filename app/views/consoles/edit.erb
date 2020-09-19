@@ -26,5 +26,15 @@
 
   <input type="submit" value="Edit Console">
 
-  <%# todo: add delete button and warning label %>
 </form>
+
+<br>
+
+<form action="/console/<%= @console.slug %>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Console">
+</form>
+<br>
+
+<p>Please Note: Deleting a Console will delete all associated Collections for ALL Users</p>
+<p>Should only be used by top level Mods / Admins</p>
