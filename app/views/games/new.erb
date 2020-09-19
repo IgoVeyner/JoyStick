@@ -1,6 +1,10 @@
 <h1>Create a Game</h1>
 
-<%# todo: add error handling %>
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <p style="color: red;"><%= error %></p>
+  <% end %>
+<% end %>
 
 <form action="/games" method="post">
   <label for="">Game Name:</label>
