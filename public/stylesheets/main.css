@@ -134,6 +134,11 @@
     margin: 15px 0px;
   }
 
+  .error-message{
+    color: red;
+    margin: 0px;
+  }
+
   
   /* --- Button Styles --- */
   .button {

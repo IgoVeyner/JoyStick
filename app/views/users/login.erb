@@ -3,16 +3,17 @@
 
   <h2 id="login-header">Log Into JoyStick</h2>
 
-  <% if @errors %>
-    <% @errors.each do |error| %>
-      <p style="color: red;"><%= error %></p>
-    <% end %>
-  <% end %>
 
   <form action="/login" method="post">
     <input class="input login-input" type="text" name="user[username]" placeholder="Username"required><br>
     <input class="input login-input" type="password" name="user[password]" placeholder="Password" required><br>
     
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <p class="error-message"><%= error %></p>
+    <% end %>
+  <% end %>
+
     <input class="button button-login login-input" type="submit" value="Log In"><br>
     
     <a href="#" class="forget-password">Forget Password?</a>
