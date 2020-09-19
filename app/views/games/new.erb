@@ -1,1 +1,27 @@
-<h1>Insert the form to create a new instance of your model.</h1>
+<h1>Create a Game</h1>
+
+<%# todo: add error handling %>
+
+<form action="/games" method="post">
+  <label for="">Game Name:</label>
+  <p>* Required</p>
+  <input type="text" name="game[name]" required>
+  <br><br>
+
+  <label for="">Publisher:</label>
+  <p>* Optional</p>
+  <input type="text" name="game[publisher]">
+  <br><br>
+  
+  <label for="">Developer:</label>
+  <p>* Optional</p>
+  <input type="text" name="game[developer]">
+  <br><br>
+
+  <label for="">Release Date:</label>
+  <p>* Optional</p>
+  <input type="text" name="game[release_date]">
+  <br><br>
+
+  <input type="submit" value="Create Game">
+</form>
