@@ -6,7 +6,6 @@
 
 <section>
   <% @consoles.each do |console| %>
-    <h3>Console Info:</h3>
     <h3>Name: <a href="/consoles/<%= console.slug %>"><%= console.name %></a></h3>
     <h3>Manufacturer: <%= console.manufacturer ||= 'Unknown' %></h3>
     <h3>Release Date: <%= console.release_date ||= 'Unknown' %></h3>
@@ -14,7 +13,7 @@
     <h3>Unique Games: <%= console.games.uniq.length %></h3>
     <h3>Total Owners: <%= console.users.uniq.length %></h3>
     <h3>Total Collections: <%= console.collections.length %></h3>
-    <p>Missing or Incorrect Information? </p>
+    <p>Missing or incorrect information? </p>
 
     <form action="/consoles/<%= console.slug %>/edit" method="get">
       <input type="submit" value="Edit Console">
