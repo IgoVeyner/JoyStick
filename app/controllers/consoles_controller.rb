@@ -44,8 +44,10 @@ class ConsolesController < ApplicationController
     end
   end
 
-  patch "/consoles/:id" do
-    redirect "/consoles/:id"
+  patch "/consoles/:slug" do
+    console = Console.find_by_slug(params[:slug])
+    console.update(params[:console])
+    redirect "/consoles/#{console.slug}"
   end
 
   delete "/consoles/:id" do
