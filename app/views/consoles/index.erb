@@ -1,5 +1,8 @@
-<!-- todo: add link to create a new console -->
 <h2>All Consoles:</h2>
+<form action="/consoles/new" method="get">
+  <input type="submit" value="Create a Console">
+</form>
+<br>
 
 <section>
   <% @consoles.each do |console| %>
