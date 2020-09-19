@@ -1,1 +1,30 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+<h1>Edit a Console</h1>
+
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <p style="color: red;"><%= error %></p>
+  <% end %>
+<% end %>
+
+<form action="/consoles/<%= @console.slug %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+
+  <label for="">Console Name:</label>
+  <p>* Required</p>
+  <input type="text" name="console[name]" value="<%= @console.name %>" required>
+  <br><br>
+
+  <label for="">Console Manufacturer:</label>
+  <br>
+  <input type="text" name="console[manufacturer]" value="<%= @console.manufacturer %>">
+  <br><br>
+
+  <label for="">Console Release Date:</label>
+  <br>
+  <input type="text" name="console[release_date]" value="<%= @console.release_date %>">
+  <br><br>
+
+  <input type="submit" value="Edit Console">
+
+  <%# todo: add delete button and warning label %>
+</form>
