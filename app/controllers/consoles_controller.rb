@@ -12,7 +12,13 @@ class ConsolesController < ApplicationController
   end
 
   post "/consoles" do
-    redirect "/consoles"
+    console = Console.new(params[:console])
+    if console.save
+      redirect "/consoles"
+    else
+      @errors = console.errors.full_messages
+      erb :'consoles/new'
+    end 
   end
 
   get "/consoles/:id" do
