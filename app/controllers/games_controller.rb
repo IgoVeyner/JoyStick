@@ -51,6 +51,8 @@ class GamesController < ApplicationController
   end
 
   delete "/games/:slug" do
+    game = Game.find_by_slug(params[:slug])
+    game.destroy
     redirect "/games"
   end
 end
