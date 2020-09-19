@@ -1,1 +1,21 @@
-<h1>Insert the form to create a new instance of your model.</h1>
+<%# todo: display errors %>
+<h1>Create a Console</h1>
+
+<form action="/consoles" method="post">
+  <label for="">Console Name:</label>
+  <p>* Required</p>
+  <input type="text" name="console[name]" required>
+  <br><br>
+
+  <label for="">Console Manufacturer:</label>
+  <p>* Optional</p>
+  <input type="text" name="console[manufacturer]">
+  <br><br>
+
+  <label for="">Console Release Date:</label>
+  <p>* Optional</p>
+  <input type="text" name="console[release_date]">
+  <br><br>
+
+  <input type="submit" value="Create Console">
+</form>
