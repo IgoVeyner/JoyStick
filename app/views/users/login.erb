@@ -8,14 +8,10 @@
   <% end %>
 
   <form action="/login" method="post">
-    <label>Username: </label>
-    <br>
-    <input class="input" type="text" name="user[username]" required>
+    <input class="input" type="text" name="user[username]" placeholder="Username"required>
     <br><br>
 
-    <label>Password: </label>
-    <br>
-    <input type="password" name="user[password]" required>
+    <input class="input" type="password" name="user[password]" placeholder="Password" required>
     <br><br>
 
     <input class="button button-login" type="submit" value="Log In">
