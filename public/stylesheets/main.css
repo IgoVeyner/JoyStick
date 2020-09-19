@@ -9,12 +9,13 @@
   html {
     height: 100%;
     width: 100%;
+    cursor: default;
   }
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightsalmon;
-    color: black;
+    background-color: lightgrey;
+    color: grey;
     font-family: Sans-Serif;
     line-height: 18px;
   }
@@ -31,15 +32,13 @@
   }
 
   h1 {
-    font-size: 36px;
+    font-size: 2.7em;
     line-height: 54px;
   }
 
   h2 {
-    border-bottom: 2px solid #ccc;
-    font-size: 24px;
+    font-size: 1.5em;
     line-height: 36px;
-    margin-bottom: 16px;
   }
 
   h3 {
@@ -60,14 +59,6 @@
     width: 60%; /* 480px / 800px */
   }
 
-  .sidebar {
-    background: #eee;
-    border: 1px solid #ccc;
-    float: right;
-    padding: 2.08333333333%; /* 5px / 240px */
-    width: 30%; /* 240px / 800px */
-  }
-
   .sidebar ul {
     font-size: 14px;
   }
@@ -83,17 +74,72 @@
   }
 
   #welcome-img-container{
-    max-width: 30%;
+    max-width: 20%;
     margin: auto;
   }
 
   #welcome-img{
     width: 100%;
     max-width: 100%;
+    animation: fade-in 5s;
   }
 
-  #welcome-message {
-    text-align: center;
+  #welcome-name {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
+    color: red;
+    animation: fade-in 9s;
+  }
+  
+  .welcome-info{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: light;
+    animation: fade-in 12s;
+  }
+
+  h2.welcome-info{
+    margin-bottom: 1rem;
+  }
+  
+  #welcome-message { text-align: center;}
+  
+  #welcome-links{
+    animation: fade-in 15s;
+    margin: 75px 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: red;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  @keyframes fade-in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+
+  .button {
+    cursor: pointer;
+    width: 150px;
+    height: 42px;
+    font-size: 17.5px;
+    color: white;
+    font-weight: bolder;
+    border: none;
+    border-radius: 7px;
+  }
+
+  .button-login {
+    background-color: #1877f2;
+  }
+
+  .button-signup {
+    width: 200px;
+    background-color:  #42b72a;
   }
 }
 

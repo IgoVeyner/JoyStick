@@ -3,7 +3,22 @@
   <img id='welcome-img' src="https://freesvg.org/img/brunurb_Retro_Joystick_001.png" alt="joyatick">
 </figure>
 <section id='welcome-message'>
-  <h1>Welcome to <span style='color: red;'>JoyStick!<span></h1>
-  <h3>Keep track of your many Video Games and Consoles.</h3>
-  <h2>Please <a href="/login">Log In</a> or <a href="/signup">Sign Up</a></h2>
+
+  <div>
+    <h1 id="welcome-name">JoyStick</h1>
+    <h2 class="welcome-info">Keep track of your many Video Games and Consoles.</h2>
+  </div>
+
+  <div id="welcome-links">
+    <form action="/signup" method="get">
+      <input class="button button-signup" type="submit" value="Create New Account">
+    </form>
+
+    <br><p class="welcome-info">or</p>
+    
+    <form action="/login" method="get">
+      <input class=" button button-login" type="submit" value="Log In">
+    </form>
+
+  </div>
 </section>
