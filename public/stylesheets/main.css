@@ -126,7 +126,8 @@
   section#login-page { text-align: center;}
 
   #login-header { 
-    margin: 15px 0;
+    margin: 10px 0;
+    font-size: 16px;
   }
   /* --- Button Styles --- */
   .button {
