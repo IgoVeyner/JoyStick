@@ -10,19 +10,16 @@
   <% end %>
 
   <form action="/login" method="post">
-    <input class="input" type="text" name="user[username]" placeholder="Username"required>
-    <br><br>
-
-    <input class="input" type="password" name="user[password]" placeholder="Password" required>
-    <br><br>
-
-    <input class="button button-login" type="submit" value="Log In">
-    <br>
-    <a href="#">Forget Password?</a>
+    <input class="input login-input" type="text" name="user[username]" placeholder="Username"required><br>
+    <input class="input login-input" type="password" name="user[password]" placeholder="Password" required><br>
+    
+    <input class="button button-login login-input" type="submit" value="Log In"><br>
+    
+    <a href="#" class="forget-password">Forget Password?</a>
   </form>
 
   <br>
-  <p>or</p>
+  <p class="button-or">or</p>
 
   <form action="/signup" method="get">
     <input class="button button-signup" type="submit" value="Create New Account">
