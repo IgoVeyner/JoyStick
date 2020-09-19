@@ -175,10 +175,11 @@
     margin: auto;
     outline: none;
     cursor: pointer;
+    transition: color 3s;
   }
 
   #name-container:hover{
-   
+    color: orange;
   }
 
   /* --- Input Styles --- */
