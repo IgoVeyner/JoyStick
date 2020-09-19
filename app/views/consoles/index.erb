@@ -6,7 +6,7 @@
 
 <section>
   <% @consoles.each do |console| %>
-    <h3>Name: <%= console.name %></h3>
+    <h3>Name: <a href="/consoles/<%= console.slug %>"><%= console.name %></a></h3>
     <h3>Manufacturer: <%= console.manufacturer ||= 'Unknown' %></h3>
     <h3>Release Date: <%= console.release_date ||= 'Unknown' %></h3>
     <p>Missing or Incorrect Information? </p>
