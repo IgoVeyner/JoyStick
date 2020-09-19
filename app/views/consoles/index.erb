@@ -1,4 +1,4 @@
-<!-- todo: add link to create a new console, create links to edit each console -->
+<!-- todo: add link to create a new console -->
 <h2>All Consoles:</h2>
 
 <section>
@@ -6,6 +6,8 @@
     <h3>Name: <%= console.name %></h3>
     <h3>Manufacturer: <%= console.manufacturer ||= 'Unknown' %></h3>
     <h3>Release Date: <%= console.release_date ||= 'Unknown' %></h3>
+    <p>Missing or Incorrect Information? </p>
+    <a href="/consoles/<%= console.slug %>/edit">Edit Console</a>
     <br><br>
   <% end %>
 </section>
