@@ -32,9 +32,16 @@ class ConsolesController < ApplicationController
     end
   end
 
-  get "/consoles/:id/edit" do
+  get "/consoles/:slug/edit" do
     redirect_if_not_logged_in
-    erb :"/consoles/edit"
+    @console = Console.find_by_slug(params[:slug])
+
+    if @console
+      erb :"/consoles/edit"
+    else
+      @errors = ["#{params[:slug]} is not a valid Console"]
+      erb :'failure'
+    end
   end
 
   patch "/consoles/:id" do
