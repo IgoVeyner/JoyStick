@@ -8,8 +8,8 @@
 
 
   <form action="/login" method="post">
-    <input class="input login-input" type="text" name="user[username]" placeholder="Username"required><br>
-    <input class="input login-input" type="password" name="user[password]" placeholder="Password" required><br>
+    <input class="input text-input" type="text" name="user[username]" placeholder="Username"required><br>
+    <input class="input text-input" type="password" name="user[password]" placeholder="Password" required><br>
     
   <% if @errors %>
     <% @errors.each do |error| %>
