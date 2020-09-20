@@ -6,15 +6,16 @@
 
   <h2 class="main-header-small">Create a New Account</h2>
     
-  <% if @errors %>
-    <% @errors.each do |error| %>
-      <p style="color: red;"><%= error %></p>
-    <% end %>
-  <% end %>
 
   <form action="/signup" method="post">
     <input class="input text-input" type="text" name="user[username]" placeholder="Username" required><br>
     <input class="input text-input" type="password" name="user[password]" placeholder="Password" required><br>
+
+    <% if @errors %>
+      <% @errors.each do |error| %>
+        <p style="color: red;"><%= error %></p>
+      <% end %>
+    <% end %>
 
     <input class="button button-signup button-large text-input" type="submit" value="Create New Account">
   </form>
