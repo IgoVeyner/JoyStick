@@ -289,10 +289,13 @@
     width: 100px;
     margin: 10px auto;
   }
+  
   .button-edit {
     width: 100px;
-    background-color: #435448;
+    background-color: #878787;
   }
+
+  .button-edit:hover{background-color:grey}
   
   #name-container{
     border: none;
