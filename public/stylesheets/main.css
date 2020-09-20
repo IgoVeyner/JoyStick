@@ -259,6 +259,7 @@
   .user-container {
     border: solid 1px grey;
     background-color: #543B3B;
+    margin-bottom: 2.25%;
   }
 
   .user-sub-container {
