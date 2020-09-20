@@ -8,20 +8,24 @@
 
   <section class="index-container">
     <% @games.sort_by(&:name).each do |game| %>
-      <h3><a href="/games/<%= game.slug %>"><%= game.name %></a></h3>
-      <h3>Publisher: <%= game.publisher ||= 'Unknown' %></h3>
-      <h3>Developer: <%= game.developer ||= 'Unknown' %></h3>
-      <h3>Release Date: <%= game.release_date ||= 'Unknown' %></h3>
-      <h3>Stats:</h3>
-      <h3>Total Owners: <%= game.users.uniq.length %></h3>
-      <h3>Total Collections: <%= game.collections.length %></h3>
-      <h3>Available for # of Consoles: <%= game.consoles.uniq.length %></h3>
-      <p>Missing or incorrect information? </p>
 
-      <form action="/games/<%= game.slug %>/edit" method="get">
-        <input type="submit" value="Edit Game">
-      </form>
-      <br><br>
+      <section class="index-sub-container">
+        <h3><a href="/games/<%= game.slug %>"><%= game.name %></a></h3>
+        <h3>Publisher: <%= game.publisher ||= 'Unknown' %></h3>
+        <h3>Developer: <%= game.developer ||= 'Unknown' %></h3>
+        <h3>Release Date: <%= game.release_date ||= 'Unknown' %></h3>
+        <h3>Stats:</h3>
+        <h3>Total Owners: <%= game.users.uniq.length %></h3>
+        <h3>Total Collections: <%= game.collections.length %></h3>
+        <h3>Available for # of Consoles: <%= game.consoles.uniq.length %></h3>
+        
+        <p>Missing or incorrect information? </p>
+
+        <form action="/games/<%= game.slug %>/edit" method="get">
+          <input type="submit" value="Edit Game">
+        </form>
+        
+      </section>
     <% end %>
   </section>
 </section>
