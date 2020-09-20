@@ -1,23 +1,25 @@
-<h2>All Consoles:</h2>
-<form action="/consoles/new" method="get">
-  <input type="submit" value="Create a Console">
-</form>
-<br>
+<section class="center-text">
+  <h2>All Consoles:</h2>
+  <form action="/consoles/new" method="get">
+    <input type="submit" value="Create a Console">
+  </form>
+  <br>
 
-<section>
-  <% @consoles.each do |console| %>
-    <h3>Name: <a href="/consoles/<%= console.slug %>"><%= console.name %></a></h3>
-    <h3>Manufacturer: <%= console.manufacturer ||= 'Unknown' %></h3>
-    <h3>Release Date: <%= console.release_date ||= 'Unknown' %></h3>
-    <h3>Stats:</h3>
-    <h3>Unique Games: <%= console.games.uniq.length %></h3>
-    <h3>Total Owners: <%= console.users.uniq.length %></h3>
-    <h3>Total Collections: <%= console.collections.length %></h3>
-    <p>Missing or incorrect information? </p>
+  <section>
+    <% @consoles.each do |console| %>
+      <h3>Name: <a href="/consoles/<%= console.slug %>"><%= console.name %></a></h3>
+      <h3>Manufacturer: <%= console.manufacturer ||= 'Unknown' %></h3>
+      <h3>Release Date: <%= console.release_date ||= 'Unknown' %></h3>
+      <h3>Stats:</h3>
+      <h3>Unique Games: <%= console.games.uniq.length %></h3>
+      <h3>Total Owners: <%= console.users.uniq.length %></h3>
+      <h3>Total Collections: <%= console.collections.length %></h3>
+      <p>Missing or incorrect information? </p>
 
-    <form action="/consoles/<%= console.slug %>/edit" method="get">
-      <input type="submit" value="Edit Console">
-    </form>
-    <br><br>
-  <% end %>
+      <form action="/consoles/<%= console.slug %>/edit" method="get">
+        <input type="submit" value="Edit Console">
+      </form>
+      <br><br>
+    <% end %>
+  </section>
 </section>
