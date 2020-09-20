@@ -120,8 +120,6 @@
   
   .welcome-info{
     font-family: 'Ubuntu', sans-serif;
-    line-height: normal;
-    font-weight: light;
     animation: fade-in 12s;
   }
   
