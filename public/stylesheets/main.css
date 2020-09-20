@@ -135,6 +135,14 @@
     100% {opacity: 1;}
   }
 
+  /* --- Navbar Style --- */
+  #navbar {
+    width: 100%;
+    background-color: #fff;
+    display: grid;
+    grid-template: / 20% 40% 30%
+  }
+
   /* --- Signup Page Styles --- */
   #signup-or {margin: 0px;}
 

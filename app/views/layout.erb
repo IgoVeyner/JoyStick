@@ -11,8 +11,8 @@
   </head>
   <body>
 
-    <nav>
-      <% if current_user %>  
+    <% if logged_in? %> 
+      <nav id="navbar">
         <a href="/users/<%= current_user.slug %>">My Collections</a>
 
         <form action="/logout" method="post">
@@ -25,8 +25,8 @@
         <a href="/games">Games</a>
 
         <!-- Add search bar later -->
-      <% end %>
-    </nav>
+      </nav>
+    <% end %>
 
     <div class="wrapper">
 
