@@ -230,6 +230,11 @@
     text-align: start;
   }
 
+  .missing-info { 
+    align-items: center;
+    margin: 5px auto 0px;
+  }
+
   .index-sub-collection-header:first-of-type {justify-self: center;}
   .index-sub-collection-header:nth-of-type(2) {margin-left: 40px}
   .index-sub-collection-header:nth-of-type(3) {margin-left: 10px}
@@ -241,6 +246,7 @@
   .index-sub-console-header:nth-of-type(4) {margin-left: 10px}
   .index-sub-console-header:nth-of-type(5) {margin-left: 24px}
   .index-sub-console-header:nth-of-type(6) {margin-left: 41px}
+
   /* --- Button Styles --- */
   .button {
     cursor: pointer;
@@ -293,7 +299,7 @@
   }
 
   .button-edit:hover{background-color:grey}
-  
+
   #name-container{
     border: none;
     background: transparent;
@@ -315,7 +321,6 @@
     100% {color: red;}
   }
 
-  /* --- Input Styles --- */
   .disclaimer {
     font-size: 12px;
     color: grey;
