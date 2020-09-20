@@ -162,6 +162,8 @@
   .forget-password{ 
     font-size: 12px;
     color: #1877f2;
+    display: block;
+    padding-top: 10px;
   }
 
   .button-signup {
