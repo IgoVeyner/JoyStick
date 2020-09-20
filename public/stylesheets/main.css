@@ -300,7 +300,8 @@
     background-color: #42b72a;
   }
   
-  .button-signup:hover, .button-new:hover{ background-color: #36a420;}
+  .button-signup:hover, .button-new:hover,
+   .button-new-collection:hover{background-color: #36a420;}
   .button-large {width: 280px}
   .button-or {font-size: small;}
 
@@ -313,6 +314,11 @@
     position: absolute;
     top: 119px;
     right: 30%;
+  }
+  
+  .button-new-collection {
+    background-color: #42b72a;
+    margin-bottom: 2.25%;
   }
 
   .button-edit-container{

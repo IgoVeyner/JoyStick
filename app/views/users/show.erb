@@ -16,14 +16,13 @@
 
   </section>
 
-  <br>
+  <h1 class="index-header">All Collections: </h1>
+
   <% if @user == current_user %>
     <form action="/collections/new" method="get">
-      <input type="submit" value="New Collection">
+      <input class="button button-new-collection" type="submit" value="New Collection">
     </form>
   <% end %>
-
-  <h1 class="index-header">All Collections: </h1>
 
   <section class="index-container">
   
