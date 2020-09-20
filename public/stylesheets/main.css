@@ -147,8 +147,21 @@
 
   #nav-name-sm{display: none;}
 
-  .nav-link {
+  .nav-link {color: #A1A1A1;}
+
+  #button-logout {
+    padding: 24px 12px;
+    background-color: none;
+    outline: none;
+    border: none;
+    background-color: transparent;
     color: #A1A1A1;
+    font-size: 16px;
+  }
+
+  #button-logout:hover {
+    background-color: #6E2C2C;
+    border: none;
   }
 
   #col-2 li a{float: left; }
@@ -156,6 +169,7 @@
     display: block;
     padding: 24px 12px;
   }
+  
   #col-2 li a:hover{
     text-decoration: none;
     background-color: #6E2C2C;
