@@ -22,6 +22,10 @@
     font-size: 16px;
   }
   
+  .error-message{
+    color: red;
+    margin: 0px;
+  }
 
   /* --- Welcome Page Styles --- */
   body {
@@ -131,16 +135,8 @@
     100% {opacity: 1;}
   }
 
-  /* --- Login Page Styles --- */
-
-  .text-input{
-    margin: 15px 0px;
-  }
-
-  .error-message{
-    color: red;
-    margin: 0px;
-  }
+  /* --- Signup Page Styles --- */
+  #signup-or {margin: 0px;}
 
   /* --- Button Styles --- */
   .button {
@@ -194,6 +190,10 @@
     margin: auto;
   }
 
+  .text-input{
+    margin: 15px 0px;
+  }
+  
   .disclaimer p{ margin-bottom: 0px;}
   
   /* --- Input Styles --- */
