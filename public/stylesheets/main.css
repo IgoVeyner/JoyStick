@@ -273,6 +273,7 @@
   .button-signup:hover, .button-new:hover{ background-color: #36a420;}
   .button-large {width: 280px}
   .button-or {font-size: small;}
+
   .button-new {
     width: 50px;
     border-radius: 12px;
@@ -282,6 +283,11 @@
     position: absolute;
     top: 119px;
     right: 225px;
+  }
+
+  .button-edit {
+    width: 100px;
+    background-color: #435448;
   }
   
   #name-container{

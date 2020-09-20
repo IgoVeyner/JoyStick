@@ -22,10 +22,10 @@
 
         <% if current_user == col.user %>
           <form action="/collections/<%= col.id %>/edit" method="get">
-            <input type="submit" value="Edit Collection">
+            <input class="button button-edit" type="submit" value="Edit">
           </form>
         <% end %>
-        
+
       </section>
     <% end %>
   </section>
