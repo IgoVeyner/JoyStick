@@ -283,7 +283,7 @@
     padding-left: 1px;
     position: absolute;
     top: 119px;
-    right: 225px;
+    right: 30%;
   }
 
   .button-edit-container{
@@ -351,6 +351,10 @@
 
 }
 
+@media screen and (max-width: 1200px){
+  .button-new{right: 10%;}
+}
+
 @media screen and (max-width: 1000px){
   /*--- Nav Bar ---*/
   #navbar{ grid-template: none / 20% 55% 25%;}
@@ -363,6 +367,8 @@
     font-size: 14px;
     padding: 25px 5px;
   }
+
+  .button-new{top:106px}
 }
 
 @media screen and (max-width: 600px) {
@@ -396,10 +402,17 @@
     line-height: 24px;
   }
 
-  #navbar{ grid-template: none / 10% 75% 15%;}
+  #navbar { grid-template: none / 10% 75% 15%;}
 
-  #nav-name-med{display: none;}
-  #nav-name-sm{
+  #nav-name-med {display: none;}
+  #nav-name-sm {
     display: block;
-    font-size: 3.5vw;}
+    font-size: 3.5vw;
+  }
+
+  .button-new {
+    width: 35px;
+    height: 35px;
+    top: 75px;
+  }
 }
