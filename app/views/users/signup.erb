@@ -13,15 +13,8 @@
   <% end %>
 
   <form action="/signup" method="post">
-    <label>Username: </label>
-    <br>
-    <input class="input login-input" type="text" name="user[username]" required>
-    <br><br>
-
-    <label>Password: </label>
-    <br>
-    <input class="input login-input" type="password" name="user[password]" required>
-    <br><br>
+    <input class="input login-input" type="text" name="user[username]" placeholder="Username" required><br>
+    <input class="input login-input" type="password" name="user[password]" placeholder="Password" required><br>
 
     <input type="submit" value="Sign Up">
   </form>
