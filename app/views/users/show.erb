@@ -2,14 +2,18 @@
 
   <h1 class="index-header"><%= @user.username %></h1>
 
-  <section>
-    <p>Member Since: </p>
-    <p><%= @user.created_at.month %> / <%= @user.created_at.day %> / <%= @user.created_at.year %></p>
-    <h3>Collections: <%= @user.collections.size %></h3>
-    <h3>Consoles: <%= @user.consoles.size %></h3>
-    <h3>Games: <%= @user.games.size %></h3>
-    <h3>Favorite Console: STUB<%=  %></h3>
-    <p>*by number of games</p>
+  <section class="user-container">
+
+    <section class="user-sub-container">
+      <p>Member Since: </p>
+      <p><%= @user.created_at.month %> / <%= @user.created_at.day %> / <%= @user.created_at.year %></p>
+      <h3>Collections: <%= @user.collections.size %></h3>
+      <h3>Consoles: <%= @user.consoles.size %></h3>
+      <h3>Games: <%= @user.games.size %></h3>
+      <h3>Favorite Console: STUB<%=  %></h3>
+      <p>*by number of games</p>
+    </section>
+
   </section>
 
   <br>
