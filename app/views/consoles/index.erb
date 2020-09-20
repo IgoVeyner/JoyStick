@@ -7,7 +7,7 @@
   </form>
 
   <section class="index-container">
-    <% @consoles.each do |console| %>
+    <% @consoles.sort_by(&:name).each do |console| %>
 
     <section class="index-sub-container">
 
