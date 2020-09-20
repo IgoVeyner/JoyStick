@@ -1,10 +1,9 @@
-
+<h1 class="index-header">All Collections </h1>
 
 <form action="/collections/new" method="get">
-  <input type="submit" value="New Collection">
+  <input class="button button-new" type="submit" value="New Collection">
 </form>
 
-<h1 class="index-header">All Collections </h1>
 <section class="index-container">
   <% @collections.each do |col| %>
     <section class="collection-container">
