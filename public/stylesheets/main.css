@@ -211,6 +211,7 @@
 
   .index-header {
     color: #543B3B;
+    padding-bottom: 2.25%;
   }
 
   .index-container {
@@ -260,7 +261,7 @@
     padding-left: 1px;
     position: absolute;
     top: 119px;
-    right: 200px;
+    right: 225px;
   }
   
   #name-container{
