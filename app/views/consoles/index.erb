@@ -5,9 +5,8 @@
   <form action="/consoles/new" method="get">
     <input id="new-button" class="button button-new" type="submit" value="+">
   </form>
-  <br>
 
-  <section>
+  <section class="index-container">
     <% @consoles.each do |console| %>
       <h3>Name: <a href="/consoles/<%= console.slug %>"><%= console.name %></a></h3>
       <h3>Manufacturer: <%= console.manufacturer ||= 'Unknown' %></h3>
