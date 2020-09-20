@@ -213,7 +213,10 @@
     border: solid 1px grey;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    
+  }
+  
+  .collection-container {
+    padding: 8px;
   }
   
   /* --- Button Styles --- */
