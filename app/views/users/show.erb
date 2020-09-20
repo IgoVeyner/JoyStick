@@ -35,8 +35,8 @@
         <h3 class="user-sub-container-header">Games: <%= col.games.size %></h3>
 
         <% if @user == current_user %>
-          <form action="/collections/<%= col.id %>/edit" method="get">
-            <input type="submit" value="Edit Collection">
+          <form class="button-edit-container" action="/collections/<%= col.id %>/edit" method="get">
+            <input class="button button-edit" type="submit" value="Edit">
           </form>
         <% end %>
 
