@@ -30,9 +30,9 @@
     <% @user.collections.sort_by(&:name).each do |col| %>
       <section class="index-sub-container">
 
-        <h2>Name: <a href="/collections/<%= col.id %>"><%= col.name %></h2></a>
-        <h3>Console: <a href="/consoles/<%= col.console.slug %>"><%= col.console.name %> </h3></a>
-        <h3>Games: <%= col.games.size %></h3>
+        <h3 class="user-sub-container-header"><a href="/collections/<%= col.id %>"><%= col.name %></h3></a>
+        <h3 class="user-sub-container-header">Console: <a href="/consoles/<%= col.console.slug %>"><%= col.console.name %> </h3></a>
+        <h3 class="user-sub-container-header">Games: <%= col.games.size %></h3>
 
         <% if @user == current_user %>
           <form action="/collections/<%= col.id %>/edit" method="get">
