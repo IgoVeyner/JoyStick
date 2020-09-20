@@ -16,7 +16,7 @@
       <h3 class="index-sub-console-header">Release Date: <%= console.release_date ||= 'Unknown' %></h3>
       <h3 class="index-sub-console-header">Unique Games: <%= console.games.uniq.length %></h3>
       <h3 class="index-sub-console-header">Total Owners: <%= console.users.uniq.length %></h3>
-      <h3 class="index-sub-console-header">Total Collections: <%= console.collections.length %></h3>
+      <h3 class="index-sub-console-header">Collections: <%= console.collections.length %></h3>
       <p>Missing or incorrect information? </p>
 
       <form action="/consoles/<%= console.slug %>/edit" method="get">
