@@ -20,20 +20,20 @@
         </div>
 
         <div id="col-2">
-          <a class="nav-link" href="/users/<%= current_user.slug %>">My Collections</a>
-
-          <form action="/logout" method="post">
-            <input type="hidden" name="_method" value="delete">
-            <input type="submit" value="Logout">
-          </form>
-
-          <a class="nav-link" href="/collections">Collections</a>
-          <a class="nav-link" href="/consoles">Consoles</a>
-          <a class="nav-link" href="/games">Games</a>
+          <ul>
+            <li><a class="nav-link" href="/users/<%= current_user.slug %>">My Collections</a></li>
+            <li><a class="nav-link" href="/collections">Collections</a></li>
+            <li><a class="nav-link" href="/consoles">Consoles</a></li>
+            <li><a class="nav-link" href="/games">Games</a></li>
+          </ul>
         </div>
 
         <div id="col-3">
           <!-- Add search bar later -->
+          <form action="/logout" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Logout">
+          </form>
         </div>
       </nav>
     <% end %>
