@@ -363,12 +363,17 @@
     padding: 24px 6px;
     font-size: 14px;
   }
+
   #button-logout { 
     font-size: 14px;
     padding: 25px 5px;
   }
 
   .button-new{top:106px}
+}
+
+@media screen and (max-width: 1000px){
+  .index-container {grid-template-columns: repeat(2, 1fr);}
 }
 
 @media screen and (max-width: 600px) {
@@ -415,4 +420,8 @@
     height: 35px;
     top: 75px;
   }
+}
+
+@media screen and (max-width: 500px) {
+  .index-container {grid-template-columns: 1fr;}
 }
