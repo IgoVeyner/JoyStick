@@ -246,7 +246,16 @@
   
   .button-signup:hover, .button-new:hover{ background-color: #36a420;}
   .button-large {width: 280px}
-  .button-or{ font-size: small;}
+  .button-or {font-size: small;}
+  .button-new {
+    width: 50px;
+    border-radius: 12px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    font-size: 25px;
+    line-height: 0px;
+    padding-left: 1px;
+  }
   
   #name-container{
     border: none;
