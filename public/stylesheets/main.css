@@ -285,6 +285,10 @@
     right: 225px;
   }
 
+  .button-edit-container{
+    width: 100px;
+    margin: 10px auto;
+  }
   .button-edit {
     width: 100px;
     background-color: #435448;

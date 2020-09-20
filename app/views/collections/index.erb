@@ -21,7 +21,7 @@
         </ol>
 
         <% if current_user == col.user %>
-          <form action="/collections/<%= col.id %>/edit" method="get">
+          <form class="button-edit-container" action="/collections/<%= col.id %>/edit" method="get">
             <input class="button button-edit" type="submit" value="Edit">
           </form>
         <% end %>
