@@ -9,7 +9,7 @@
   <section class="index-container">
     <% @collections.each do |col| %>
       <section class="collection-container">
-        <h2>Name: <a href="/collections/<%= col.id %>"><%= col.name %></h2></a>
+        <h3 class="index-collection-name">Name: <a href="/collections/<%= col.id %>"><%= col.name %></h3></a>
         
         <% if current_user == col.user %>
           <form action="/collections/<%= col.id %>/edit" method="get">
@@ -17,15 +17,14 @@
           </form>
         <% end %>
 
-          <h3>User: <a href="/users/<%= col.user.slug %>"><%= col.user.username %> </h3></a>
-          <h3>Console: <a href="/consoles/<%= col.console.slug %>"><%= col.console.name %> </h3></a>
-          <h3>Games: <%= col.games.size %></h3>
+          <h3 class="index-collection-name">User: <a href="/users/<%= col.user.slug %>"><%= col.user.username %> </h3></a>
+          <h3 class="index-collection-name">Console: <a href="/consoles/<%= col.console.slug %>"><%= col.console.name %> </h3></a>
+          <h3 class="index-collection-name">Games: <%= col.games.size %></h3>
           <ol>
             <% col.games.each do |game| %>
               <li><a href="/games/<%= game.slug %>"><%= game.name %></a></li>
             <% end %>
           </ol>
-          <br><br>
       </section>
     <% end %>
   </section>

@@ -85,7 +85,7 @@
 
   a {
     text-decoration: none;
-    color: red;
+    color: #435448;
   }
 
   a:hover {
@@ -225,7 +225,23 @@
     margin: 8px;
     border: solid 1px grey;
     background-color: #fff;
-    /* background-color: #543B3B; */
+    color: #A1A1A1;
+    text-align: start;
+  }
+
+  .index-collection-name:first-of-type {margin-left: 30px}
+  .index-collection-name:nth-of-type(2) {margin-left: 40px}
+  .index-collection-name:nth-of-type(3) {margin-left: 10px}
+  .index-collection-name:nth-of-type(4) {margin-left: 22px}
+
+  .collection-container ol {
+    margin-left: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .collection-container li {
+    margin: 0px 5px;
+    display: inline;
   }
   
   /* --- Button Styles --- */
