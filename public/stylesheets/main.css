@@ -17,6 +17,12 @@
     text-align: center;
   }
 
+  .main-header-small{
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
+
   /* --- Welcome Page Styles --- */
   body {
     background-color: lightgrey;
@@ -126,10 +132,6 @@
   }
 
   /* --- Login Page Styles --- */
-  #login-header { 
-    margin-top: 10px;
-    font-size: 16px;
-  }
 
   .login-input{
     margin: 15px 0px;
