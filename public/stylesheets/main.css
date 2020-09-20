@@ -145,6 +145,8 @@
     overflow: hidden;
   }
 
+  #nav-name-sm{display: none;}
+
   .nav-link {
     color: #A1A1A1;
   }
@@ -274,6 +276,7 @@
     -webkit-box-shadow: none;
     box-shadow: none;
     width: auto;
+    margin: 0px;
   }
 
   .content, .sidebar {
@@ -297,4 +300,11 @@
     font-size: 18px;
     line-height: 24px;
   }
+
+  #navbar{ grid-template: none / 10% 65% 25%;}
+
+  #nav-name-med{display: none;}
+  #nav-name-sm{
+    display: block;
+    font-size: 3.5vw;}
 }

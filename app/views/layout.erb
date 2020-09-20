@@ -15,13 +15,14 @@
       <nav id="navbar">
         <div id="col-1">
           <form id="app-name-container" action="/">
-            <input type="submit" class="name name-med" value="JoyStick">
+            <input id="nav-name-med" type="submit" class="name name-med" value="JoyStick">
+            <input id="nav-name-sm" type="submit" class="name name-med" value="JS">
           </form>
         </div>
 
         <div id="col-2">
           <ul>
-            <li><a class="nav-link" href="/users/<%= current_user.slug %>">My Collections</a></li>
+            <li><a class="nav-link" href="/users/<%= current_user.slug %>">Account</a></li>
             <li><a class="nav-link" href="/collections">Collections</a></li>
             <li><a class="nav-link" href="/consoles">Consoles</a></li>
             <li><a class="nav-link" href="/games">Games</a></li>
