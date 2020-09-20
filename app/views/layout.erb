@@ -13,18 +13,28 @@
 
     <% if logged_in? %> 
       <nav id="navbar">
-        <a href="/users/<%= current_user.slug %>">My Collections</a>
+        <div>
+          <form action="/">
+            <input type="submit" id="name-container" class="name name-med" value="JoyStick">
+          </form>
+        </div>
 
-        <form action="/logout" method="post">
-          <input type="hidden" name="_method" value="delete">
-          <input type="submit" value="Logout">
-        </form>
+        <div>
+          <a href="/users/<%= current_user.slug %>">My Collections</a>
 
-        <a href="/collections">Collections</a>
-        <a href="/consoles">Consoles</a>
-        <a href="/games">Games</a>
+          <form action="/logout" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Logout">
+          </form>
 
-        <!-- Add search bar later -->
+          <a href="/collections">Collections</a>
+          <a href="/consoles">Consoles</a>
+          <a href="/games">Games</a>
+        </div>
+
+        <div>
+          <!-- Add search bar later -->
+        </div>
       </nav>
     <% end %>
 

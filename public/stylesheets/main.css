@@ -143,6 +143,10 @@
     grid-template: / 20% 40% 30%
   }
 
+  .name-med{
+    font-size: auto;
+  }
+
   /* --- Signup Page Styles --- */
   #signup-or {margin: 0px;}
 
