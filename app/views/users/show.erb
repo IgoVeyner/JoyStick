@@ -34,18 +34,13 @@
         <h2>Name: <a href="/collections/<%= col.id %>"><%= col.name %></h2></a>
         <h3>Console: <a href="/consoles/<%= col.console.slug %>"><%= col.console.name %> </h3></a>
         <h3>Games: <%= col.games.size %></h3>
-        <ol>
-          <% col.games.each do |game| %>
-            <li><a href="/games/<%= game.slug %>"><%= game.name %></a></li>
-          <% end %>
-        </ol>
 
         <% if @user == current_user %>
           <form action="/collections/<%= col.id %>/edit" method="get">
             <input type="submit" value="Edit Collection">
           </form>
         <% end %>
-        
+
       </section>
     <% end %>
 
