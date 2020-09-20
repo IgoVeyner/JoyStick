@@ -7,7 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/main.css" />
-    <% if @env["sinatra.route"] == "GET /" %>
+    <% if @env["sinatra.route"].match?(/^GET \/$|^GET \/login$|^GET \/signup$/) %>
       <link rel ="stylesheet" href="/stylesheets/welcome.css">
     <% end %>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
