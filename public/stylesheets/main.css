@@ -171,8 +171,7 @@
   }
   
   .button-signup:hover{ background-color: #36a420;}
-  .button-login-large {width: 280px}
-  
+  .button-large {width: 280px}
   .button-or{ font-size: small;}
   
   #name-container{
