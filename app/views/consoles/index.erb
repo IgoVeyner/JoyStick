@@ -8,6 +8,8 @@
 
   <section class="index-container">
     <% @consoles.each do |console| %>
+
+    <section class="collection-sub-container">
       <h3>Name: <a href="/consoles/<%= console.slug %>"><%= console.name %></a></h3>
       <h3>Manufacturer: <%= console.manufacturer ||= 'Unknown' %></h3>
       <h3>Release Date: <%= console.release_date ||= 'Unknown' %></h3>
@@ -20,7 +22,7 @@
       <form action="/consoles/<%= console.slug %>/edit" method="get">
         <input type="submit" value="Edit Console">
       </form>
-      <br><br>
+    </section>
     <% end %>
   </section>
 </section>
