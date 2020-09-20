@@ -218,10 +218,14 @@
     border: solid 1px grey;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    background-color: #543B3B;
   }
   
   .collection-container {
-    padding: 8px;
+    margin: 8px;
+    border: solid 1px grey;
+    background-color: #fff;
+    /* background-color: #543B3B; */
   }
   
   /* --- Button Styles --- */
