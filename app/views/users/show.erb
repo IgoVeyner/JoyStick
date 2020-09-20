@@ -27,10 +27,9 @@
 
   <section class="index-container">
   
-    <% @user.collections.each do |col| %>
+    <% @user.collections.sort_by(&:name).each do |col| %>
       <section class="index-sub-container">
 
-        
         <h2>Name: <a href="/collections/<%= col.id %>"><%= col.name %></h2></a>
         <h3>Console: <a href="/consoles/<%= col.console.slug %>"><%= col.console.name %> </h3></a>
         <h3>Games: <%= col.games.size %></h3>
