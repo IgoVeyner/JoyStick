@@ -177,6 +177,8 @@
     background-color: #6E2C2C;
   }
 
+  .active {background-color: #6E2C2C;}
+
   .name-med{
     border: none;
     background: transparent;
