@@ -280,9 +280,12 @@
   #navbar{ grid-template: none / 20% 55% 25%;}
 
   #col-2 li a{
-    display: block;
     padding: 24px 6px;
     font-size: 14px;
+  }
+  #button-logout { 
+    font-size: 14px;
+    padding: 25px 5px;
   }
 }
 
@@ -317,7 +320,7 @@
     line-height: 24px;
   }
 
-  #navbar{ grid-template: none / 10% 65% 25%;}
+  #navbar{ grid-template: none / 10% 75% 15%;}
 
   #nav-name-med{display: none;}
   #nav-name-sm{
