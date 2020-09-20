@@ -140,12 +140,16 @@
     width: 100%;
     background-color: #fff;
     display: grid;
-    grid-template: / 20% 40% 30%
+    grid-template: none / 20% 40% 40%
   }
 
   .name-med{
     font-size: auto;
   }
+
+  #col-1{order: 1}
+  #col-2{order: 2}
+  #col-3{order: 3}
 
   /* --- Signup Page Styles --- */
   #signup-or {margin: 0px;}

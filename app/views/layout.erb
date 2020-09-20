@@ -13,13 +13,13 @@
 
     <% if logged_in? %> 
       <nav id="navbar">
-        <div>
+        <div id="col-1">
           <form action="/">
             <input type="submit" id="name-container" class="name name-med" value="JoyStick">
           </form>
         </div>
 
-        <div>
+        <div id="col-2">
           <a href="/users/<%= current_user.slug %>">My Collections</a>
 
           <form action="/logout" method="post">
@@ -32,7 +32,7 @@
           <a href="/games">Games</a>
         </div>
 
-        <div>
+        <div id="col-3">
           <!-- Add search bar later -->
         </div>
       </nav>
