@@ -204,8 +204,20 @@
   #signup-or {margin: 0px;}
   
   /* --- Index Page Styles --- */
+  .index-header-container {
+    display: grid;
+    grid-template: none / 90% 10%;
+  }
+
+  .index-header-container form{
+    justify-self: center;
+    align-self: center;
+  }
+
   .index-header {
     color: #543B3B;
+    justify-self: center;
+    align-self: center;
   }
 
   .index-container {
@@ -250,8 +262,6 @@
   .button-new {
     width: 50px;
     border-radius: 12px;
-    margin-top: 15px;
-    margin-bottom: 25px;
     font-size: 25px;
     line-height: 0px;
     padding-left: 1px;
