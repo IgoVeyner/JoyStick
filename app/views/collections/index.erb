@@ -8,7 +8,7 @@
 
   <section class="index-container">
     <% @collections.each do |col| %>
-      <section class="collection-container">
+      <section class="index-sub-container">
         <h3 class="index-collection-name">Name: <a href="/collections/<%= col.id %>"><%= col.name %></h3></a>
         <h3 class="index-collection-name">User: <a href="/users/<%= col.user.slug %>"><%= col.user.username %> </h3></a>
         <h3 class="index-collection-name">Console: <a href="/consoles/<%= col.console.slug %>"><%= col.console.name %> </h3></a>

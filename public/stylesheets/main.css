@@ -221,7 +221,7 @@
     background-color: #543B3B;
   }
   
-  .collection-container {
+  .index-sub-container {
     display: grid;
     margin: 8px;
     border: solid 1px grey;
@@ -235,12 +235,12 @@
   .index-collection-name:nth-of-type(3) {margin-left: 10px}
   .index-collection-name:nth-of-type(4) {margin-left: 22px}
 
-  .collection-container ol {
+  .index-container ol {
     margin-left: 10px;
     margin-bottom: 5px;
   }
   
-  .collection-container li {
+  .index-container li {
     margin: 0px 5px;
     display: inline;
   }
