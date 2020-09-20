@@ -202,7 +202,13 @@
 
   /* --- Signup Page Styles --- */
   #signup-or {margin: 0px;}
-
+  
+  /* --- Index Page Styles --- */
+  .index-header {
+    color: #543B3B;
+    text-align: center;
+  }
+  
   /* --- Button Styles --- */
   .button {
     cursor: pointer;
