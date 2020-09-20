@@ -6,7 +6,7 @@
 
 <section>
   <% @games.each do |game| %>
-    <h3>Name: <a href="/games/<%= game.slug %>"><%= game.name %></a></h3>
+    <h3><a href="/games/<%= game.slug %>"><%= game.name %></a></h3>
     <h3>Publisher: <%= game.publisher ||= 'Unknown' %></h3>
     <h3>Developer: <%= game.developer ||= 'Unknown' %></h3>
     <h3>Release Date: <%= game.release_date ||= 'Unknown' %></h3>
