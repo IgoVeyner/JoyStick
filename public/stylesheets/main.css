@@ -162,6 +162,7 @@
   #button-logout:hover {
     background-color: #6E2C2C;
     border: none;
+    cursor: pointer;
   }
 
   #col-2 li a{float: left; }
