@@ -19,8 +19,8 @@
       <h3 class="index-sub-console-header">Collections: <%= console.collections.length %></h3>
       <p>Missing or incorrect information? </p>
 
-      <form action="/consoles/<%= console.slug %>/edit" method="get">
-        <input type="submit" value="Edit Console">
+      <form class="button-edit-container" action="/consoles/<%= console.slug %>/edit" method="get">
+        <input class="button button-edit" type="submit" value="Edit">
       </form>
     </section>
     <% end %>
