@@ -28,7 +28,7 @@
   <section class="index-container">
   
     <% @user.collections.each do |col| %>
-      <section>
+      <section class="index-sub-container">
 
         <% if @user == current_user %>
           <form action="/collections/<%= col.id %>/edit" method="get">
