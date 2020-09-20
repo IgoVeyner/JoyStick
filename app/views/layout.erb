@@ -20,16 +20,16 @@
         </div>
 
         <div id="col-2">
-          <a href="/users/<%= current_user.slug %>">My Collections</a>
+          <a class="nav-link" href="/users/<%= current_user.slug %>">My Collections</a>
 
           <form action="/logout" method="post">
             <input type="hidden" name="_method" value="delete">
             <input type="submit" value="Logout">
           </form>
 
-          <a href="/collections">Collections</a>
-          <a href="/consoles">Consoles</a>
-          <a href="/games">Games</a>
+          <a class="nav-link" href="/collections">Collections</a>
+          <a class="nav-link" href="/consoles">Consoles</a>
+          <a class="nav-link" href="/games">Games</a>
         </div>
 
         <div id="col-3">

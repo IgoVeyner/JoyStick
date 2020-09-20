@@ -144,7 +144,10 @@
     grid-template: none / 20% 40% 40%;
   }
 
-  #app-name-container{ }
+  .nav-link {
+    color: #A1A1A1;
+  }
+  /* #app-name-container{ } */
 
   .name-med{
     border: none;
