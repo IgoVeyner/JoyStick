@@ -19,7 +19,7 @@
         <h3 class="index-sub-game-header">Collections: <%= game.collections.length %></h3>
         <h3 class="index-sub-game-header">Consoles: <%= game.consoles.uniq.length %></h3>
 
-        <p>Missing or incorrect information? </p>
+        <p class="missing-info">Missing or incorrect information? </p>
 
         <form action="/games/<%= game.slug %>/edit" method="get">
           <input type="submit" value="Edit Game">
