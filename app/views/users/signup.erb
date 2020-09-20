@@ -1,33 +1,37 @@
-<h1>Create a New Account</h1>
-<h3>It's quick and easy!</h3>
-  
-<% if @errors %>
-  <% @errors.each do |error| %>
-    <p style="color: red;"><%= error %></p>
+<section class="center-text">
+
+
+  <h1>Create a New Account</h1>
+  <h3>It's quick and easy!</h3>
+    
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <p style="color: red;"><%= error %></p>
+    <% end %>
   <% end %>
-<% end %>
 
-<form action="/signup" method="post">
-  <label>Username: </label>
+  <form action="/signup" method="post">
+    <label>Username: </label>
+    <br>
+    <input type="text" name="user[username]" required>
+    <br><br>
+
+    <label>Password: </label>
+    <br>
+    <input type="password" name="user[password]" required>
+    <br><br>
+
+    <input type="submit" value="Sign Up">
+  </form>
+
   <br>
-  <input type="text" name="user[username]" required>
-  <br><br>
+  <p>By clicking Sign Up, you agree to our Terms, Data Policy, Cookie Policy.</p>
+  <p>And you give up all your privacy and allow us to sell your metadata to whoever wants it</p>
 
-  <label>Password: </label>
   <br>
-  <input type="password" name="user[password]" required>
-  <br><br>
+  <p>or</p>
 
-  <input type="submit" value="Sign Up">
-</form>
-
-<br>
-<p>By clicking Sign Up, you agree to our Terms, Data Policy, Cookie Policy.</p>
-<p>And you give up all your privacy and allow us to sell your metadata to whoever wants it</p>
-
-<br>
-<p>or</p>
-
-<form action="/login" method="get">
-  <input type="submit" value="Log Into an Existing Account">
-</form>
+  <form action="/login" method="get">
+    <input type="submit" value="Log Into an Existing Account">
+  </form>
+</section>

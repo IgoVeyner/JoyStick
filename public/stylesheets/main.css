@@ -12,6 +12,11 @@
     cursor: default;
   }
 
+  /* --- General Styles --- */
+  .center-text {
+    text-align: center;
+  }
+
   /* --- Welcome Page Styles --- */
   body {
     background-color: lightgrey;
