@@ -10,13 +10,14 @@
     <% @consoles.each do |console| %>
 
     <section class="index-sub-container">
-      <h3><a href="/consoles/<%= console.slug %>"><%= console.name %></a></h3>
-      <h3>Manufacturer: <%= console.manufacturer ||= 'Unknown' %></h3>
-      <h3>Release Date: <%= console.release_date ||= 'Unknown' %></h3>
-      <h3>Stats:</h3>
-      <h3>Unique Games: <%= console.games.uniq.length %></h3>
-      <h3>Total Owners: <%= console.users.uniq.length %></h3>
-      <h3>Total Collections: <%= console.collections.length %></h3>
+
+      <h3 class="index-sub-console-header"><a href="/consoles/<%= console.slug %>"><%= console.name %></a></h3>
+      <h3 class="index-sub-console-header">Manufacturer: <%= console.manufacturer ||= 'Unknown' %></h3>
+      <h3 class="index-sub-console-header">Release Date: <%= console.release_date ||= 'Unknown' %></h3>
+      <h3 class="index-sub-console-header">Stats:</h3>
+      <h3 class="index-sub-console-header">Unique Games: <%= console.games.uniq.length %></h3>
+      <h3 class="index-sub-console-header">Total Owners: <%= console.users.uniq.length %></h3>
+      <h3 class="index-sub-console-header">Total Collections: <%= console.collections.length %></h3>
       <p>Missing or incorrect information? </p>
 
       <form action="/consoles/<%= console.slug %>/edit" method="get">
