@@ -6,7 +6,7 @@
     <input id="new-button" class="button button-new" type="submit" value="+">
   </form>
 
-  <section>
+  <section class="index-container">
     <% @games.sort_by(&:name).each do |game| %>
       <h3><a href="/games/<%= game.slug %>"><%= game.name %></a></h3>
       <h3>Publisher: <%= game.publisher ||= 'Unknown' %></h3>
