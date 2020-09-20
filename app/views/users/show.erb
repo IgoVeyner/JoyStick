@@ -1,6 +1,6 @@
 <section class="center-text">
 
-  <h1><%= @user.username %></h1>
+  <h1 class="index-header"><%= @user.username %></h1>
   <p>Member Since: </p>
   <p><%= @user.created_at.month %> / <%= @user.created_at.day %> / <%= @user.created_at.year %></p>
   <br>
@@ -20,7 +20,9 @@
       <input type="submit" value="New Collection">
     </form>
   <% end %>
-  <h2>All Collections: </h2>
+
+  <h1 class="index-header">All Collections: </h1>
+
   <% @user.collections.each do |col| %>
     <section>
 
