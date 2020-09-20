@@ -106,11 +106,9 @@
     animation: fade-in 12s;
   }
   
-  #welcome-message { text-align: center;}
-  
   #welcome-links{
     animation: fade-in 15s;
-    margin: 60px 0;
+    margin: 45px 0;
   }
   
   a {
