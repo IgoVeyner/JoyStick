@@ -27,7 +27,6 @@
     margin: 0px;
   }
 
-  /* --- Welcome Page Styles --- */
   body {
     background-color: lightgrey;
     color: grey;
@@ -84,6 +83,16 @@
     padding-top: 20px;
   }
 
+  a {
+    text-decoration: none;
+    color: red;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* --- Welcome Page Styles --- */
   #welcome-img-container{
     max-width: 20%;
     margin: auto;
@@ -119,15 +128,6 @@
   #welcome-links{
     animation: fade-in 15s;
     margin: 45px 0;
-  }
-  
-  a {
-    text-decoration: none;
-    color: red;
-  }
-
-  a:hover {
-    text-decoration: underline;
   }
 
   @keyframes fade-in {
