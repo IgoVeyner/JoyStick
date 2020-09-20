@@ -208,6 +208,13 @@
     color: #543B3B;
     text-align: center;
   }
+
+  .index-container {
+    border: solid 1px grey;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+  }
   
   /* --- Button Styles --- */
   .button {

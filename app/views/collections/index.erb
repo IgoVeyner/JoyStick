@@ -5,7 +5,7 @@
 </form>
 
 <h1 class="index-header">All Collections </h1>
-<section>
+<section class="index-container">
   <% @collections.each do |col| %>
 
     <h2>Name: <a href="/collections/<%= col.id %>"><%= col.name %></h2></a>
