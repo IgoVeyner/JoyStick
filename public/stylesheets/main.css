@@ -424,4 +424,8 @@
 
 @media screen and (max-width: 500px) {
   .index-container {grid-template-columns: 1fr;}
+
+  #col-2 li a{
+    padding: 24px 4px;
+  }
 }
