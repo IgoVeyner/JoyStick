@@ -7,7 +7,7 @@
   </form>
 
   <section class="index-container">
-    <% @collections.each do |col| %>
+    <% @collections.sort_by(&:name).each do |col| %>
       <section class="index-sub-container">
         <h3 class="index-sub-collection-header"><a href="/collections/<%= col.id %>"><%= col.name %></h3></a>
         <h3 class="index-sub-collection-header">User: <a href="/users/<%= col.user.slug %>"><%= col.user.username %> </h3></a>
