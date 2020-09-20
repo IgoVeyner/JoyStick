@@ -13,12 +13,6 @@
         <h3 class="index-collection-name">User: <a href="/users/<%= col.user.slug %>"><%= col.user.username %> </h3></a>
         <h3 class="index-collection-name">Console: <a href="/consoles/<%= col.console.slug %>"><%= col.console.name %> </h3></a>
         <h3 class="index-collection-name">Games: <%= col.games.size %></h3>
-        
-        <ol>
-          <% col.games.each do |game| %>
-            <li><a href="/games/<%= game.slug %>"><%= game.name %></a></li>
-          <% end %>
-        </ol>
 
         <% if current_user == col.user %>
           <form class="button-edit-container" action="/collections/<%= col.id %>/edit" method="get">
