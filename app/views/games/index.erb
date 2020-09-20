@@ -15,9 +15,9 @@
         <h3 class="index-sub-game-header">Publisher: <%= game.publisher ||= 'Unknown' %></h3>
         <h3 class="index-sub-game-header">Developer: <%= game.developer ||= 'Unknown' %></h3>
         <h3 class="index-sub-game-header">Release Date: <%= game.release_date ||= 'Unknown' %></h3>
-        <h3 class="index-sub-game-header">Total Owners: <%= game.users.uniq.length %></h3>
-        <h3 class="index-sub-game-header">Total Collections: <%= game.collections.length %></h3>
-        <h3 class="index-sub-game-header">Available for # of Consoles: <%= game.consoles.uniq.length %></h3>
+        <h3 class="index-sub-game-header">Owners: <%= game.users.uniq.length %></h3>
+        <h3 class="index-sub-game-header">Collections: <%= game.collections.length %></h3>
+        <h3 class="index-sub-game-header">Consoles: <%= game.consoles.uniq.length %></h3>
 
         <p>Missing or incorrect information? </p>
 
