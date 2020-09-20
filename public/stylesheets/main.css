@@ -261,6 +261,15 @@
     background-color: #543B3B;
   }
 
+  .user-sub-container {
+    width: 50%;
+    display: grid;
+    margin: 15px auto;
+    border: solid 1px grey;
+    background-color: #fff;
+    color: #A1A1A1;
+  }
+
   /* --- Button Styles --- */
   .button {
     cursor: pointer;
