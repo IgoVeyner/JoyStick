@@ -240,11 +240,18 @@
     margin: auto;
     outline: none;
     cursor: pointer;
-    transition: color 3s;
+    animation: color-shift 60s; 
   }
 
-  #name-container:hover{
-    color: orange;
+  @keyframes color-shift {
+    0% {color: red;}
+    14% {color: orange}
+    28% {color: yellow}
+    42% {color: green}
+    56% {color: blue}
+    70% {color: indigo}
+    84% {color: violet}
+    100% {color: red;}
   }
 
   /* --- Input Styles --- */
