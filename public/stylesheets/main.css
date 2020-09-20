@@ -257,6 +257,17 @@
 
 }
 
+@media screen and (max-width: 1000px){
+  /*--- Nav Bar ---*/
+  #navbar{ grid-template: none / 20% 55% 25%;}
+
+  #col-2 li a{
+    display: block;
+    padding: 24px 6px;
+    font-size: 14px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .wrapper {
     -moz-box-shadow: none;
