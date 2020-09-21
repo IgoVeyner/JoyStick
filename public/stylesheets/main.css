@@ -286,8 +286,26 @@
   }
 
   /*--- New Model Page Styles ---*/
-  .small-text {
+  .text-small { 
     font-size: 12px;
+    color: #543B3B}
+
+  .console-container {
+    background-color: #543B3B;
+    margin-bottom: 2.25%;
+    padding: 8px 0px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .console-sub-container {
+    width: 90%;
+    margin: 3px auto;
+    background-color: #fff;
+    color: #543B3B;
+    padding: 5px 0px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
   }
 
   /*--- User Show Page Styles ---*/
