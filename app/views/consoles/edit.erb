@@ -19,7 +19,7 @@
       <% end %>
     <% end %>
 
-    <input type="submit" value="Edit Console">
+    <input class="button button-signup button-large" type="submit" value="Edit Console">
 
   </form>
 
@@ -27,7 +27,7 @@
 
   <form action="/consoles/<%= @console.slug %>" method="post">
     <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete Console">
+    <input class="button button-edit" type="submit" value="Delete">
   </form>
   <br>
 
