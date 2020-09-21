@@ -257,18 +257,20 @@
   
   /* --- User Show Page Styles ---*/
   .user-container {
-    border: solid 1px grey;
     background-color: #543B3B;
     margin-bottom: 2.25%;
+    padding: 8px 0px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
   }
 
   .user-sub-container {
     width: 50%;
     display: grid;
     margin: 15px auto;
-    border: solid 1px grey;
     background-color: #fff;
     color: #A1A1A1;
+    padding: 8px 0px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
   }
 
   .user-sub-container-header:first-of-type {justify-self: center;}
@@ -480,6 +482,8 @@
     height: 35px;
     top: 75px;
   }
+
+  .user-sub-container {width: 80%}
 }
 
 @media screen and (max-width: 500px) {
