@@ -10,7 +10,7 @@
       <h2>Games: <%= @collection.games.size %></h2>
 
       <ol>
-        <% @collection.games.each do |game| %>
+        <% @collection.games.sort_by(&:name).each do |game| %>
           <li><a href="/games/<%= game.slug %>"><%= game.name %></a></li>
         <% end %>
       </ol>
