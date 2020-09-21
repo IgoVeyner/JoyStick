@@ -215,19 +215,21 @@
   }
 
   .index-container {
-    border: solid 1px grey;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     background-color: #543B3B;
+    padding: 8px 0px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
   }
   
   .index-sub-container {
     display: grid;
     margin: 8px;
-    border: solid 1px grey;
     background-color: #fff;
     color: #A1A1A1;
     text-align: start;
+    padding: 8px 0px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
   }
 
   .missing-info { 
