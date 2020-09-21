@@ -290,16 +290,16 @@
     font-size: 12px;
     color: #543B3B}
 
-  .console-container {
+  .collection-new-container {
     background-color: #543B3B;
     margin-bottom: 2.25%;
-    padding: 8px 0px;
+    padding: 20px 0px;
     box-shadow: 0 0 10px rgba(0,0,0,.3);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .console-sub-container {
+  .collection-new-sub-container {
     width: 90%;
     margin: 3px auto;
     background-color: #fff;
@@ -465,7 +465,7 @@
 }
 
 @media screen and (max-width: 1000px){
-  .index-container, .console-container {grid-template-columns: repeat(2, 1fr);}
+  .index-container, .collection-new-container {grid-template-columns: repeat(2, 1fr);}
 
   /*--- User Page Headers ---*/
   h3.user-sub-container-header {justify-self: center;}
@@ -549,5 +549,5 @@
 }
 
 @media screen and (max-width: 500px) {
-  .index-container, .console-container {grid-template-columns: 1fr;}
+  .index-container, .collection-new-container {grid-template-columns: 1fr;}
 }
