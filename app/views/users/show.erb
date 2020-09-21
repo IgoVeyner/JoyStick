@@ -21,29 +21,33 @@
       <input class="button button-new-collection" type="submit" value="New Collection">
     </form>
   <% end %>
+  <% if @user.collections.length > 0 %>
 
-  <section class="index-container">
-  
-    <% @user.collections.sort_by(&:name).each do |col| %>
-      <section class="index-sub-container">
+    <section class="index-container">
+    
+      <% @user.collections.sort_by(&:name).each do |col| %>
+        <section class="index-sub-container">
 
-        <h3 class="user-sub-container-header"><a href="/collections/<%= col.id %>"><%= col.name %></h3></a>
-        <h3 class="user-sub-container-header">Console: <a href="/consoles/<%= col.console.slug %>"><%= col.console.name %> </h3></a>
-        <h3 class="user-sub-container-header">Games: <%= col.games.size %></h3>
+          <h3 class="user-sub-container-header"><a href="/collections/<%= col.id %>"><%= col.name %></h3></a>
+          <h3 class="user-sub-container-header">Console: <a href="/consoles/<%= col.console.slug %>"><%= col.console.name %> </h3></a>
+          <h3 class="user-sub-container-header">Games: <%= col.games.size %></h3>
 
-        <% if @user == current_user %>
-          <form class="button-edit-container" action="/collections/<%= col.id %>/edit" method="get">
-            <input class="button button-edit" type="submit" value="Edit">
-          </form>
-        <% end %>
+          <% if @user == current_user %>
+            <form class="button-edit-container" action="/collections/<%= col.id %>/edit" method="get">
+              <input class="button button-edit" type="submit" value="Edit">
+            </form>
+          <% end %>
 
-      </section>
-    <% end %>
+        </section>
+      <% end %>
 
-  </section>
+    </section>
+    
+  <% end %>
+
 
   <h1 class="main-header-large">All Consoles</h1>
-
+  
   <section class="collection-new-container">
     <% @user.consoles.uniq.sort_by(&:name).each do |console| %>
         <section class="collection-new-sub-container">
