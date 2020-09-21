@@ -358,6 +358,8 @@
     background-color: #878787;
   }
 
+  .show-edit-button {margin-top: 20px;}
+
   .button-edit:hover{background-color:grey}
 
   #name-container{

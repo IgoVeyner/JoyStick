@@ -20,7 +20,7 @@
 
     <% if current_user == @collection.user %>
       <form action="/collections/<%= @collection.id %>/edit" method="get">
-        <input type="submit" value="Edit Collection">
+        <input class="button button-edit show-edit-button" type="submit" value="Edit">
       </form>
     <% end %>
 
