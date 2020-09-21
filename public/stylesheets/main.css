@@ -173,7 +173,7 @@
   }
 
   #button-logout:hover {
-    background-color: #6E2C2C;
+    background-color: #3B2929;
     border: none;
     cursor: pointer;
   }
@@ -186,10 +186,10 @@
 
   #col-2 li a:hover{
     text-decoration: none;
-    background-color: #6E2C2C;
+    background-color: #3B2929;
   }
 
-  .active {background-color: #6E2C2C;}
+  .active {background-color: #3B2929;}
 
   .name-med{
     border: none;
