@@ -471,7 +471,14 @@
     line-height: 24px;
   }
 
-  #navbar { grid-template: none / 10% 75% 15%;}
+  #navbar { 
+    grid-template: none / 10% 75% 15%;
+    height: 54px;
+  }
+
+  #col-2 li a {padding: 18px 6px;}
+
+  #button-logout {padding: 19px 5px}
 
   #nav-name-med {display: none;}
   #nav-name-sm {
@@ -490,8 +497,4 @@
 
 @media screen and (max-width: 500px) {
   .index-container {grid-template-columns: 1fr;}
-
-  #col-2 li a{
-    padding: 24px 4px;
-  }
 }
