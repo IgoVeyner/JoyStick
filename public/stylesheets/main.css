@@ -274,6 +274,11 @@
     box-shadow: 0 0 10px rgba(0,0,0,.3);
   }
 
+  .show-sub-container li {
+    display: inline;
+    margin: 3px;
+  }
+
   /*--- User Show Page Styles ---*/
   .user-container {
     background-color: #543B3B;
@@ -509,7 +514,7 @@
     top: 65px;
   }
 
-  .user-sub-container {width: 80%}
+  .user-sub-container, .show-sub-container {width: 80%}
 }
 
 @media screen and (max-width: 500px) {
