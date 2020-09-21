@@ -415,6 +415,13 @@
   .user-sub-container-header:nth-of-type(2) {margin-left: 0px}
   .user-sub-container-header:nth-of-type(3) {margin-left: 0px}
   
+  .index-sub-game-header {justify-self: center;}
+  .index-sub-game-header:nth-of-type(2) {margin-left: 0px;}
+  .index-sub-game-header:nth-of-type(3) {margin-left: 0px;}
+  .index-sub-game-header:nth-of-type(4) {margin-left: 0px;}
+  .index-sub-game-header:nth-of-type(5) {margin-left: 0px;}
+  .index-sub-game-header:nth-of-type(6) {margin-left: 0px;}
+  .index-sub-game-header:nth-of-type(7) {margin-left: 0px;}
 }
 
 @media screen and (max-width: 600px) {
