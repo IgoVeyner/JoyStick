@@ -223,7 +223,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     background-color: #543B3B;
-    padding: 8px 0px;
+    padding: 10px 10px;
     box-shadow: 0 0 10px rgba(0,0,0,.3);
   }
   
