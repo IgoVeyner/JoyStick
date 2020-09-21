@@ -261,8 +261,19 @@
   .show-container {
     background-color: #543B3B;
     padding: 8px 0px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
   }
   
+  .show-sub-container {
+    width: 50%;
+    display: grid;
+    margin: 15px auto;
+    background-color: #fff;
+    color: #A1A1A1;
+    padding: 8px 0px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+  }
+
   /*--- User Show Page Styles ---*/
   .user-container {
     background-color: #543B3B;
