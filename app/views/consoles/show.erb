@@ -5,11 +5,11 @@
   <section class="show-container">
 
     <section class="show-sub-container">
-      <h2>Manufacturer: <%= @console.manufacturer ||= 'Unknown' %></h2>
-      <h2>Release Date: <%= @console.release_date ||= 'Unknown' %></h2>
-      <h2>Unique Games: <%= @console.games.uniq.length %></h2>
-      <h2>Total Owners: <%= @console.users.uniq.length %></h2>
-      <h2>Total Collections: <%= @console.collections.length %></h2>
+      <h2>Manufacturer: <span class="text-stat"><%= @console.manufacturer ||= 'Unknown' %></span></h2>
+      <h2>Release Date: <span class="text-stat"><%= @console.release_date ||= 'Unknown' %></span></h2>
+      <h2>Unique Games: <span class="text-stat"><%= @console.games.uniq.length %></span></h2>
+      <h2>Total Owners: <span class="text-stat"><%= @console.users.uniq.length %></span></h2>
+      <h2>Total Collections: <span class="text-stat"><%= @console.collections.length %></span></h2>
     </section>
   </section>
 

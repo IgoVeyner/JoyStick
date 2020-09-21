@@ -12,12 +12,12 @@
       <section class="index-sub-container">
 
         <h3 class="index-sub-game-header"><a href="/games/<%= game.slug %>"><%= game.name %></a></h3>
-        <h3 class="index-sub-game-header">Publisher: <%= game.publisher ||= 'Unknown' %></h3>
-        <h3 class="index-sub-game-header">Developer: <%= game.developer ||= 'Unknown' %></h3>
-        <h3 class="index-sub-game-header">Release Date: <%= game.release_date ||= 'Unknown' %></h3>
-        <h3 class="index-sub-game-header">Owners: <%= game.users.uniq.length %></h3>
-        <h3 class="index-sub-game-header">Collections: <%= game.collections.length %></h3>
-        <h3 class="index-sub-game-header">Consoles: <%= game.consoles.uniq.length %></h3>
+        <h3 class="index-sub-game-header">Publisher: <span class="text-stat"><%= game.publisher ||= 'Unknown' %></span></h3>
+        <h3 class="index-sub-game-header">Developer: <span class="text-stat"><%= game.developer ||= 'Unknown' %></span></h3>
+        <h3 class="index-sub-game-header">Release Date: <span class="text-stat"><%= game.release_date ||= 'Unknown' %></span></h3>
+        <h3 class="index-sub-game-header">Owners: <span class="text-stat"><%= game.users.uniq.length %></span></h3>
+        <h3 class="index-sub-game-header">Collections: <span class="text-stat"><%= game.collections.length %></span></h3>
+        <h3 class="index-sub-game-header">Consoles: <span class="text-stat"><%= game.consoles.uniq.length %></span></h3>
 
         <p class="missing-info">Missing or incorrect information? </p>
 

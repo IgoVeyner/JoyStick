@@ -12,11 +12,11 @@
     <section class="index-sub-container">
 
       <h3 class="index-sub-console-header"><a href="/consoles/<%= console.slug %>"><%= console.name %></a></h3>
-      <h3 class="index-sub-console-header">Manufacturer: <%= console.manufacturer ||= 'Unknown' %></h3>
-      <h3 class="index-sub-console-header">Release Date: <%= console.release_date ||= 'Unknown' %></h3>
-      <h3 class="index-sub-console-header">Unique Games: <%= console.games.uniq.length %></h3>
-      <h3 class="index-sub-console-header">Total Owners: <%= console.users.uniq.length %></h3>
-      <h3 class="index-sub-console-header">Collections: <%= console.collections.length %></h3>
+      <h3 class="index-sub-console-header">Manufacturer: <span class="text-stat"><%= console.manufacturer ||= 'Unknown' %></span></h3>
+      <h3 class="index-sub-console-header">Release Date: <span class="text-stat"><%= console.release_date ||= 'Unknown' %></span></h3>
+      <h3 class="index-sub-console-header">Unique Games: <span class="text-stat"><%= console.games.uniq.length %></span></h3>
+      <h3 class="index-sub-console-header">Total Owners: <span class="text-stat"><%= console.users.uniq.length %></span></h3>
+      <h3 class="index-sub-console-header">Collections: <span class="text-stat"><%= console.collections.length %></span></h3>
       <p class="missing-info">Missing or incorrect information? </p>
 
       <form class="button-edit-container" action="/consoles/<%= console.slug %>/edit" method="get">

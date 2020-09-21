@@ -12,7 +12,7 @@
         <h3 class="index-sub-collection-header"><a href="/collections/<%= col.id %>"><%= col.name %></h3></a>
         <h3 class="index-sub-collection-header">User: <a href="/users/<%= col.user.slug %>"><%= col.user.username %> </h3></a>
         <h3 class="index-sub-collection-header">Console: <a href="/consoles/<%= col.console.slug %>"><%= col.console.name %> </h3></a>
-        <h3 class="index-sub-collection-header">Games: <%= col.games.size %></h3>
+        <h3 class="index-sub-collection-header">Games: <span class="text-stat"><%= col.games.size %></h3></span>
 
         <% if current_user == col.user %>
           <form class="button-edit-container" action="/collections/<%= col.id %>/edit" method="get">

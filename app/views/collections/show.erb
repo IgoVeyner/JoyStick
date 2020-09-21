@@ -7,7 +7,7 @@
     <section class="show-sub-container">
       <h2>User: <a href="/users/<%= @collection.user.slug %>"><%= @collection.user.username %> </h2></a>
       <h2>Console: <a href="/consoles/<%= @collection.console.slug %>"><%= @collection.console.name %> </h2></a>
-      <h2>Games: <%= @collection.games.size %></h2>
+      <h2>Games: <span class="text-stat"><%= @collection.games.size %></span></h2>
 
       <ol>
         <% @collection.games.sort_by(&:name).each do |game| %>

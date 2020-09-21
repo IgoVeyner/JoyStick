@@ -102,6 +102,8 @@
     margin-bottom: 2.25%;
   }
 
+  .text-stat {color: #435448}
+
   /* --- Welcome Page Styles --- */
   #welcome-img-container{
     max-width: 20%;
