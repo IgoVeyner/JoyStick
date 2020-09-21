@@ -29,7 +29,7 @@
 
           <h3 class="user-sub-container-header"><a href="/collections/<%= col.id %>"><%= col.name %></h3></a>
           <h3 class="user-sub-container-header">Console: <a href="/consoles/<%= col.console.slug %>"><%= col.console.name %> </h3></a>
-          <h3 class="user-sub-container-header">Games: <%= col.games.size %></h3>
+          <h3 class="user-sub-container-header">Games: <span class="text-stat"><%= col.games.size %></span></h3>
 
           <% if @user == current_user %>
             <form class="button-edit-container" action="/collections/<%= col.id %>/edit" method="get">
@@ -50,7 +50,7 @@
     <section class="collection-new-container">
       <% @user.consoles.uniq.sort_by(&:name).each do |console| %>
           <section class="collection-new-sub-container">
-            <h3><%= console.name %></h3>
+            <h3><a href="/consoles/<%= console.slug %>"><%= console.name %></a></h3>
         </section>
         <% end %>
     </section>
@@ -62,7 +62,7 @@
     <section class="collection-new-container">
       <% @user.games.uniq.sort_by(&:name).each do |game| %>
           <section class="collection-new-sub-container">
-            <h3><%= game.name %></h3>
+            <h3><a href="/games/<%= game.slug %>"><%= game.name %></a></h3>
         </section>
         <% end %>
     </section>
