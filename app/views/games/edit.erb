@@ -1,38 +1,36 @@
-<section class="center-text">
-  <h1 class="main-header-large">Edit a Game</h1>
+<h1 class="main-header-large">Edit a Game</h1>
 
-  <form action="/games/<%= @game.slug %>" method="post">
-    <input type="hidden" name="_method" value="patch">
+<form action="/games/<%= @game.slug %>" method="post">
+  <input type="hidden" name="_method" value="patch">
 
-    <input class="input" type="text" name="game[name]" value="<%= @game.name %>" placeholder="Name" required>
-    <p class="text-small">* Required</p>
+  <input class="input" type="text" name="game[name]" value="<%= @game.name %>" placeholder="Name" required>
+  <p class="text-small">* Required</p>
 
-    <input class="input" type="text" name="game[publisher]" value="<%= @game.publisher %>" placeholder="Publisher">
-    <p class="text-small">* Optional</p>
-    
-    <input class="input" type="text" name="game[developer]" value="<%= @game.developer %>" placeholder="Developer">
-    <p class="text-small">* Optional</p>
+  <input class="input" type="text" name="game[publisher]" value="<%= @game.publisher %>" placeholder="Publisher">
+  <p class="text-small">* Optional</p>
+  
+  <input class="input" type="text" name="game[developer]" value="<%= @game.developer %>" placeholder="Developer">
+  <p class="text-small">* Optional</p>
 
-    <input class="input" type="text" name="game[release_date]" value="<%= @game.release_date %>" placeholder="Release Date">
-    <p class="text-small">* Optional</p>
+  <input class="input" type="text" name="game[release_date]" value="<%= @game.release_date %>" placeholder="Release Date">
+  <p class="text-small">* Optional</p>
 
-    <% if @errors %>
-      <% @errors.each do |error| %>
-        <p style="color: red;"><%= error %></p>
-      <% end %>
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <p style="color: red;"><%= error %></p>
     <% end %>
+  <% end %>
 
-    <input class="button button-signup button-large" type="submit" value="Edit Game">
-  </form>
+  <input class="button button-signup button-large" type="submit" value="Edit Game">
+</form>
 
-  <br>
+<br>
 
-  <form action="/games/<%= @game.slug %>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input class="button button-edit" type="submit" value="Delete">
-  </form>
-  <br>
+<form action="/games/<%= @game.slug %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button button-edit" type="submit" value="Delete">
+</form>
+<br>
 
-  <p class="text-small">Please Note: Deleting a Game will delete it from all Collections for ALL Users. <br>
-  Should only be used by top level Mods / Admins</p>
-</section>
+<p class="text-small">Please Note: Deleting a Game will delete it from all Collections for ALL Users. <br>
+Should only be used by top level Mods / Admins</p>

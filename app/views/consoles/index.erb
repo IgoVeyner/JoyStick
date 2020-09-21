@@ -1,28 +1,25 @@
-<section class="center-text">
+<h1 class="main-header-large">All Consoles</h1>
 
-  <h1 class="main-header-large">All Consoles</h1>
+<form action="/consoles/new" method="get">
+  <input id="new-button" class="button button-new" type="submit" value="+">
+</form>
 
-  <form action="/consoles/new" method="get">
-    <input id="new-button" class="button button-new" type="submit" value="+">
-  </form>
+<section class="index-container">
+  <% @consoles.sort_by(&:name).each do |console| %>
 
-  <section class="index-container">
-    <% @consoles.sort_by(&:name).each do |console| %>
+  <section class="index-sub-container">
 
-    <section class="index-sub-container">
+    <h3 class="index-sub-console-header"><a href="/consoles/<%= console.slug %>"><%= console.name %></a></h3>
+    <h3 class="index-sub-console-header">Manufacturer: <span class="text-stat"><%= console.manufacturer ||= 'Unknown' %></span></h3>
+    <h3 class="index-sub-console-header">Release Date: <span class="text-stat"><%= console.release_date ||= 'Unknown' %></span></h3>
+    <h3 class="index-sub-console-header">Unique Games: <span class="text-stat"><%= console.games.uniq.length %></span></h3>
+    <h3 class="index-sub-console-header">Total Owners: <span class="text-stat"><%= console.users.uniq.length %></span></h3>
+    <h3 class="index-sub-console-header">Collections: <span class="text-stat"><%= console.collections.length %></span></h3>
+    <p class="missing-info">Missing or incorrect information? </p>
 
-      <h3 class="index-sub-console-header"><a href="/consoles/<%= console.slug %>"><%= console.name %></a></h3>
-      <h3 class="index-sub-console-header">Manufacturer: <span class="text-stat"><%= console.manufacturer ||= 'Unknown' %></span></h3>
-      <h3 class="index-sub-console-header">Release Date: <span class="text-stat"><%= console.release_date ||= 'Unknown' %></span></h3>
-      <h3 class="index-sub-console-header">Unique Games: <span class="text-stat"><%= console.games.uniq.length %></span></h3>
-      <h3 class="index-sub-console-header">Total Owners: <span class="text-stat"><%= console.users.uniq.length %></span></h3>
-      <h3 class="index-sub-console-header">Collections: <span class="text-stat"><%= console.collections.length %></span></h3>
-      <p class="missing-info">Missing or incorrect information? </p>
-
-      <form class="button-edit-container" action="/consoles/<%= console.slug %>/edit" method="get">
-        <input class="button button-edit" type="submit" value="Edit">
-      </form>
-    </section>
-    <% end %>
+    <form class="button-edit-container" action="/consoles/<%= console.slug %>/edit" method="get">
+      <input class="button button-edit" type="submit" value="Edit">
+    </form>
   </section>
+  <% end %>
 </section>

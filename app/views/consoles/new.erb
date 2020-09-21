@@ -1,24 +1,21 @@
-<section class="center-text">
-  <form action="/consoles" method="post">
+<form action="/consoles" method="post">
 
-    <h1 class="main-header-large">Create a Console</h1> 
+  <h1 class="main-header-large">Create a Console</h1> 
 
-    <input class="input" type="text" name="console[name]" placeholder="Name" required>
-    <p class="text-small">* Required</p>
+  <input class="input" type="text" name="console[name]" placeholder="Name" required>
+  <p class="text-small">* Required</p>
 
-    <input class="input" type="text" name="console[manufacturer]" placeholder="Manufacturer">
-    <p class="text-small">* Optional</p>
+  <input class="input" type="text" name="console[manufacturer]" placeholder="Manufacturer">
+  <p class="text-small">* Optional</p>
 
-    <input class="input" type="text" name="console[release_date]" placeholder="Release Date">
-    <p class="text-small">* Optional</p>
+  <input class="input" type="text" name="console[release_date]" placeholder="Release Date">
+  <p class="text-small">* Optional</p>
 
-    <% if @errors %>
-      <% @errors.each do |error| %>
-        <p style="color: red;"><%= error %></p>
-      <% end %>
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <p style="color: red;"><%= error %></p>
     <% end %>
+  <% end %>
 
-    <input class="button button-signup button-large" type="submit" value="Create Console">
-  </form>
-
-</section>
+  <input class="button button-signup button-large" type="submit" value="Create Console">
+</form>

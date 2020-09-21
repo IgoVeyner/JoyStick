@@ -1,31 +1,28 @@
-<section class="center-text">
+<form action="/">
+  <input type="submit" id="name-container" class="name" value="JoyStick">
+</form>
 
-  <form action="/">
-    <input type="submit" id="name-container" class="name" value="JoyStick">
-  </form>
-
-  <h2 class="main-header-small">Log Into JoyStick</h2>
+<h2 class="main-header-small">Log Into JoyStick</h2>
 
 
-  <form action="/login" method="post">
-    <input class="input text-input" type="text" name="user[username]" placeholder="Username"required><br>
-    <input class="input text-input" type="password" name="user[password]" placeholder="Password" required><br>
-    
-  <% if @errors %>
-    <% @errors.each do |error| %>
-      <p class="error-message"><%= error %></p>
-    <% end %>
+<form action="/login" method="post">
+  <input class="input text-input" type="text" name="user[username]" placeholder="Username"required><br>
+  <input class="input text-input" type="password" name="user[password]" placeholder="Password" required><br>
+  
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <p class="error-message"><%= error %></p>
   <% end %>
+<% end %>
 
-    <input class="button button-login text-input button-large" type="submit" value="Log In"><br>
-    
-    <a href="#" class="forget-password">Forget Password?</a>
-  </form>
+  <input class="button button-login text-input button-large" type="submit" value="Log In"><br>
+  
+  <a href="#" class="forget-password">Forget Password?</a>
+</form>
 
-  <br>
-  <p class="button-or">or</p>
+<br>
+<p class="button-or">or</p>
 
-  <form action="/signup" method="get">
-    <input class="button button-signup" type="submit" value="Create New Account">
-  </form>
-</section>
+<form action="/signup" method="get">
+  <input class="button button-signup" type="submit" value="Create New Account">
+</form>

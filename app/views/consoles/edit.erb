@@ -1,36 +1,34 @@
-<section class="center-text">
-  <h1 class="main-header-large">Edit a Console</h1>
+<h1 class="main-header-large">Edit a Console</h1>
 
-  <form action="/consoles/<%= @console.slug %>" method="post">
-    <input type="hidden" name="_method" value="patch">
+<form action="/consoles/<%= @console.slug %>" method="post">
+  <input type="hidden" name="_method" value="patch">
 
-    <input class="input" type="text" name="console[name]" value="<%= @console.name %>" placeholder="Name" required>
-    <p class="text-small">* Required</p>
+  <input class="input" type="text" name="console[name]" value="<%= @console.name %>" placeholder="Name" required>
+  <p class="text-small">* Required</p>
 
-    <input class="input" type="text" name="console[manufacturer]" value="<%= @console.manufacturer %>" placeholder="Manufacturer">
-    <p class="text-small">* Optional</p>
+  <input class="input" type="text" name="console[manufacturer]" value="<%= @console.manufacturer %>" placeholder="Manufacturer">
+  <p class="text-small">* Optional</p>
 
-    <input class="input" type="text" name="console[release_date]" value="<%= @console.release_date %>" placeholder="Release Date">
-    <p class="text-small">* Optional</p>
+  <input class="input" type="text" name="console[release_date]" value="<%= @console.release_date %>" placeholder="Release Date">
+  <p class="text-small">* Optional</p>
 
-    <% if @errors %>
-      <% @errors.each do |error| %>
-        <p style="color: red;"><%= error %></p>
-      <% end %>
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <p style="color: red;"><%= error %></p>
     <% end %>
+  <% end %>
 
-    <input class="button button-signup button-large" type="submit" value="Edit Console">
+  <input class="button button-signup button-large" type="submit" value="Edit Console">
 
-  </form>
+</form>
 
-  <br>
+<br>
 
-  <form action="/consoles/<%= @console.slug %>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input class="button button-edit" type="submit" value="Delete">
-  </form>
-  <br>
+<form action="/consoles/<%= @console.slug %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button button-edit" type="submit" value="Delete">
+</form>
+<br>
 
-  <p class="text-small">Please Note: Deleting a Console will delete all associated Collections for ALL Users. <br>
-  Should only be used by top level Mods / Admins</p>
-</section>
+<p class="text-small">Please Note: Deleting a Console will delete all associated Collections for ALL Users. <br>
+Should only be used by top level Mods / Admins</p>

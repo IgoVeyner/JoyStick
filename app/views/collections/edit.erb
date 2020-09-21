@@ -1,57 +1,56 @@
-<section class="center-text">
-  <form action="/collections/<%= @collection.id %>" method="post">
-    <input type="hidden" name="_method" value="patch">
 
-    <h1 class="main-header-large">Edit a Collection</h1>
-    
-    <input class="input" type="text" name="collection[name]" value="<%= @collection.name %>" placeholder="Collection Name" required>
-    <p class="text-small">* Required</p>
+<form action="/collections/<%= @collection.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
 
-    <h3 class="main-header-med">Edit Console is currently disabled</h3>
-    
-    <section class="collection-new-container">
-      <% @consoles.each do |console| %>
-        <section class="collection-new-sub-container">
-          <input type="radio" name="collection[console_id]" id="<%= console.id %>" value="<%= console.id %>" <%= 'checked' if @collection.console == console %> disabled>
-          <span><%= console.name %></span>
-        </section>
-      <% end %>
-    </section>
-    
-    <p class="text-small">or</p>
-    <input class="input" type="text" name="console[name]" placeholder="Console Name" disabled>
+  <h1 class="main-header-large">Edit a Collection</h1>
+  
+  <input class="input" type="text" name="collection[name]" value="<%= @collection.name %>" placeholder="Collection Name" required>
+  <p class="text-small">* Required</p>
 
-    <h3 class="main-header-med">Select existing Games or create a new one:</h3>
-    <p class="text-small">* Optional</p>
-
-    <section class="collection-new-container">
-      <% @games.each do |game| %>
-        <section class="collection-new-sub-container">
-          <input type="checkbox" name="collection[game_ids][]" id="<%= game.id %>" value="<%= game.id %>" <%= 'checked' if @collection.games.include?(game) %>>
-          <span><%= game.name %></span>
-        </section>
-      <% end %>
-    </section>
-
-    <p class="text-small">or</p>
-
-    <input class="input" type="text" name="game[name]" placeholder="Game Name">
-    <br><br><br>
-
-    <% if @errors %>
-      <% @errors.each do |error| %>
-        <p style="color: red;"><%= error %></p>
-      <% end %>
+  <h3 class="main-header-med">Edit Console is currently disabled</h3>
+  
+  <section class="collection-new-container">
+    <% @consoles.each do |console| %>
+      <section class="collection-new-sub-container">
+        <input type="radio" name="collection[console_id]" id="<%= console.id %>" value="<%= console.id %>" <%= 'checked' if @collection.console == console %> disabled>
+        <span><%= console.name %></span>
+      </section>
     <% end %>
+  </section>
+  
+  <p class="text-small">or</p>
+  <input class="input" type="text" name="console[name]" placeholder="Console Name" disabled>
 
-    <input type="hidden" name="collection[user_id]" value="<%= current_user.id %>">
-    <input class="button button-signup button-large" type="submit" value="Edit Collection">
-  </form>
+  <h3 class="main-header-med">Select existing Games or create a new one:</h3>
+  <p class="text-small">* Optional</p>
 
-  <br><br>
+  <section class="collection-new-container">
+    <% @games.each do |game| %>
+      <section class="collection-new-sub-container">
+        <input type="checkbox" name="collection[game_ids][]" id="<%= game.id %>" value="<%= game.id %>" <%= 'checked' if @collection.games.include?(game) %>>
+        <span><%= game.name %></span>
+      </section>
+    <% end %>
+  </section>
 
-  <form action="/collections/<%= @collection.id %>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input class="button button-edit" type="submit"  value="Delete">
-  </form>
-</section>
+  <p class="text-small">or</p>
+
+  <input class="input" type="text" name="game[name]" placeholder="Game Name">
+  <br><br><br>
+
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <p style="color: red;"><%= error %></p>
+    <% end %>
+  <% end %>
+
+  <input type="hidden" name="collection[user_id]" value="<%= current_user.id %>">
+  <input class="button button-signup button-large" type="submit" value="Edit Collection">
+</form>
+
+<br><br>
+
+<form action="/collections/<%= @collection.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button button-edit" type="submit"  value="Delete">
+</form>

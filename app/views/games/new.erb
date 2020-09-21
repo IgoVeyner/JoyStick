@@ -1,27 +1,24 @@
-<section class="center-text">
+<form action="/games" method="post">
 
-  <form action="/games" method="post">
+  <h1 class="main-header-large">Create a Game</h1>
 
-    <h1 class="main-header-large">Create a Game</h1>
+  <input class="input" type="text" name="game[name]" placeholder="Name" required>
+  <p class="text-small">* Required</p>
 
-    <input class="input" type="text" name="game[name]" placeholder="Name" required>
-    <p class="text-small">* Required</p>
+  <input class="input" type="text" name="game[publisher]" placeholder="Publisher">
+  <p class="text-small">* Optional</p>
+  
+  <input class="input" type="text" name="game[developer]" placeholder="Developer">
+  <p class="text-small">* Optional</p>
 
-    <input class="input" type="text" name="game[publisher]" placeholder="Publisher">
-    <p class="text-small">* Optional</p>
-    
-    <input class="input" type="text" name="game[developer]" placeholder="Developer">
-    <p class="text-small">* Optional</p>
+  <input class="input" type="text" name="game[release_date]" placeholder="Release Date">
+  <p class="text-small">* Optional</p>
 
-    <input class="input" type="text" name="game[release_date]" placeholder="Release Date">
-    <p class="text-small">* Optional</p>
-
-    <% if @errors %>
-      <% @errors.each do |error| %>
-        <p style="color: red;"><%= error %></p>
-      <% end %>
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <p style="color: red;"><%= error %></p>
     <% end %>
+  <% end %>
 
-    <input class="button button-signup button-large" type="submit" value="Create Game">
-  </form>
-</section>
+  <input class="button button-signup button-large" type="submit" value="Create Game">
+</form>

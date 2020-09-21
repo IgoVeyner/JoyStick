@@ -1,27 +1,23 @@
-<section class="center-text">
+<h1 class="main-header-large"><%= @collection.name %></h1>
 
-  <h1 class="main-header-large"><%= @collection.name %></h1>
+<section class="show-container">
 
-  <section class="show-container">
+  <section class="show-sub-container">
+    <h2>User: <a href="/users/<%= @collection.user.slug %>"><%= @collection.user.username %> </h2></a>
+    <h2>Console: <a href="/consoles/<%= @collection.console.slug %>"><%= @collection.console.name %> </h2></a>
+    <h2>Games: <span class="text-stat"><%= @collection.games.size %></span></h2>
 
-    <section class="show-sub-container">
-      <h2>User: <a href="/users/<%= @collection.user.slug %>"><%= @collection.user.username %> </h2></a>
-      <h2>Console: <a href="/consoles/<%= @collection.console.slug %>"><%= @collection.console.name %> </h2></a>
-      <h2>Games: <span class="text-stat"><%= @collection.games.size %></span></h2>
+    <ol>
+      <% @collection.games.sort_by(&:name).each do |game| %>
+        <li><a href="/games/<%= game.slug %>"><%= game.name %></a></li>
+      <% end %>
+    </ol>
 
-      <ol>
-        <% @collection.games.sort_by(&:name).each do |game| %>
-          <li><a href="/games/<%= game.slug %>"><%= game.name %></a></li>
-        <% end %>
-      </ol>
-
-      </section>
     </section>
+  </section>
 
-    <% if current_user == @collection.user %>
-      <form action="/collections/<%= @collection.id %>/edit" method="get">
-        <input class="button button-edit show-edit-button" type="submit" value="Edit">
-      </form>
-    <% end %>
-
-</section>
+  <% if current_user == @collection.user %>
+    <form action="/collections/<%= @collection.id %>/edit" method="get">
+      <input class="button button-edit show-edit-button" type="submit" value="Edit">
+    </form>
+  <% end %>

@@ -1,20 +1,16 @@
-<section class="center-text">
+<h1 class="main-header-large"><%= @console.name %></h1>
 
-  <h1 class="main-header-large"><%= @console.name %></h1>
+<section class="show-container">
 
-  <section class="show-container">
-
-    <section class="show-sub-container">
-      <h2>Manufacturer: <span class="text-stat"><%= @console.manufacturer ||= 'Unknown' %></span></h2>
-      <h2>Release Date: <span class="text-stat"><%= @console.release_date ||= 'Unknown' %></span></h2>
-      <h2>Unique Games: <span class="text-stat"><%= @console.games.uniq.length %></span></h2>
-      <h2>Total Owners: <span class="text-stat"><%= @console.users.uniq.length %></span></h2>
-      <h2>Total Collections: <span class="text-stat"><%= @console.collections.length %></span></h2>
-    </section>
+  <section class="show-sub-container">
+    <h2>Manufacturer: <span class="text-stat"><%= @console.manufacturer ||= 'Unknown' %></span></h2>
+    <h2>Release Date: <span class="text-stat"><%= @console.release_date ||= 'Unknown' %></span></h2>
+    <h2>Unique Games: <span class="text-stat"><%= @console.games.uniq.length %></span></h2>
+    <h2>Total Owners: <span class="text-stat"><%= @console.users.uniq.length %></span></h2>
+    <h2>Total Collections: <span class="text-stat"><%= @console.collections.length %></span></h2>
   </section>
-
-  <form action="/consoles/<%= @console.slug %>/edit" method="get">
-    <input class="button button-edit show-edit-button" type="submit" value="Edit">
-  </form>
 </section>
 
+<form action="/consoles/<%= @console.slug %>/edit" method="get">
+  <input class="button button-edit show-edit-button" type="submit" value="Edit">
+</form>

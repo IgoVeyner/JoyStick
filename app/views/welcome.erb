@@ -1,26 +1,23 @@
-<section class="center-text">
+<figure id='welcome-img-container'>
+  <img id='welcome-img' src="https://freesvg.org/img/brunurb_Retro_Joystick_001.png" alt="joyatick">
+</figure>
+<section id='welcome-message'>
 
-  <figure id='welcome-img-container'>
-    <img id='welcome-img' src="https://freesvg.org/img/brunurb_Retro_Joystick_001.png" alt="joyatick">
-  </figure>
-  <section id='welcome-message'>
+  <div id="welcome-header">
+    <h1 id="welcome-name" class="name">JoyStick</h1>
+    <h2 class="welcome-info">Keep track of your games and consoles.</h2>
+  </div>
 
-    <div id="welcome-header">
-      <h1 id="welcome-name" class="name">JoyStick</h1>
-      <h2 class="welcome-info">Keep track of your games and consoles.</h2>
-    </div>
+  <div id="welcome-links">
+    <form action="/signup" method="get">
+      <input class="button button-signup" type="submit" value="Create New Account">
+    </form>
 
-    <div id="welcome-links">
-      <form action="/signup" method="get">
-        <input class="button button-signup" type="submit" value="Create New Account">
-      </form>
+    <br><p class="welcome-info button-or">or</p>
+    
+    <form action="/login" method="get">
+      <input class=" button button-login" type="submit" value="Log In">
+    </form>
 
-      <br><p class="welcome-info button-or">or</p>
-      
-      <form action="/login" method="get">
-        <input class=" button button-login" type="submit" value="Log In">
-      </form>
-
-    </div>
-  </section>
+  </div>
 </section>

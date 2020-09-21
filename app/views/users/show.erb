@@ -1,74 +1,68 @@
-<section class="center-text">
+<h1 class="main-header-large"><%= @user.username %></h1>
 
-  <h1 class="main-header-large"><%= @user.username %></h1>
+<section class="user-container">
 
-  <section class="user-container">
-
-    <section class="user-sub-container">
-      <h3 class="user-container-header">Member Since: <br>
-        <span class="text-stat"><%= @user.created_at.month %> / <%= @user.created_at.day %> / <%= @user.created_at.year %></span></h3>
-      <h3 class="user-container-header">Collections: <span class="text-stat"><%= @user.collections.size %></span></h3>
-      <h3 class="user-container-header">Consoles: <span class="text-stat"><%= @user.consoles.size %></span></h3>
-      <h3 class="user-container-header">Games: <span class="text-stat"><%= @user.games.size %></span></h3>
-    </section>
-
+  <section class="user-sub-container">
+    <h3 class="user-container-header">Member Since: <br>
+      <span class="text-stat"><%= @user.created_at.month %> / <%= @user.created_at.day %> / <%= @user.created_at.year %></span></h3>
+    <h3 class="user-container-header">Collections: <span class="text-stat"><%= @user.collections.size %></span></h3>
+    <h3 class="user-container-header">Consoles: <span class="text-stat"><%= @user.consoles.size %></span></h3>
+    <h3 class="user-container-header">Games: <span class="text-stat"><%= @user.games.size %></span></h3>
   </section>
 
-  <h1 class="main-header-large">All Collections </h1>
-
-  <% if @user == current_user %>
-    <form action="/collections/new" method="get">
-      <input class="button button-new-collection" type="submit" value="New Collection">
-    </form>
-  <% end %>
-  <% if @user.collections.length > 0 %>
-   
-    <section class="index-container">
-      <% @user.collections.sort_by(&:name).each do |col| %>
-        <section class="index-sub-container">
-
-          <h3 class="user-sub-container-header"><a href="/collections/<%= col.id %>"><%= col.name %></h3></a>
-          <h3 class="user-sub-container-header">Console: <a href="/consoles/<%= col.console.slug %>"><%= col.console.name %> </h3></a>
-          <h3 class="user-sub-container-header">Games: <span class="text-stat"><%= col.games.size %></span></h3>
-
-          <% if @user == current_user %>
-            <form class="button-edit-container" action="/collections/<%= col.id %>/edit" method="get">
-              <input class="button button-edit" type="submit" value="Edit">
-            </form>
-          <% end %>
-
-        </section>
-      <% end %>
-
-    </section>
-    
-  <% end %>
-
-  <% if @user.consoles.length > 0 %>
-    <h1 class="main-header-large">All Consoles</h1>
-    
-    <section class="collection-new-container">
-      <% @user.consoles.uniq.sort_by(&:name).each do |console| %>
-          <section class="collection-new-sub-container">
-            <h3><a href="/consoles/<%= console.slug %>"><%= console.name %></a></h3>
-        </section>
-        <% end %>
-    </section>
-  <% end %>
-
-  <% if @user.games.length > 0 %>
-    <h1 class="main-header-large">All Games</h1>
-    
-    <section class="collection-new-container">
-      <% @user.games.uniq.sort_by(&:name).each do |game| %>
-          <section class="collection-new-sub-container">
-            <h3><a href="/games/<%= game.slug %>"><%= game.name %></a></h3>
-        </section>
-        <% end %>
-    </section>
-    
-  <% end %>
-
-
-
 </section>
+
+<h1 class="main-header-large">All Collections </h1>
+
+<% if @user == current_user %>
+  <form action="/collections/new" method="get">
+    <input class="button button-new-collection" type="submit" value="New Collection">
+  </form>
+<% end %>
+<% if @user.collections.length > 0 %>
+  
+  <section class="index-container">
+    <% @user.collections.sort_by(&:name).each do |col| %>
+      <section class="index-sub-container">
+
+        <h3 class="user-sub-container-header"><a href="/collections/<%= col.id %>"><%= col.name %></h3></a>
+        <h3 class="user-sub-container-header">Console: <a href="/consoles/<%= col.console.slug %>"><%= col.console.name %> </h3></a>
+        <h3 class="user-sub-container-header">Games: <span class="text-stat"><%= col.games.size %></span></h3>
+
+        <% if @user == current_user %>
+          <form class="button-edit-container" action="/collections/<%= col.id %>/edit" method="get">
+            <input class="button button-edit" type="submit" value="Edit">
+          </form>
+        <% end %>
+
+      </section>
+    <% end %>
+
+  </section>
+  
+<% end %>
+
+<% if @user.consoles.length > 0 %>
+  <h1 class="main-header-large">All Consoles</h1>
+  
+  <section class="collection-new-container">
+    <% @user.consoles.uniq.sort_by(&:name).each do |console| %>
+        <section class="collection-new-sub-container">
+          <h3><a href="/consoles/<%= console.slug %>"><%= console.name %></a></h3>
+      </section>
+      <% end %>
+  </section>
+<% end %>
+
+<% if @user.games.length > 0 %>
+  <h1 class="main-header-large">All Games</h1>
+  
+  <section class="collection-new-container">
+    <% @user.games.uniq.sort_by(&:name).each do |game| %>
+        <section class="collection-new-sub-container">
+          <h3><a href="/games/<%= game.slug %>"><%= game.name %></a></h3>
+      </section>
+      <% end %>
+  </section>
+  
+<% end %>

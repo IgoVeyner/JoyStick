@@ -1,33 +1,30 @@
-<section class="center-text">
+<form action="/">
+  <input type="submit" id="name-container" class="name" value="JoyStick">
+</form>
 
-  <form action="/">
-    <input type="submit" id="name-container" class="name" value="JoyStick">
-  </form>
+<h2 class="main-header-small">Create a New Account</h2>
+  
 
-  <h2 class="main-header-small">Create a New Account</h2>
-    
+<form action="/signup" method="post">
+  <input class="input text-input" type="text" name="user[username]" placeholder="Username" required><br>
+  <input class="input text-input" type="password" name="user[password]" placeholder="Password" required><br>
 
-  <form action="/signup" method="post">
-    <input class="input text-input" type="text" name="user[username]" placeholder="Username" required><br>
-    <input class="input text-input" type="password" name="user[password]" placeholder="Password" required><br>
-
-    <% if @errors %>
-      <% @errors.each do |error| %>
-        <p style="color: red;"><%= error %></p>
-      <% end %>
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <p style="color: red;"><%= error %></p>
     <% end %>
+  <% end %>
 
-    <input class="button button-signup button-large text-input" type="submit" value="Create New Account">
-  </form>
+  <input class="button button-signup button-large text-input" type="submit" value="Create New Account">
+</form>
 
-  <section class="disclaimer">
-    <p>By clicking Sign Up, you agree to our Terms, Data Policy  
-       and allow us to sell your metadata to the highest bidder.</p>
-  </section>
-
-  <br><p id="signup-or" class="button-or">or</p>
-
-  <form action="/login" method="get">
-    <input class="button button-login text-input" type="submit" value="Log In">
-  </form>
+<section class="disclaimer">
+  <p>By clicking Sign Up, you agree to our Terms, Data Policy  
+      and allow us to sell your metadata to the highest bidder.</p>
 </section>
+
+<br><p id="signup-or" class="button-or">or</p>
+
+<form action="/login" method="get">
+  <input class="button button-login text-input" type="submit" value="Log In">
+</form>

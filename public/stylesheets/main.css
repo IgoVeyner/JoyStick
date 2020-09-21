@@ -13,10 +13,6 @@
   }
 
   /* --- General Styles --- */
-  .center-text {
-    text-align: center;
-  }
-
   .main-header-small{
     margin-top: 10px;
     font-size: 16px;
@@ -43,6 +39,7 @@
     max-width: 960px;
     padding: 2.25%; /* 18px / 800px */
     width: 85%;
+    text-align: center;
   }
 
   h1 {

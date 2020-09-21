@@ -1,31 +1,28 @@
-<section class="center-text">
+<h1 class="main-header-large">All Games</h1>
 
-  <h1 class="main-header-large">All Games</h1>
+<form action="/games/new" method="get">
+  <input id="new-button" class="button button-new" type="submit" value="+">
+</form>
 
-  <form action="/games/new" method="get">
-    <input id="new-button" class="button button-new" type="submit" value="+">
-  </form>
+<section class="index-container">
+  <% @games.sort_by(&:name).each do |game| %>
 
-  <section class="index-container">
-    <% @games.sort_by(&:name).each do |game| %>
+    <section class="index-sub-container">
 
-      <section class="index-sub-container">
+      <h3 class="index-sub-game-header"><a href="/games/<%= game.slug %>"><%= game.name %></a></h3>
+      <h3 class="index-sub-game-header">Publisher: <span class="text-stat"><%= game.publisher ||= 'Unknown' %></span></h3>
+      <h3 class="index-sub-game-header">Developer: <span class="text-stat"><%= game.developer ||= 'Unknown' %></span></h3>
+      <h3 class="index-sub-game-header">Release Date: <span class="text-stat"><%= game.release_date ||= 'Unknown' %></span></h3>
+      <h3 class="index-sub-game-header">Owners: <span class="text-stat"><%= game.users.uniq.length %></span></h3>
+      <h3 class="index-sub-game-header">Collections: <span class="text-stat"><%= game.collections.length %></span></h3>
+      <h3 class="index-sub-game-header">Consoles: <span class="text-stat"><%= game.consoles.uniq.length %></span></h3>
 
-        <h3 class="index-sub-game-header"><a href="/games/<%= game.slug %>"><%= game.name %></a></h3>
-        <h3 class="index-sub-game-header">Publisher: <span class="text-stat"><%= game.publisher ||= 'Unknown' %></span></h3>
-        <h3 class="index-sub-game-header">Developer: <span class="text-stat"><%= game.developer ||= 'Unknown' %></span></h3>
-        <h3 class="index-sub-game-header">Release Date: <span class="text-stat"><%= game.release_date ||= 'Unknown' %></span></h3>
-        <h3 class="index-sub-game-header">Owners: <span class="text-stat"><%= game.users.uniq.length %></span></h3>
-        <h3 class="index-sub-game-header">Collections: <span class="text-stat"><%= game.collections.length %></span></h3>
-        <h3 class="index-sub-game-header">Consoles: <span class="text-stat"><%= game.consoles.uniq.length %></span></h3>
+      <p class="missing-info">Missing or incorrect information? </p>
 
-        <p class="missing-info">Missing or incorrect information? </p>
-
-        <form class="button-edit-container" action="/games/<%= game.slug %>/edit" method="get">
-          <input class="button button-edit" type="submit" value="Edit">
-        </form>
-        
-      </section>
-    <% end %>
-  </section>
+      <form class="button-edit-container" action="/games/<%= game.slug %>/edit" method="get">
+        <input class="button button-edit" type="submit" value="Edit">
+      </form>
+      
+    </section>
+  <% end %>
 </section>

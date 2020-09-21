@@ -1,50 +1,48 @@
-<section class="center-text">
-  <form action="/collections" method="post">
+<form action="/collections" method="post">
 
-    <h1 class="main-header-large">Create a Collection</h1>
-    
-    <input class="input" type="text" name="collection[name]" placeholder="Collection Name" required>
+  <h1 class="main-header-large">Create a Collection</h1>
+  
+  <input class="input" type="text" name="collection[name]" placeholder="Collection Name" required>
 
-    <h2 class="main-header-med">Select an existing Console or create a new one:</h2>
-    <p class="text-small">* Required</p>
+  <h2 class="main-header-med">Select an existing Console or create a new one:</h2>
+  <p class="text-small">* Required</p>
 
-    <section class="collection-new-container">
-      <% @consoles.sort_by(&:name).each do |console| %>
-        <section class="collection-new-sub-container">
-          <input type="radio" name="collection[console_id]" id="<%= console.id %>" value="<%= console.id %>">
-          <span><%= console.name %></span>
-       </section>
-      <% end %>
-    </section>
-
-    <p class="text-small">or</p>
-
-    <input class="input" type="text" name="console[name]" placeholder="Console Name">
-
-    <h2 class="main-header-med">Select existing Games or create a new one:</h2>
-    <p class="text-small">* Optional</p>
-
-    <section class="collection-new-container">
-      <% @games.sort_by(&:name).each do |game| %>
-        <section class="collection-new-sub-container">
-          <input type="checkbox" name="collection[game_ids][]" id="<%= game.id %>" value="<%= game.id %>">
-          <span><%= game.name %></span>
-        </section>
-      <% end %>
-    </section>
-
-    <p class="text-small">or</p>
-
-    <input class="input" type="text" name="game[name]" placeholder="Game Name">
-    <br><br><br>
-
-    <% if @errors %>
-      <% @errors.each do |error| %>
-        <p style="color: red;"><%= error %></p>
-      <% end %>
+  <section class="collection-new-container">
+    <% @consoles.sort_by(&:name).each do |console| %>
+      <section class="collection-new-sub-container">
+        <input type="radio" name="collection[console_id]" id="<%= console.id %>" value="<%= console.id %>">
+        <span><%= console.name %></span>
+      </section>
     <% end %>
+  </section>
 
-    <input type="hidden" name="collection[user_id]" value="<%= current_user.id %>">
-    <input class="button button-signup button-large" type="submit" value="Create Collection">
-  </form>
-</section>
+  <p class="text-small">or</p>
+
+  <input class="input" type="text" name="console[name]" placeholder="Console Name">
+
+  <h2 class="main-header-med">Select existing Games or create a new one:</h2>
+  <p class="text-small">* Optional</p>
+
+  <section class="collection-new-container">
+    <% @games.sort_by(&:name).each do |game| %>
+      <section class="collection-new-sub-container">
+        <input type="checkbox" name="collection[game_ids][]" id="<%= game.id %>" value="<%= game.id %>">
+        <span><%= game.name %></span>
+      </section>
+    <% end %>
+  </section>
+
+  <p class="text-small">or</p>
+
+  <input class="input" type="text" name="game[name]" placeholder="Game Name">
+  <br><br><br>
+
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <p style="color: red;"><%= error %></p>
+    <% end %>
+  <% end %>
+
+  <input type="hidden" name="collection[user_id]" value="<%= current_user.id %>">
+  <input class="button button-signup button-large" type="submit" value="Create Collection">
+</form>
