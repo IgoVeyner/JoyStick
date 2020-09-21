@@ -439,14 +439,19 @@
     border: 1px solid #dddfe2;
     border-radius: 8px;
     outline: none;
-    color: grey;
+    color:#543B3B;
   }
 
   .input:focus{
     outline: none;
     border-color: grey;
+    color: #543B3B;
   }
 
+  ::placeholder {
+    color: #a1a1a1;
+    opacity: 1; /* Firefox */
+  }
 }
 
 @media screen and (max-width: 1200px){
