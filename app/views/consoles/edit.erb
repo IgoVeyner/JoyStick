@@ -1,40 +1,36 @@
-<h1>Edit a Console</h1>
+<section class="center-text">
+  <h1 class="main-header-large">Edit a Console</h1>
 
-<% if @errors %>
-  <% @errors.each do |error| %>
-    <p style="color: red;"><%= error %></p>
-  <% end %>
-<% end %>
+  <form action="/consoles/<%= @console.slug %>" method="post">
+    <input type="hidden" name="_method" value="patch">
 
-<form action="/consoles/<%= @console.slug %>" method="post">
-  <input type="hidden" name="_method" value="patch">
+    <input class="input" type="text" name="console[name]" value="<%= @console.name %>" placeholder="Name" required>
+    <p class="text-small">* Required</p>
 
-  <label for="">Console Name:</label>
-  <p>* Required</p>
-  <input type="text" name="console[name]" value="<%= @console.name %>" required>
-  <br><br>
+    <input class="input" type="text" name="console[manufacturer]" value="<%= @console.manufacturer %>" placeholder="Manufacturer">
+    <p class="text-small">* Optional</p>
 
-  <label for="">Console Manufacturer:</label>
+    <input class="input" type="text" name="console[release_date]" value="<%= @console.release_date %>" placeholder="Release Date">
+    <p class="text-small">* Optional</p>
+
+    <% if @errors %>
+      <% @errors.each do |error| %>
+        <p style="color: red;"><%= error %></p>
+      <% end %>
+    <% end %>
+
+    <input type="submit" value="Edit Console">
+
+  </form>
+
   <br>
-  <input type="text" name="console[manufacturer]" value="<%= @console.manufacturer %>">
-  <br><br>
 
-  <label for="">Console Release Date:</label>
+  <form action="/consoles/<%= @console.slug %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Console">
+  </form>
   <br>
-  <input type="text" name="console[release_date]" value="<%= @console.release_date %>">
-  <br><br>
 
-  <input type="submit" value="Edit Console">
-
-</form>
-
-<br>
-
-<form action="/consoles/<%= @console.slug %>" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="Delete Console">
-</form>
-<br>
-
-<p>Please Note: Deleting a Console will delete all associated Collections for ALL Users</p>
-<p>Should only be used by top level Mods / Admins</p>
+  <p>Please Note: Deleting a Console will delete all associated Collections for ALL Users</p>
+  <p>Should only be used by top level Mods / Admins</p>
+</section>
