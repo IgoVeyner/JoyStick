@@ -92,6 +92,11 @@
     text-decoration: underline;
   }
 
+  .main-header-med {
+    color: #543B3B;
+    margin-top: 20px;
+  }
+
   .main-header-large {
     color: #543B3B;
     margin-bottom: 2.25%;
@@ -278,6 +283,11 @@
   .show-sub-container li {
     display: inline;
     margin: 3px;
+  }
+
+  /*--- New Model Page Styles ---*/
+  .small-text {
+    font-size: 12px;
   }
 
   /*--- User Show Page Styles ---*/

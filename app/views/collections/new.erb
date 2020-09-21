@@ -5,8 +5,8 @@
     
     <input class="input" type="text" name="collection[name]" placeholder="Collection Name" required>
 
-    <h3>Select an existing Console or create a new one:</h3>
-    <p>* Required</p>
+    <h3 class="main-header-med">Select an existing Console or create a new one:</h3>
+    <p class="small-text">* Required</p>
 
     <% @consoles.each do |console| %>
       <input type="radio" name="collection[console_id]" id="<%= console.id %>" value="<%= console.id %>"><span><%= console.name %></span>
@@ -16,10 +16,9 @@
     <br>
     <p>or</p>
     <input class="input" type="text" name="console[name]" placeholder="Console Name">
-    <br><br>
 
-    <h3>Select existing Games or create a new one:</h3>
-    <p>* Optional</p>
+    <h3 class="main-header-med">Select existing Games or create a new one:</h3>
+    <p class="small-text">* Optional</p>
     <% @games.each do |game| %>
       <input type="checkbox" name="collection[game_ids][]" id="<%= game.id %>" value="<%= game.id %>"><span><%= game.name %></span>
       <br>
@@ -38,7 +37,7 @@
         <p style="color: red;"><%= error %></p>
       <% end %>
     <% end %>
-    
+
     <input type="hidden" name="collection[user_id]" value="<%= current_user.id %>">
     <input class="button button-signup button-large" type="submit" value="Create Collection">
   </form>
