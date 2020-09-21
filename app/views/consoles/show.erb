@@ -1,13 +1,20 @@
+<section class="center-text">
 
-<h2>Name: <%= @console.name %></h2>
-<h3>Manufacturer: <%= @console.manufacturer ||= 'Unknown' %></h3>
-<h3>Release Date: <%= @console.release_date ||= 'Unknown' %></h3>
-<h3>Stats:</h3>
-<h3>Unique Games: <%= @console.games.uniq.length %></h3>
-<h3>Total Owners: <%= @console.users.uniq.length %></h3>
-<h3>Total Collections: <%= @console.collections.length %></h3>
-<p>Missing or incorrect information? </p>
+  <h1 class="main-header-large"><%= @console.name %></h1>
 
-<form action="/consoles/<%= @console.slug %>/edit" method="get">
-  <input type="submit" value="Edit Console">
-</form>
+  <section class="show-container">
+
+    <section class="show-sub-container">
+      <h2>Manufacturer: <%= @console.manufacturer ||= 'Unknown' %></h2>
+      <h2>Release Date: <%= @console.release_date ||= 'Unknown' %></h2>
+      <h2>Unique Games: <%= @console.games.uniq.length %></h2>
+      <h2>Total Owners: <%= @console.users.uniq.length %></h2>
+      <h2>Total Collections: <%= @console.collections.length %></h2>
+    </section>
+  </section>
+
+  <form action="/consoles/<%= @console.slug %>/edit" method="get">
+    <input class="button button-edit show-edit-button" type="submit" value="Edit">
+  </form>
+</section>
+

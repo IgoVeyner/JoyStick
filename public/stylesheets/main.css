@@ -233,6 +233,7 @@
   }
 
   .missing-info { 
+    font-size: 12px;
     align-items: center;
     margin: 5px auto 0px;
   }
