@@ -18,14 +18,20 @@
     </section>
 
     <p class="text-small">or</p>
+
     <input class="input" type="text" name="console[name]" placeholder="Console Name">
 
     <h2 class="main-header-med">Select existing Games or create a new one:</h2>
     <p class="text-small">* Optional</p>
-    <% @games.each do |game| %>
-      <input type="checkbox" name="collection[game_ids][]" id="<%= game.id %>" value="<%= game.id %>"><span><%= game.name %></span>
-      <br>
-    <% end %>
+
+    <section class="collection-new-container">
+      <% @games.each do |game| %>
+        <section class="collection-new-sub-container">
+          <input type="checkbox" name="collection[game_ids][]" id="<%= game.id %>" value="<%= game.id %>">
+          <span><%= game.name %></span>
+        </section>
+      <% end %>
+    </section>
 
     <p class="text-small">or</p>
 
