@@ -1,15 +1,21 @@
+<section class="center-text">
 
-<h2>Name: <%= @game.name %></h2>
-<h3>Publisher: <%= @game.publisher ||= 'Unknown' %></h3>
-<h3>Developer: <%= @game.developer ||= 'Unknown' %></h3>
-<h3>Release Date: <%= @game.release_date ||= 'Unknown' %></h3>
-<h3>Stats:</h3>
-<h3>Total Owners: <%= @game.users.uniq.length %></h3>
-<h3>Total Collections: <%= @game.collections.length %></h3>
-<h3>Available for # of Consoles: <%= @game.consoles.uniq.length %></h3>
-<p>Missing or incorrect information? </p>
+  <h1 class="main-header-large"><%= @game.name %></h1>
 
-<form action="/games/<%= @game.slug %>/edit" method="get">
-  <input type="submit" value="Edit Game">
-</form>
-<br><br>
+  <section class="show-container">
+
+    <section class="show-sub-container">
+      <h3>Publisher: <%= @game.publisher ||= 'Unknown' %></h3>
+      <h3>Developer: <%= @game.developer ||= 'Unknown' %></h3>
+      <h3>Release Date: <%= @game.release_date ||= 'Unknown' %></h3>
+      <h3>Owners: <%= @game.users.uniq.length %></h3>
+      <h3>Collections: <%= @game.collections.length %></h3>
+      <h3>Consoles: <%= @game.consoles.uniq.length %></h3>
+    </section>
+  </section>
+
+  <form action="/games/<%= @game.slug %>/edit" method="get">
+    <input class="button button-edit show-edit-button" type="submit" value="Edit Game">
+  </form>
+
+</section>
