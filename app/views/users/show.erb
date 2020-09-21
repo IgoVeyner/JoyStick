@@ -22,9 +22,8 @@
     </form>
   <% end %>
   <% if @user.collections.length > 0 %>
-
+   
     <section class="index-container">
-    
       <% @user.collections.sort_by(&:name).each do |col| %>
         <section class="index-sub-container">
 
@@ -45,16 +44,19 @@
     
   <% end %>
 
+  <% if @user.consoles.length > 0 %>
+    <h1 class="main-header-large">All Consoles</h1>
+    
+    <section class="collection-new-container">
+      <% @user.consoles.uniq.sort_by(&:name).each do |console| %>
+          <section class="collection-new-sub-container">
+            <h3><%= console.name %></h3>
+        </section>
+        <% end %>
+    </section>
+    
+  <% end %>
 
-  <h1 class="main-header-large">All Consoles</h1>
-  
-  <section class="collection-new-container">
-    <% @user.consoles.uniq.sort_by(&:name).each do |console| %>
-        <section class="collection-new-sub-container">
-          <input type="radio" name="collection[console_id]" id="<%= console.id %>" value="<%= console.id %>">
-          <span><%= console.name %></span>
-       </section>
-      <% end %>
-  </section>
+
 
 </section>
