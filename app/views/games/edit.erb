@@ -22,14 +22,14 @@
       <% end %>
     <% end %>
 
-    <input type="submit" value="Edit Game">
+    <input class="button button-signup button-large" type="submit" value="Edit Game">
   </form>
 
   <br>
 
   <form action="/games/<%= @game.slug %>" method="post">
     <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete Game">
+    <input class="button button-edit" type="submit" value="Delete">
   </form>
   <br>
 
