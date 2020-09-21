@@ -465,7 +465,7 @@
 }
 
 @media screen and (max-width: 1000px){
-  .index-container {grid-template-columns: repeat(2, 1fr);}
+  .index-container, .console-container {grid-template-columns: repeat(2, 1fr);}
 
   /*--- User Page Headers ---*/
   h3.user-sub-container-header {justify-self: center;}
@@ -549,5 +549,5 @@
 }
 
 @media screen and (max-width: 500px) {
-  .index-container {grid-template-columns: 1fr;}
+  .index-container, .console-container {grid-template-columns: 1fr;}
 }
