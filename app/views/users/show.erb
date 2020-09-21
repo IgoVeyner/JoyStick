@@ -54,6 +54,18 @@
         </section>
         <% end %>
     </section>
+  <% end %>
+
+  <% if @user.games.length > 0 %>
+    <h1 class="main-header-large">All Games</h1>
+    
+    <section class="collection-new-container">
+      <% @user.games.uniq.sort_by(&:name).each do |game| %>
+          <section class="collection-new-sub-container">
+            <h3><%= game.name %></h3>
+        </section>
+        <% end %>
+    </section>
     
   <% end %>
 
