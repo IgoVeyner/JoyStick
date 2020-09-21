@@ -1,6 +1,6 @@
 <section class="center-text">
 
-  <h1 class="index-header"><%= @user.username %></h1>
+  <h1 class="main-header-large"><%= @user.username %></h1>
 
   <section class="user-container">
 
@@ -14,7 +14,7 @@
 
   </section>
 
-  <h1 class="index-header">All Collections: </h1>
+  <h1 class="main-header-large">All Collections: </h1>
 
   <% if @user == current_user %>
     <form action="/collections/new" method="get">

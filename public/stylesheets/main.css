@@ -92,6 +92,11 @@
     text-decoration: underline;
   }
 
+  .main-header-large {
+    color: #543B3B;
+    margin-bottom: 2.25%;
+  }
+
   /* --- Welcome Page Styles --- */
   #welcome-img-container{
     max-width: 20%;
@@ -207,11 +212,6 @@
   .index-header-container {
     display: grid;
     grid-template: none / 90% 10%;
-  }
-
-  .index-header {
-    color: #543B3B;
-    margin-bottom: 2.25%;
   }
 
   .index-container {
