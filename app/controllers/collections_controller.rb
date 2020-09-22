@@ -124,7 +124,6 @@ class CollectionsController < ApplicationController
   patch "/collections/:id" do
     @collection = Collection.find_by(params[:id])
 
-    # binding.pry
     if !params[:collection].keys.include?("game_ids")
       params[:collection][:game_ids] = []
     end
@@ -133,9 +132,9 @@ class CollectionsController < ApplicationController
     
     if !params[:game][:name].empty?     # If making a new game
       
-      game = Game.new(params[:game])
+      game = @collection.games.build(params[:game])
+
       if game.save                      # Does the game save? (Unique Name)
-        @collection.games << game
         redirect "/collections/#{@collection.id}"
       else                              # Did not save (Name already taken)
         @consoles = Console.all.sort_by(&:name)
