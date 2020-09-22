@@ -46,7 +46,7 @@ Game.create(name: "Final Fantasy V", publisher: "Square", developer: "Square", r
 Game.create(name: "Final Fantasy VI", publisher: "Square", developer: "Square", release_date: "1994")
 Game.create(name: "Final Fantasy VII", publisher: "PlayStation", developer: "Square", release_date: "1997")
 Game.create(name: "Final Fantasy VIII", publisher: "Square", developer: "Square", release_date: "1999")
-Game.create(name: "Final Fantasy XI", publisher: "Square", developer: "Square", release_date: "2000")
+Game.create(name: "Final Fantasy IX", publisher: "Square", developer: "Square", release_date: "2000")
 Game.create(name: "Final Fantasy X", publisher: "Square", developer: "Square", release_date: "2001")
 Game.create(name: "Final Fantasy XI", publisher: "PlayStation", developer: "Square Enix", release_date: "2002")
 Game.create(name: "Final Fantasy XII", publisher: "Square Enix", developer: "Square Enix", release_date: "2006")
