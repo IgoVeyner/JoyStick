@@ -2,7 +2,7 @@ class ConsolesController < ApplicationController
 
   get "/consoles" do
     redirect_if_not_logged_in
-    @consoles = Console.all
+    @consoles = Console.all.sort_by(&:name)
     erb :"/consoles/index"
   end
   
