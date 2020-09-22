@@ -124,7 +124,8 @@ class CollectionsController < ApplicationController
   patch "/collections/:id" do
     @collection = Collection.find_by(params[:id])
 
-    if !params[:collection].keys.include?(:game_ids)
+    # binding.pry
+    if !params[:collection].keys.include?("game_ids")
       params[:collection][:game_ids] = []
     end
 
