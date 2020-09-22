@@ -38,5 +38,21 @@ Game.create(name: "Call of Duty: WWII", publisher: "Activision", developer: "Sle
 Game.create(name: "Call of Duty: Black Ops 4", publisher: "Activision", developer: "Treyarch", release_date: "2018")
 Game.create(name: "Call of Duty: Black Ops Cold War", publisher: "Activision", developer: "Treyarch", release_date: "2020")
 
+Game.create(name: "Final Fantasy", publisher: "Square", developer: "Square", release_date: "1987")
+Game.create(name: "Final Fantasy II", publisher: "Square", developer: "Square", release_date: "1988")
+Game.create(name: "Final Fantasy III", publisher: "Square", developer: "Square", release_date: "1990")
+Game.create(name: "Final Fantasy IV", publisher: "Square", developer: "Square", release_date: "1991")
+Game.create(name: "Final Fantasy V", publisher: "Square", developer: "Square", release_date: "1992")
+Game.create(name: "Final Fantasy VI", publisher: "Square", developer: "Square", release_date: "1994")
+Game.create(name: "Final Fantasy VII", publisher: "PlayStation", developer: "Square", release_date: "1997")
+Game.create(name: "Final Fantasy VIII", publisher: "Square", developer: "Square", release_date: "1999")
+Game.create(name: "Final Fantasy XI", publisher: "Square", developer: "Square", release_date: "2000")
+Game.create(name: "Final Fantasy X", publisher: "Square", developer: "Square", release_date: "2001")
+Game.create(name: "Final Fantasy XI", publisher: "PlayStation", developer: "Square Enix", release_date: "2002")
+Game.create(name: "Final Fantasy XII", publisher: "Square Enix", developer: "Square Enix", release_date: "2006")
+Game.create(name: "Final Fantasy XIII", publisher: "Square Enix", developer: "Square Enix", release_date: "2009")
+Game.create(name: "Final Fantasy XIV: Online", publisher: "Square Enix", developer: "Square Enix", release_date: "2010")
+Game.create(name: "Final Fantasy XIV: A Relm Reborn", publisher: "Square Enix", developer: "Square Enix", release_date: "2013")
+Game.create(name: "Final Fantasy XV", publisher: "Square Enix", developer: "Square Enix", release_date: "2016")
 # Create Users
 # Create Collections
