@@ -2,21 +2,21 @@ class CollectionsController < ApplicationController
 
   get "/collections" do
     redirect_if_not_logged_in
-    @collections = Collection.all
+    @collections = Collection.all.sort_by(&:name)
     erb :"/collections/index"
   end
 
   get "/collections/new" do
     redirect_if_not_logged_in
-    @consoles = Console.all
-    @games = Game.all
+    @consoles = Console.all.sort_by(&:name)
+    @games = Game.all.sort_by(&:name)
     erb :"/collections/new"
   end
 
   post "/collections" do
 
-    @games = Game.all
-    @consoles = Console.all
+    @games = Game.all.sort_by(&:name)
+    @consoles = Console.all.sort_by(&:name)
 
     if params[:console][:name].empty? # Was the create a new console field left blank? (not creating a new console)
       if !params[:game][:name].empty? # Are you creating a new game?
@@ -108,8 +108,8 @@ class CollectionsController < ApplicationController
 
     if @collection
       if current_user == @collection.user
-        @consoles = Console.all
-        @games = Game.all
+        @consoles = Console.all.sort_by(&:name)
+        @games = Game.all.sort_by(&:name)
         erb :"/collections/edit"
       else
         redirect "/collections/#{@collection.id}"
@@ -137,8 +137,8 @@ class CollectionsController < ApplicationController
         @collection.games << game
         redirect "/collections/#{@collection.id}"
       else                              # Did not save (Name already taken)
-        @consoles = Console.all
-        @games = Game.all
+        @consoles = Console.all.sort_by(&:name)
+        @games = Game.all.sort_by(&:name)
         @errors = ["Game "]
         @errors[0] += game.errors.full_messages[0]
         erb :'collections/edit'

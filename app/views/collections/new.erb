@@ -8,7 +8,7 @@
   <p class="text-small">* Required</p>
 
   <section class="collection-new-container">
-    <% @consoles.sort_by(&:name).each do |console| %>
+    <% @consoles.each do |console| %>
       <section class="collection-new-sub-container">
         <input type="radio" name="collection[console_id]" id="<%= console.id %>" value="<%= console.id %>">
         <span><%= console.name %></span>
@@ -24,7 +24,7 @@
   <p class="text-small">* Optional</p>
 
   <section class="collection-new-container">
-    <% @games.sort_by(&:name).each do |game| %>
+    <% @games.each do |game| %>
       <section class="collection-new-sub-container">
         <input type="checkbox" name="collection[game_ids][]" id="<%= game.id %>" value="<%= game.id %>">
         <span><%= game.name %></span>
