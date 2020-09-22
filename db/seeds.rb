@@ -22,5 +22,21 @@ Console.create(name: "Dreamcast", manufacturer: "Sega", release_date: "Nov. 1998
 Console.create(name: "Saturn", manufacturer: "Sega", release_date: "Nov. 1994")
 
 # Create Games
+Game.create(name: "Call of Duty", publisher: "Activision", developer: "Infinity Ward", release_date: "2003")
+Game.create(name: "Call of Duty 2", publisher: "Activision", developer: "Infinity Ward", release_date: "2005")
+Game.create(name: "Call of Duty 3", publisher: "Activision", developer: "Treyarch", release_date: "2006")
+Game.create(name: "Call of Duty 4: Modern Warfare", publisher: "Activision", developer: "Infinity Ward", release_date: "2007")
+Game.create(name: "Call of Duty: World at War", publisher: "Activision", developer: "Treyarch", release_date: "2008")
+Game.create(name: "Call of Duty: Modern Warfare 2", publisher: "Activision", developer: "Infinity Ward", release_date: "2009")
+Game.create(name: "Call of Duty: Black Ops", publisher: "Activision", developer: "Treyarch", release_date: "2010")
+Game.create(name: "Call of Duty: Modern Warfare 3", publisher: "Activision", developer: "Infinity Ward", release_date: "2011")
+Game.create(name: "Call of Duty: Black Ops 2", publisher: "Activision", developer: "Treyarch", release_date: "2012")
+Game.create(name: "Call of Duty: Ghosts", publisher: "Activision", developer: "Infinity Ward", release_date: "2013")
+Game.create(name: "Call of Duty: Black Ops 3", publisher: "Activision", developer: "Treyarch", release_date: "2015")
+Game.create(name: "Call of Duty: Infinite Warfare", publisher: "Activision", developer: "Infinity Ward", release_date: "2016")
+Game.create(name: "Call of Duty: WWII", publisher: "Activision", developer: "Sledgehammer Games", release_date: "2017")
+Game.create(name: "Call of Duty: Black Ops 4", publisher: "Activision", developer: "Treyarch", release_date: "2018")
+Game.create(name: "Call of Duty: Black Ops Cold War", publisher: "Activision", developer: "Treyarch", release_date: "2020")
+
 # Create Users
 # Create Collections
