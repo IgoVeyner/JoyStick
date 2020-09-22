@@ -57,8 +57,8 @@ Game.create(name: "Final Fantasy XV", publisher: "Square Enix", developer: "Squa
 
 # Create Users
 
-u1 = User.create(name: "JRPG_Lover")
-u2 = User.create(name: "COD_Fan_Boy")
-u3 = User.create(name: "Casual_Gamer")
+u1 = User.create(username: "JRPG_Lover", password: "japan")
+u2 = User.create(username: "COD_Fan_Boy", password: "ak47")
+u3 = User.create(username: "Casual_Gamer", password: "farmvil")
 
 # Create Collections
