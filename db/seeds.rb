@@ -62,3 +62,10 @@ u2 = User.create(username: "COD_Fan_Boy", password: "ak47")
 u3 = User.create(username: "Casual_Gamer", password: "farmvil")
 
 # Create Collections
+c1 = Collection.create(name: "JRPGS", user_id: User.first.id, console_id: Console.find(5).id)
+c2 = Collection.create(name: "Best Shooters Ever", user_id: User.find(2).id, console_id: Console.find(4).id)
+c3 = Collection.create(name: "Fun Games :)", user_id: User.find(3).id, console_id: Console.find_by(name: "Switch").id)
+
+c1.games << Game.find(16) << Game.find(17) << Game.find(18) << Game.find(19) << Game.find(20) << Game.find(21) << Game.find(22) << Game.find(23) << Game.find(24) << Game.find(25) << Game.find(26) << Game.find(27) << Game.find(28) << Game.find(29) << Game.find(30)
+c2.games << Game.find(1) << Game.find(2) << Game.find(3) << Game.find(4) << Game.find(5) << Game.find(6) << Game.find(7) << Game.find(8) << Game.find(9) << Game.find(10) << Game.find(11) << Game.find(12) << Game.find(13) << Game.find(14) << Game.find(15)
+c3.games << Game.find(30)
