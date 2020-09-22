@@ -54,5 +54,11 @@ Game.create(name: "Final Fantasy XIII", publisher: "Square Enix", developer: "Sq
 Game.create(name: "Final Fantasy XIV: Online", publisher: "Square Enix", developer: "Square Enix", release_date: "2010")
 Game.create(name: "Final Fantasy XIV: A Relm Reborn", publisher: "Square Enix", developer: "Square Enix", release_date: "2013")
 Game.create(name: "Final Fantasy XV", publisher: "Square Enix", developer: "Square Enix", release_date: "2016")
+
 # Create Users
+
+u1 = User.create(name: "JRPG_Lover")
+u2 = User.create(name: "COD_Fan_Boy")
+u3 = User.create(name: "Casual_Gamer")
+
 # Create Collections
