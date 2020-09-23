@@ -10,8 +10,20 @@
   <section class="index-sub-container">
 
     <h3 class="index-sub-console-header"><a href="/consoles/<%= console.slug %>"><%= console.name %></a></h3>
-    <h3 class="index-sub-console-header">Manufacturer: <span class="text-stat"><%= console.manufacturer ||= 'Unknown' %></span></h3>
-    <h3 class="index-sub-console-header">Release Date: <span class="text-stat"><%= console.release_date ||= 'Unknown' %></span></h3>
+    <h3 class="index-sub-console-header">Manufacturer: <span class="text-stat">
+        <% if console.manufacturer == "" %>
+          <%= 'Unknown' %>
+        <% else %>
+          <%= console.manufacturer %>
+        <% end %>
+    </span></h3>
+    <h3 class="index-sub-console-header">Release Date: <span class="text-stat">
+      <% if console.release_date == "" %>
+          <%= 'Unknown' %>
+        <% else %>
+          <%= console.release_date %>
+        <% end %>
+    </span></h3>
     <p class="missing-info">Missing or incorrect information? </p>
 
     <form class="button-edit-container" action="/consoles/<%= console.slug %>/edit" method="get">
