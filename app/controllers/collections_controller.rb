@@ -149,7 +149,7 @@ class CollectionsController < ApplicationController
   end
 
   delete "/collections/:id" do
-    collection = Collection.find_by(params[:id])
+    collection = Collection.find_by(id: params[:id])
     collection.destroy
     redirect "/collections"
   end
