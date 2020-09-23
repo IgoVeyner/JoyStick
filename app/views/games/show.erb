@@ -3,12 +3,12 @@
 <section class="show-container">
 
   <section class="show-sub-container">
-    <h3>Publisher: <span class="text-stat"><%= @game.publisher == "" ? 'Unknown' : @game.publisher %></span></h3>
-    <h3>Developer: <span class="text-stat"><%= @game.developer == "" ? 'Unknown' : @game.developer %></span></h3>
-    <h3>Release Date: <span class="text-stat"><%= @game.release_date == "" ? 'Unknown' : @game.release_date %></span></h3>
-    <h3>Owners: <span class="text-stat"><%= @game.users.uniq.length %></span></h3>
-    <h3>Collections: <span class="text-stat"><%= @game.collections.length %></span></h3>
-    <h3>Consoles: <span class="text-stat"><%= @game.consoles.uniq.length %></span></h3>
+    <h2>Publisher: <span class="text-stat"><%= @game.publisher == "" ? 'Unknown' : @game.publisher %></span></h2>
+    <h2>Developer: <span class="text-stat"><%= @game.developer == "" ? 'Unknown' : @game.developer %></span></h2>
+    <h2>Release Date: <span class="text-stat"><%= @game.release_date == "" ? 'Unknown' : @game.release_date %></span></h2>
+    <h2>Owners: <span class="text-stat"><%= @game.users.uniq.length %></span></h2>
+    <h2>Collections: <span class="text-stat"><%= @game.collections.length %></span></h2>
+    <h2>Consoles: <span class="text-stat"><%= @game.consoles.uniq.length %></span></h2>
   </section>
 </section>
 
