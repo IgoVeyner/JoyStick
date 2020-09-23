@@ -10,9 +10,9 @@
     <section class="index-sub-container">
 
       <h3 class="index-sub-game-header"><a href="/games/<%= game.slug %>"><%= game.name %></a></h3>
-      <h3 class="index-sub-game-header">Publisher: <span class="text-stat"><%= game.publisher ||= 'Unknown' %></span></h3>
-      <h3 class="index-sub-game-header">Developer: <span class="text-stat"><%= game.developer ||= 'Unknown' %></span></h3>
-      <h3 class="index-sub-game-header">Release Date: <span class="text-stat"><%= game.release_date ||= 'Unknown' %></span></h3>
+      <h3 class="index-sub-game-header">Publisher: <span class="text-stat"><%= game.publisher == "" ? 'Unknown' : game.publisher %></span></h3>
+      <h3 class="index-sub-game-header">Developer: <span class="text-stat"><%= game.developer == "" ? 'Unknown' : game.developer %></span></h3>
+      <h3 class="index-sub-game-header">Release Date: <span class="text-stat"><%= game.release_date == "" ? 'Unknown' : game.release_date %></span></h3>
 
       <p class="missing-info">Missing or incorrect information? </p>
 
