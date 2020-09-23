@@ -46,10 +46,7 @@ class ConsolesController < ApplicationController
 
   patch "/consoles/:slug" do
     console = Console.find_by_slug(params[:slug])
-    console.name = params[:console][:name]
-    console.manufacturer = params[:console][:manufacturer] unless params[:console][:manufacturer].empty?
-    console.release_date = params[:console][:release_date] unless params[:console][:release_date].empty?
-    console.save
+    console.update(params[:console])
     redirect "/consoles/#{console.slug}"
   end
 
