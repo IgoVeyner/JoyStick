@@ -4,7 +4,7 @@
 
   <section class="show-sub-container">
     <h2>Manufacturer: <span class="text-stat">
-      <% if @console.manufacturer == "" %>
+      <% if @console.manufacturer == "" || @console.manufacturer == nil%>
           <%= 'Unknown' %>
       <% else %>
           <%= @console.manufacturer %>
@@ -12,7 +12,7 @@
     </span></h3>
     
     <h2>Release Date: <span class="text-stat">
-    <% if @console.release_date == "" %>
+    <% if @console.release_date == "" || @console.release_date == nil %>
           <%= 'Unknown' %>
         <% else %>
           <%= @console.release_date %>
