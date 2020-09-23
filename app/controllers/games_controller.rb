@@ -46,11 +46,7 @@ class GamesController < ApplicationController
 
   patch "/games/:slug" do
     game = Game.find_by_slug(params[:slug])
-    game.name = params[:game][:name]
-    game.publisher = params[:game][:publisher] unless params[:game][:publisher].empty?
-    game.developer = params[:game][:developer] unless params[:game][:developer].empty?
-    game.release_date = params[:game][:release_date] unless params[:game][:release_date].empty?
-    game.save
+    game.update(params[:game])
     redirect "/games/#{game.slug}"
   end
 
