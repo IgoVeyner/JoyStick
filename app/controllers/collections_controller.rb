@@ -19,6 +19,7 @@ class CollectionsController < ApplicationController
     @consoles = Console.all.sort_by(&:name)
 
     if params[:console][:name].empty? # Was the create a new console field left blank? (not creating a new console)
+
       if !params[:game][:name].empty? # Are you creating a new game?
         game = Game.new(params[:game]) 
 
@@ -28,11 +29,11 @@ class CollectionsController < ApplicationController
           if collection.save          # Does the collection save?
             collection.games << game
             redirect '/collections'
-
           else                        # Collection did not save (No console selected)
             @errors = collection.errors.full_messages
             erb :'collections/new'
           end
+
         else                          # Game did not save (Name was already taken) 
           @errors = ["Game "]
           @errors[0] += game.errors.full_messages[0]
@@ -44,7 +45,6 @@ class CollectionsController < ApplicationController
 
         if collection.save          # Does the collection save?
           redirect '/collections'
-
         else                        # collection did not save, there was no console selected
           @errors = collection.errors.full_messages
           erb :'collections/new'
@@ -64,7 +64,6 @@ class CollectionsController < ApplicationController
             collection = Collection.create(params[:collection])
             collection.games << game
             redirect '/collections'
-
           else                            # Game did not save (Name was already taken)
             @errors = ["Game "]
             @errors[0] += game.errors.full_messages[0]
@@ -76,7 +75,6 @@ class CollectionsController < ApplicationController
 
           if collection.save              # Does the collection save?
             redirect '/collections'
-
           else                            # Collection did not save
             @errors = collection.errors.full_messages
             erb :'collections/new'
@@ -94,6 +92,7 @@ class CollectionsController < ApplicationController
   get "/collections/:id" do
     redirect_if_not_logged_in
     @collection = Collection.find_by(id: params[:id])
+
     if @collection 
       erb :"/collections/show"
     else
@@ -107,6 +106,7 @@ class CollectionsController < ApplicationController
     @collection = Collection.find_by(id: params[:id])
 
     if @collection
+
       if current_user == @collection.user
         @consoles = Console.all.sort_by(&:name)
         @games = Game.all.sort_by(&:name)
@@ -114,6 +114,7 @@ class CollectionsController < ApplicationController
       else
         redirect "/collections/#{@collection.id}"
       end
+
     else
       @errors = ["#{params[:id]} is not a valid Collection"]
       erb :'failure'
@@ -131,7 +132,6 @@ class CollectionsController < ApplicationController
     @collection.update(params[:collection])
     
     if !params[:game][:name].empty?     # If making a new game
-      
       game = @collection.games.build(params[:game])
 
       if game.save                      # Does the game save? (Unique Name)
@@ -143,6 +143,7 @@ class CollectionsController < ApplicationController
         @errors[0] += game.errors.full_messages[0]
         erb :'collections/edit'
       end
+      
     else                                # Not making a new game
       redirect "/collections/#{@collection.id}"
     end
