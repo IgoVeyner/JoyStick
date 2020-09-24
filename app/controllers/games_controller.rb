@@ -13,6 +13,7 @@ class GamesController < ApplicationController
 
   post "/games" do
     game = Game.new(params[:game])
+
     if game.save
       redirect "/games"
     else
@@ -24,6 +25,7 @@ class GamesController < ApplicationController
   get "/games/:slug" do
     redirect_if_not_logged_in
     @game = Game.find_by_slug(params[:slug])
+    
     if @game
       erb :"/games/show"
     else
