@@ -2,20 +2,21 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-
     <title>JoyStick</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/main.css" />
+
     <% if @env["sinatra.route"].match?(/^GET \/$|^GET \/login$|^GET \/signup$/) %>
       <link rel ="stylesheet" href="/stylesheets/wrapper.css">
     <% end %>
+
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
   </head>
   <body>
 
     <% if logged_in? %> 
       <nav id="navbar">
+      
         <div id="col-1">
           <form id="app-name-container" action="/">
             <input id="nav-name-med" type="submit" class="name name-med" value="JoyStick">
