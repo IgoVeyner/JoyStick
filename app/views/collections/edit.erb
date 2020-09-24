@@ -1,8 +1,7 @@
+<h1 class="main-header-large">Edit a Collection</h1>
 
 <form action="/collections/<%= @collection.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
-
-  <h1 class="main-header-large">Edit a Collection</h1>
   
   <input class="input" type="text" name="collection[name]" value="<%= @collection.name %>" placeholder="Collection Name" required>
   <p class="text-small">* Required</p>
@@ -19,6 +18,7 @@
   </section>
   
   <p class="text-small">or</p>
+  
   <input class="input" type="text" name="console[name]" placeholder="Console Name" disabled>
 
   <h3 class="main-header-med">Select existing Games or create a new one:</h3>
