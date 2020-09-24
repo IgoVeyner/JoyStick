@@ -5,23 +5,23 @@
   <section class="show-sub-container">
     <h2>Manufacturer: <span class="text-stat">
       <% if @console.manufacturer == "" || @console.manufacturer == nil%>
-          <%= 'Unknown' %>
+        "Unknown"
       <% else %>
           <%= @console.manufacturer %>
       <% end %>
-    </span></h3>
+    </span></h2>
     
     <h2>Release Date: <span class="text-stat">
-    <% if @console.release_date == "" || @console.release_date == nil %>
-          <%= 'Unknown' %>
-        <% else %>
-          <%= @console.release_date %>
-        <% end %>
+      <% if @console.release_date == "" || @console.release_date == nil %>
+        "Unknown"
+      <% else %>
+        <%= @console.release_date %>
+      <% end %>
     </span></h2>
 
-    <h2>Unique Games: <span class="text-stat"><%= @console.games.uniq.length %></span></h2>
-    <h2>Total Owners: <span class="text-stat"><%= @console.users.uniq.length %></span></h2>
-    <h2>Total Collections: <span class="text-stat"><%= @console.collections.length %></span></h2>
+    <h2>Owners: <span class="text-stat"><%= @console.users.uniq.length %></span></h2>
+    <h2>Games: <span class="text-stat"><%= @console.games.uniq.length %></span></h2>
+    <h2>Collections: <span class="text-stat"><%= @console.collections.length %></span></h2>
   </section>
 </section>
 
