@@ -11,6 +11,6 @@ class Console < ActiveRecord::Base
   end
 
   def self.find_by_slug(slug)
-    self.all.find {|u| u.slug == slug}
+    self.all.find {|console| console.slug == slug}
   end
 end
