@@ -13,6 +13,7 @@ class ConsolesController < ApplicationController
 
   post "/consoles" do
     console = Console.new(params[:console])
+
     if console.save
       redirect "/consoles"
     else
@@ -24,6 +25,7 @@ class ConsolesController < ApplicationController
   get "/consoles/:slug" do
     redirect_if_not_logged_in
     @console = Console.find_by_slug(params[:slug])
+    
     if @console
       erb :"/consoles/show"
     else
