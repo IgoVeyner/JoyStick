@@ -12,17 +12,7 @@
     cursor: default;
   }
 
-  /* --- General Styles --- */
-  .main-header-small{
-    margin-top: 10px;
-    font-size: 16px;
-  }
-  
-  .error-message{
-    color: red;
-    margin: 0px;
-  }
-
+  /*--- General Styles ---*/
   body {
     background-color: lightgrey;
     color: grey;
@@ -57,22 +47,16 @@
     line-height: 36px;
   }
 
-  p {
-    margin-bottom: 18px;
-  }
+  p {margin-bottom: 18px;}
 
-  .main {
-    overflow: hidden;
-  }
+  .main {overflow: hidden;}
 
   .content {
     float: left;
     width: 60%; /* 480px / 800px */
   }
 
-  .branding {
-    clear: both;
-  }
+  .branding {clear: both;}
 
   footer.branding {
     border-top: 2px solid #ccc;
@@ -85,8 +69,16 @@
     color: #435448;
   }
 
-  a:hover {
-    text-decoration: underline;
+  a:hover {text-decoration: underline;}
+
+  .error-message{
+    color: red;
+    margin: 0px;
+  }
+
+  .main-header-small{
+    margin-top: 10px;
+    font-size: 16px;
   }
 
   .main-header-med {
@@ -202,8 +194,11 @@
   #col-1{
     order: 1;
     justify-self: center;
-    align-self: center;}
+    align-self: center;
+  }
+
   #col-2{order: 2}
+
   #col-3{
     order: 3;
     justify-self: end;
@@ -250,23 +245,37 @@
   .user-sub-container-header {line-height: 25px;}
 
   .index-sub-collection-header:first-of-type {justify-self: center;}
+
   .index-sub-collection-header:nth-of-type(2) {margin-left: 40px}
-  .index-sub-collection-header:nth-of-type(3) {margin-left: 10px}
+
+  .index-sub-collection-header:nth-of-type(3) {margin-left: 10px
+  }
   .index-sub-collection-header:nth-of-type(4) {margin-left: 22px}
   
   .index-sub-console-header:first-of-type {justify-self: center;}
+
   .index-sub-console-header:nth-of-type(2) {margin-left: 22px}
+
   .index-sub-console-header:nth-of-type(3) {margin-left: 22px}
+
   .index-sub-console-header:nth-of-type(4) {margin-left: 10px}
+
   .index-sub-console-header:nth-of-type(5) {margin-left: 24px}
+
   .index-sub-console-header:nth-of-type(6) {margin-left: 41px}
 
   .index-sub-game-header:first-of-type {justify-self: center;}
+
   .index-sub-game-header:nth-of-type(2) {margin-left: 37px;}
+
   .index-sub-game-header:nth-of-type(3) {margin-left: 34px;}
+
   .index-sub-game-header:nth-of-type(4) {margin-left: 10px;}
+
   .index-sub-game-header:nth-of-type(5) {margin-left: 57px;}
+
   .index-sub-game-header:nth-of-type(6) {margin-left: 27px;}
+
   .index-sub-game-header:nth-of-type(7) {margin-left: 44px;}
 
   /*--- Show Page Styles --- */
@@ -294,7 +303,8 @@
   /*--- New Model Page Styles ---*/
   .text-small { 
     font-size: 12px;
-    color: #543B3B}
+    color: #543B3B
+  }
 
   .collection-new-container {
     background-color: #543B3B;
@@ -333,7 +343,9 @@
   }
 
   .user-sub-container-header:first-of-type {justify-self: center;}
+
   .user-sub-container-header:nth-of-type(2) {margin-left: 10px}
+
   .user-sub-container-header:nth-of-type(3) {margin-left: 22px}
 
   /* --- Button Styles --- */
@@ -350,6 +362,7 @@
   }
   
   .button-login {background-color: #1877f2;}
+
   .button-login:hover {background-color: #166fe5;}
   
   .forget-password{ 
@@ -363,8 +376,10 @@
   }
   
   .button-signup:hover, .button-new:hover,
-  .button-new-collection:hover{background-color: #36a420;}
+  .button-new-collection:hover {background-color: #36a420;}
+
   .button-large {width: 280px}
+
   .button-or {font-size: small;}
 
   .button-new {
@@ -395,7 +410,7 @@
 
   .show-edit-button {margin-top: 20px;}
 
-  .button-edit:hover{background-color:grey}
+  .button-edit:hover {background-color:grey}
 
   #name-container{
     border: none;
@@ -425,14 +440,12 @@
     margin: auto;
   }
 
-  .text-input{
-    margin: 15px 0px;
-  }
+  .text-input {margin: 15px 0px;}
   
   .disclaimer p{ margin-bottom: 0px;}
   
   /* --- Input Styles --- */
-  .input{
+  .input {
     width: 250px;
     padding: 15px 15px;
     font-size: 18px;
@@ -442,7 +455,7 @@
     color:#543B3B;
   }
 
-  .input:focus{
+  .input:focus {
     outline: none;
     border-color: grey;
     color: #543B3B;
@@ -455,7 +468,7 @@
 }
 
 @media screen and (max-width: 1200px){
-  .button-new{right: 10%;}
+  .button-new {right: 10%;}
 }
 
 @media screen and (max-width: 1000px){
@@ -472,36 +485,32 @@
     padding: 25px 5px;
   }
 
-  .button-new{top:106px}
+  .button-new {top:106px}
 }
 
 @media screen and (max-width: 1000px){
   .index-container, .collection-new-container {grid-template-columns: repeat(2, 1fr);}
 
   /*--- User Page Headers ---*/
-  h3.user-sub-container-header {justify-self: center;}
-  .user-sub-container-header:nth-of-type(2) {margin-left: 0px}
-  .user-sub-container-header:nth-of-type(3) {margin-left: 0px}
+  h3.user-sub-container-header {
+    justify-self: center;
+    margin-left: 0px
+  }
   
-  .index-sub-game-header {justify-self: center;}
-  .index-sub-game-header:nth-of-type(2) {margin-left: 0px;}
-  .index-sub-game-header:nth-of-type(3) {margin-left: 0px;}
-  .index-sub-game-header:nth-of-type(4) {margin-left: 0px;}
-  .index-sub-game-header:nth-of-type(5) {margin-left: 0px;}
-  .index-sub-game-header:nth-of-type(6) {margin-left: 0px;}
-  .index-sub-game-header:nth-of-type(7) {margin-left: 0px;}
+  .index-sub-game-header {
+    justify-self: center;
+    margin-left: 0px;
+  }
 
-  .index-sub-console-header {justify-self: center;}
-  .index-sub-console-header:nth-of-type(2) {margin-left: 0px}
-  .index-sub-console-header:nth-of-type(3) {margin-left: 0px}
-  .index-sub-console-header:nth-of-type(4) {margin-left: 0px}
-  .index-sub-console-header:nth-of-type(5) {margin-left: 0px}
-  .index-sub-console-header:nth-of-type(6) {margin-left: 0px}
+  .index-sub-console-header {
+    justify-self: center;
+    margin-left: 0px
+    }
 
-  .index-sub-collection-header {justify-self: center;}
-  .index-sub-collection-header:nth-of-type(2) {margin-left: 0px}
-  .index-sub-collection-header:nth-of-type(3) {margin-left: 0px}
-  .index-sub-collection-header:nth-of-type(4) {margin-left: 0px}
+  .index-sub-collection-header {
+    justify-self: center;
+    margin-left: 0px
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -545,6 +554,7 @@
   #button-logout {padding: 19px 5px}
 
   #nav-name-med {display: none;}
+
   #nav-name-sm {
     display: block;
     font-size: 3.5vw;
