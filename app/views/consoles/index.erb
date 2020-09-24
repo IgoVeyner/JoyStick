@@ -7,28 +7,31 @@
 <section class="index-container">
   <% @consoles.each do |console| %>
 
-  <section class="index-sub-container">
+    <section class="index-sub-container">
 
-    <h3 class="index-sub-console-header"><a href="/consoles/<%= console.slug %>"><%= console.name %></a></h3>
-    <h3 class="index-sub-console-header">Manufacturer: <span class="text-stat">
+      <h3 class="index-sub-console-header"><a href="/consoles/<%= console.slug %>"><%= console.name %></a></h3>
+      <h3 class="index-sub-console-header">Manufacturer: <span class="text-stat">
         <% if console.manufacturer == "" || console.manufacturer == nil %>
-          <%= 'Unknown' %>
+          "Unknown"
         <% else %>
           <%= console.manufacturer %>
         <% end %>
-    </span></h3>
-    <h3 class="index-sub-console-header">Release Date: <span class="text-stat">
-      <% if console.release_date == "" || console.release_date == nil%>
-          <%= 'Unknown' %>
+      </span></h3>
+
+      <h3 class="index-sub-console-header">Release Date: <span class="text-stat">
+        <% if console.release_date == "" || console.release_date == nil%>
+          "Unknown"
         <% else %>
           <%= console.release_date %>
         <% end %>
-    </span></h3>
-    <p class="missing-info">Missing or incorrect information? </p>
+      </span></h3>
 
-    <form class="button-edit-container" action="/consoles/<%= console.slug %>/edit" method="get">
-      <input class="button button-edit" type="submit" value="Edit">
-    </form>
-  </section>
+      <p class="missing-info">Missing or incorrect information? </p>
+
+      <form class="button-edit-container" action="/consoles/<%= console.slug %>/edit" method="get">
+        <input class="button button-edit" type="submit" value="Edit">
+      </form>
+      
+    </section>
   <% end %>
 </section>

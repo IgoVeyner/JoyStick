@@ -13,11 +13,12 @@
       <h3 class="index-sub-collection-header">Games: <span class="text-stat"><%= col.games.size %></h3></span>
 
       <% if current_user == col.user %>
+      
         <form class="button-edit-container" action="/collections/<%= col.id %>/edit" method="get">
           <input class="button button-edit" type="submit" value="Edit">
         </form>
-      <% end %>
 
+      <% end %>
     </section>
   <% end %>
 </section>
