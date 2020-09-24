@@ -19,6 +19,7 @@
     <input class="button button-new-collection" type="submit" value="New Collection">
   </form>
 <% end %>
+
 <% if @user.collections.length > 0 %>
   
   <section class="index-container">
@@ -37,9 +38,7 @@
 
       </section>
     <% end %>
-
   </section>
-  
 <% end %>
 
 <% if @user.consoles.length > 0 %>
@@ -47,8 +46,8 @@
   
   <section class="collection-new-container">
     <% @user.consoles.uniq.sort_by(&:name).each do |console| %>
-        <section class="collection-new-sub-container">
-          <h3><a href="/consoles/<%= console.slug %>"><%= console.name %></a></h3>
+      <section class="collection-new-sub-container">
+        <h3><a href="/consoles/<%= console.slug %>"><%= console.name %></a></h3>
       </section>
       <% end %>
   </section>
@@ -59,8 +58,8 @@
   
   <section class="collection-new-container">
     <% @user.games.uniq.sort_by(&:name).each do |game| %>
-        <section class="collection-new-sub-container">
-          <h3><a href="/games/<%= game.slug %>"><%= game.name %></a></h3>
+      <section class="collection-new-sub-container">
+        <h3><a href="/games/<%= game.slug %>"><%= game.name %></a></h3>
       </section>
       <% end %>
   </section>
