@@ -52,7 +52,6 @@ class ConsolesController < ApplicationController
     if @console.update(params[:console])
       redirect "/consoles/#{@console.slug}"
     else
-      binding.pry
       @errors = @console.errors.full_messages
       erb :'consoles/edit'
     end
