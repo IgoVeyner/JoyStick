@@ -135,6 +135,7 @@ class CollectionsController < ApplicationController
       game = @collection.games.build(params[:game])
 
       if game.save                      # Does the game save? (Unique Name)
+        @collection.games << game
         redirect "/collections/#{@collection.id}"
       else                              # Did not save (Name already taken)
         @consoles = Console.all.sort_by(&:name)
