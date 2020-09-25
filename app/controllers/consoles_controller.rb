@@ -47,9 +47,15 @@ class ConsolesController < ApplicationController
   end
 
   patch "/consoles/:slug" do
-    console = Console.find_by_slug(params[:slug])
-    console.update(params[:console])
-    redirect "/consoles/#{console.slug}"
+    @console = Console.find_by_slug(params[:slug])
+
+    if @console.update(params[:console])
+      redirect "/consoles/#{@console.slug}"
+    else
+      binding.pry
+      @errors = @console.errors.full_messages
+      erb :'consoles/edit'
+    end
   end
 
   delete "/consoles/:slug" do
