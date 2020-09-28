@@ -50,7 +50,7 @@ class GamesController < ApplicationController
     @game = Game.find_by_slug(params[:slug])
 
     if @game.update(params[:game])
-      redirect "/games/#{game.slug}"
+      redirect "/games/#{@game.slug}"
     else
       @errors = @game.errors.full_messages
       erb :'games/edit'
