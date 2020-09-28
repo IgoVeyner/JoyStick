@@ -27,7 +27,8 @@ class CollectionsController < ApplicationController
           collection = Collection.new(params[:collection])
 
           if collection.save          # Does the collection save?
-            collection.games << game
+            # collection.games << game
+            collection.games_collections.create(game: game)
             redirect '/collections'
           else                        # Collection did not save (No console selected)
             @errors = collection.errors.full_messages
