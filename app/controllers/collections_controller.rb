@@ -63,7 +63,8 @@ class CollectionsController < ApplicationController
 
           if game.save                    # Does the game save? (Unique Name?)
             collection = Collection.create(params[:collection])
-            collection.games << game
+            # collection.games << game
+            collection.games_collections.create(game: game)
             redirect '/collections'
           else                            # Game did not save (Name was already taken)
             @errors = ["Game "]
